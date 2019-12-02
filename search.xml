@@ -3,7 +3,9 @@
   <entry>
     <title>Hexo 插件记录</title>
     <url>/web/hexo-plugin/</url>
-    <content><![CDATA[<ul>
+    <content><![CDATA[<p>plugins</p>
+<a id="more"></a>
+<ul>
 <li>deploy</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span></pre></td></tr></table></figure>
@@ -1937,32 +1939,6 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
       </tags>
   </entry>
   <entry>
-    <title>FFmpeg下载安装</title>
-    <url>/others/FFmpeg_Install/</url>
-    <content><![CDATA[<p>为什么需要这玩意呢?<br>因为matplotlib动图保存需要它</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ani.save(<span class="string">'vedio.mp4'</span>, extra_args=[<span class="string">'-vcodec'</span>, <span class="string">'libx264'</span>])</span></pre></td></tr></table></figure>
-<a id="more"></a>
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>简单粗暴一句话</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ffmpeg</span></pre></td></tr></table></figure>
-<h1 id="Windows-amp-MacOS"><a href="#Windows-amp-MacOS" class="headerlink" title="Windows &amp; MacOS"></a>Windows &amp; MacOS</h1><p><a href="http://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg官网</a></p>
-<p>往下滑看到下图</p>
-<p><img src="/others/FFmpeg_Install/static.png" alt="build"></p>
-<p>选择<code>static and shared</code>的</p>
-<p><img src="/others/FFmpeg_Install/build.png" alt="build"></p>
-<p>按默认选项来就好了,直接download,然后解压<br>再把<code>bin</code>文件夹路径添加到环境变量中</p>
-<h1 id="安装成功检测"><a href="#安装成功检测" class="headerlink" title="安装成功检测"></a>安装成功检测</h1><p>在命令行测试</p>
-<pre><code class="lang-shell">ffmpeg -version
-</code></pre>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>安装</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Comsol学习笔记</title>
     <url>/others/Comsol_notebook/</url>
     <content><![CDATA[<p>Comsol图形界面<br><a id="more"></a></p>
@@ -1990,6 +1966,32 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 ]]></content>
       <tags>
         <tag>Comsol</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FFmpeg下载安装</title>
+    <url>/others/FFmpeg_Install/</url>
+    <content><![CDATA[<p>为什么需要这玩意呢?<br>因为matplotlib动图保存需要它</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ani.save(<span class="string">'vedio.mp4'</span>, extra_args=[<span class="string">'-vcodec'</span>, <span class="string">'libx264'</span>])</span></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>简单粗暴一句话</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ffmpeg</span></pre></td></tr></table></figure>
+<h1 id="Windows-amp-MacOS"><a href="#Windows-amp-MacOS" class="headerlink" title="Windows &amp; MacOS"></a>Windows &amp; MacOS</h1><p><a href="http://ffmpeg.org/" target="_blank" rel="noopener">FFmpeg官网</a></p>
+<p>往下滑看到下图</p>
+<p><img src="/others/FFmpeg_Install/static.png" alt="build"></p>
+<p>选择<code>static and shared</code>的</p>
+<p><img src="/others/FFmpeg_Install/build.png" alt="build"></p>
+<p>按默认选项来就好了,直接download,然后解压<br>再把<code>bin</code>文件夹路径添加到环境变量中</p>
+<h1 id="安装成功检测"><a href="#安装成功检测" class="headerlink" title="安装成功检测"></a>安装成功检测</h1><p>在命令行测试</p>
+<pre><code class="lang-shell">ffmpeg -version
+</code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>安装</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -3409,18 +3411,18 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <h2 id="3-3-icon设置"><a href="#3-3-icon设置" class="headerlink" title="3.3. icon设置"></a>3.3. <a href="https://www.jianshu.com/p/7519c71c8ea9" target="_blank" rel="noopener">icon设置</a></h2><ul>
 <li><h2 id="3-4-添加tags和categories"><a href="#3-4-添加tags和categories" class="headerlink" title="3.4. 添加tags和categories"></a>3.4. <a href="https://www.jianshu.com/p/3d2e7b3ec182" target="_blank" rel="noopener">添加tags和categories</a></h2></li>
 </ul>
-<h2 id="3-5-Markdown插入图片"><a href="#3-5-Markdown插入图片" class="headerlink" title="3.5. Markdown插入图片"></a>3.5. Markdown插入图片</h2><p>安装插件<code>hexo-asset-image</code>, 注意一定要在博客的根目录运行</p>
+<h2 id="3-4-Markdown插入图片"><a href="#3-4-Markdown插入图片" class="headerlink" title="3.4. Markdown插入图片"></a>3.4. Markdown插入图片</h2><p>安装插件<code>hexo-asset-image</code>, 注意一定要在博客的根目录运行</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span></pre></td></tr></table></figure>
 <p>有时候安装完后不一定显示图片成功, 需要修改下代码.<br>加载图片失败的原因一般是路径错误.<br>在<code>/node_modules/hexo-asset-image/index.js</code>有一段代码如下</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span></pre></td></tr></table></figure>
 <p>此处是按照<code>/</code>的位置截取url,按照需求调整选择第几个<code>/</code>就好了</p>
 <p><strong><em>注意:</em></strong> 如果想使代码生效, 需要更改下博客的内容才能让这些代码运行.</p>
-<h2 id="3-6-MathJax-数学公式"><a href="#3-6-MathJax-数学公式" class="headerlink" title="3.6. MathJax 数学公式"></a>3.6. MathJax 数学公式</h2><ul>
+<h2 id="3-5-MathJax-数学公式"><a href="#3-5-MathJax-数学公式" class="headerlink" title="3.5. MathJax 数学公式"></a>3.5. MathJax 数学公式</h2><ul>
 <li><a href="http://palanceli.com/2018/03/08/2018/0308HexoLatex/" target="_blank" rel="noopener">http://palanceli.com/2018/03/08/2018/0308HexoLatex/</a></li>
 <li><a href="https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html" target="_blank" rel="noopener">https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html</a></li>
 <li><a href="https://blog.csdn.net/wgshun616/article/details/81019687" target="_blank" rel="noopener">https://blog.csdn.net/wgshun616/article/details/81019687</a></li>
 </ul>
-<h2 id="3-7-子博客"><a href="#3-7-子博客" class="headerlink" title="3.7. 子博客"></a>3.7. 子博客</h2><p>github库名不同于用户名时,即子网页博客,博客的文章点进去会404  </p>
+<h2 id="3-6-子博客"><a href="#3-6-子博客" class="headerlink" title="3.6. 子博客"></a>3.6. 子博客</h2><p>github库名不同于用户名时,即子网页博客,博客的文章点进去会404  </p>
 <p><strong>解决:</strong>  </p>
 <ol>
 <li>创建<code>CNAME</code>文件,内容写入父网页域名(没有http://)</li>
@@ -3435,6 +3437,7 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;benature.github.io&#x2F;lib&#x2F;three&#x2F;three.min.js net::ERR_ABORTED 404</span></pre></td></tr><tr><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;benature.github.io&#x2F;lib&#x2F;three&#x2F;canvas_lines.min.js net::ERR_ABORTED 404</span></pre></td></tr></table></figure>
 <p>显然报错原因是路径错误.<br>通过搜索在<code>\themes\next\layout\_scripts\vendors.swig</code>内有相关设置<br>再看主题配置文件,有一栏就是<code>vendors</code>,把里面需要的网址反注释出来就好了</p>
 <h2 id="4-2-2018-3-31"><a href="#4-2-2018-3-31" class="headerlink" title="4.2. 2018-3-31"></a>4.2. 2018-3-31</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Connection reset by 13.250.177.223 port 22</span></pre></td></tr><tr><td class="code"><pre><span class="line">fatal: sha1 file &#39;&lt;stdout&gt;&#39; write error: Broken pipe</span></pre></td></tr><tr><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span></pre></td></tr></table></figure>
+<h2 id="4-3-hexo-4-0-0-會給-a-標簽-添加-target-”-blank”"><a href="#4-3-hexo-4-0-0-會給-a-標簽-添加-target-”-blank”" class="headerlink" title="4.3. hexo 4.0.0 會給 a 標簽 添加 target=”_blank”"></a>4.3. hexo 4.0.0 會給 a 標簽 添加 target=”_blank”</h2><p><a href="https://github.com/hexojs/hexo/issues/3796" target="_blank" rel="noopener">https://github.com/hexojs/hexo/issues/3796</a></p>
 <hr>
 <p>参考资料:</p>
 <ul>
