@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="NEgRUIAPSdI4EIT2F1A-ghYVK8VHjIP_CsLu8FLT89k">
+  <meta name="msvalidate.01" content="66EAAE184516448376FDFCCD019A500B">
+  <meta name="yandex-verification" content="fed2548ee2f049bc">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="本文介绍用Github Desktop管理版本.">
+<meta name="keywords" content="Git,Github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github入门3 | Github Desktop基本操作">
+<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;git&#x2F;git-github-basic-operation&#x2F;index.html">
+<meta property="og:site_name" content="Benature">
+<meta property="og:description" content="本文介绍用Github Desktop管理版本.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;git&#x2F;git-github-basic-operation&#x2F;repo.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;git&#x2F;git-github-basic-operation&#x2F;clone_page.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;git&#x2F;git-github-basic-operation&#x2F;clone.png">
+<meta property="og:updated_time" content="2019-10-06T03:02:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;git&#x2F;git-github-basic-operation&#x2F;repo.png">
+  <link rel="canonical" href="https://benature.github.io/git/git-github-basic-operation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Github入门3 | Github Desktop基本操作 | Benature</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Benature</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">75</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-python">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/categories/Python/" rel="section"><i class="fa fa-fw fa-code"></i>Python</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/git/git-github-basic-operation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Benature">
+      <meta itemprop="description" content="Code is Love, Physics is Beauty.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benature">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Github入门3 | Github Desktop基本操作
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-09-27 17:41:19" itemprop="dateCreated datePublished" datetime="2019-09-27T17:41:19+08:00">2019-09-27</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-06 11:02:56" itemprop="dateModified" datetime="2019-10-06T11:02:56+08:00">2019-10-06</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Git%E6%95%99%E7%A8%8B%E7%B3%BB%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">Git教程系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/git/git-github-basic-operation/" class="post-meta-item leancloud_visitors" data-flag-title="Github入门3 | Github Desktop基本操作" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/git/git-github-basic-operation/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/git/git-github-basic-operation/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文介绍用Github Desktop管理版本.</p>
+<a id="more"></a>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>找到想要clone的repo</p>
+<h2 id="已有的repo"><a href="#已有的repo" class="headerlink" title="已有的repo"></a>已有的repo</h2><p>打开repo的页面</p>
+<p><img src="/git/git-github-basic-operation/repo.png" alt="repo"></p>
+<p>点击右边的这个绿色button <code>Clone or download</code>. 既然是用Github Desktop的话就无所谓HTTPS链接还是SSH链接了, 直接点<code>Open in desktop</code>然后跳转就好了.</p>
+<p><img src="/git/git-github-basic-operation/clone_page.png" alt="repo"></p>
+<p>跳转到Desktop后clone的url已经帮忙填好了, 自己选好要克隆到的本地路径就好了.</p>
+<blockquote>
+<p><strong>强烈建议创建专门文件夹放代码</strong>, 已有此习惯的请忽略这行.</p>
+</blockquote>
+<p><img src="/git/git-github-basic-operation/clone.png" alt="repo"></p>
+<p>点击<code>Clone</code>后会进入加载页面, 仓库正在下载.</p>
+<h2 id="自己新建一个repo"><a href="#自己新建一个repo" class="headerlink" title="自己新建一个repo"></a>自己新建一个repo</h2><p>点击右上角profile，在上方菜单栏选择repo，点击右边new的绿色button。<br>输入仓库名。可以选择是公共仓库还是私密仓库，以前私仓是要收费的，现在任意账号都可免费创建了，私仓只有受邀请人可以查看。不过既然我们是在一个开源平台上，还是先设置public吧。<br>建议自动初始化readme.md文档，其实也就帮你写了个标题而已，自己新建文件也一样。readme充当仓库的一个说明文档的角色。<br>剩下两个licence和gitignore随意即可，后面有需要再创建。</p>
+<p>仓库创建成功后，clone到本地的操作步骤和上面就一模一样了。</p>
+<h1 id="本地local与远端remote同步"><a href="#本地local与远端remote同步" class="headerlink" title="本地local与远端remote同步"></a>本地local与远端remote同步</h1><h2 id="1-atatus"><a href="#1-atatus" class="headerlink" title="1. atatus"></a>1. atatus</h2><p>在本地对文件修改过后，可以通过<br>git staus<br>查看仓库内changed文件</p>
+<h2 id="2-add"><a href="#2-add" class="headerlink" title="2. add"></a>2. add</h2><p>修改好代码之后，需要add变更文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git add -A</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git add "file name"</span></pre></td></tr></table></figure>
+<p>这里可以理解为把变更的文件信息都打包装到一个快递盒里面。</p>
+<h2 id="3-commit"><a href="#3-commit" class="headerlink" title="3. commit"></a>3. commit</h2><p>快递盒打包好后，我们需要贴标签。</p>
+<p>commit message是对打包的变更文件的一个简单说明，表明所做修改的意义之类。一个言简意赅的commit nessage有助于版本回溯的查找，也有助于仓库其他协作者在查看commit history的时候了解你做的修改。（互相了解动态在teamwork很重要）</p>
+<p>注意，commit会把介于两次commit内add的所有变更文件都打包在一起（就理解成把快递盒打包在集装箱里吧），commit成功local就更新了一个version。</p>
+<h2 id="4-push"><a href="#4-push" class="headerlink" title="4. push"></a>4. push</h2><p>本地有了新的version，但此时remote并不知情。换句话说，local领先于remote一个version。</p>
+<p>在desktop可以看到有个上箭头，旁边的数字表示local领先remote多少个version。<br>通过push，我们把local的信息推送到remote，这样就使得local和remote同步了。在desktop上面的上箭头就会消失了。</p>
+<h2 id="5-fetch"><a href="#5-fetch" class="headerlink" title="5. fetch"></a>5. fetch</h2><p>fetch相当于是和remote打个招呼，看看两边的版本是否一致。fetch只是获取信息，在命令行查看local和remote是否同步需要用status查看。</p>
+<p>如果不一致，在desktop会看到上下箭头，上箭头表示local有而remote没有的version，需要推上去，下剪头反之，需要拉下来。旁边的数字表示相差多少个version。</p>
+<h2 id="6-pull"><a href="#6-pull" class="headerlink" title="6. pull"></a>6. pull</h2><p>如果remote领先于local，也就是说你的协作者上传了新的代码，通过pull可以从remote获取最新的版本。</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Git/" rel="tag"># Git</a>
+            
+              <a href="/tags/Github/" rel="tag"># Github</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/git/github-sign-up/" rel="next" title="Github入门2 | 接触Github">
+                  <i class="fa fa-chevron-left"></i> Github入门2 | 接触Github
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/linux/wsl-ssh-server/" rel="prev" title="WSL之SSH服务端">
+                  WSL之SSH服务端 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#已有的repo"><span class="nav-number">1.1.</span> <span class="nav-text">已有的repo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自己新建一个repo"><span class="nav-number">1.2.</span> <span class="nav-text">自己新建一个repo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地local与远端remote同步"><span class="nav-number">2.</span> <span class="nav-text">本地local与远端remote同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-atatus"><span class="nav-number">2.1.</span> <span class="nav-text">1. atatus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-add"><span class="nav-number">2.2.</span> <span class="nav-text">2. add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-commit"><span class="nav-number">2.3.</span> <span class="nav-text">3. commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-push"><span class="nav-number">2.4.</span> <span class="nav-text">4. push</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-fetch"><span class="nav-number">2.5.</span> <span class="nav-text">5. fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-pull"><span class="nav-number">2.6.</span> <span class="nav-text">6. pull</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Benature">
+  <p class="site-author-name" itemprop="name">Benature</p>
+  <div class="site-description" itemprop="description">Code is Love, Physics is Beauty.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Benature" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;Benature" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Benature</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'NDPjtMpj5SvSbQmbwMyLtfpj-gzGzoHsz',
+    appKey: 'Q1VhCyLWedMCqjtVYHwcOkAP',
+    placeholder: 'Plz comment with ur HEART:)',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

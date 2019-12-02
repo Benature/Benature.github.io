@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="NEgRUIAPSdI4EIT2F1A-ghYVK8VHjIP_CsLu8FLT89k">
+  <meta name="msvalidate.01" content="66EAAE184516448376FDFCCD019A500B">
+  <meta name="yandex-verification" content="fed2548ee2f049bc">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="一切看运气哇咔咔">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信文本记录破解数据库导出">
+<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;wechat-data-export&#x2F;index.html">
+<meta property="og:site_name" content="Benature">
+<meta property="og:description" content="一切看运气哇咔咔">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-27T10:04:36.000Z">
+<meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://benature.github.io/others/wechat-data-export/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>微信文本记录破解数据库导出 | Benature</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Benature</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">75</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-python">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/categories/Python/" rel="section"><i class="fa fa-fw fa-code"></i>Python</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/others/wechat-data-export/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Benature">
+      <meta itemprop="description" content="Code is Love, Physics is Beauty.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benature">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">微信文本记录破解数据库导出
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-27 17:08:04 / Modified: 18:04:36" itemprop="dateCreated datePublished" datetime="2019-11-27T17:08:04+08:00">2019-11-27</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+            <span id="/others/wechat-data-export/" class="post-meta-item leancloud_visitors" data-flag-title="微信文本记录破解数据库导出" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/others/wechat-data-export/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/others/wechat-data-export/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一切看运气哇咔咔</p>
+<a id="more"></a>
+<h1 id="从手机提取记录文件"><a href="#从手机提取记录文件" class="headerlink" title="从手机提取记录文件"></a>从手机提取记录文件</h1><p>从手机免root导出数据的方法可以参考<a href="https://godweiyang.com/2019/08/09/wechat-explore/#toc-heading-4" target="_blank" rel="noopener">韦阳的博客</a>和<a href="https://www.louyue.com/weixin.htm" target="_blank" rel="noopener">楼月软件(这个收费的别折腾了)</a></p>
+<h1 id="获取手机IMEI码和微信iduserinformation"><a href="#获取手机IMEI码和微信iduserinformation" class="headerlink" title="获取手机IMEI码和微信iduserinformation"></a>获取手机<code>IMEI</code>码和微信id<code>userinformation</code></h1><h2 id="IMEI"><a href="#IMEI" class="headerlink" title="IMEI"></a><code>IMEI</code></h2><ol>
+<li><p>比较直接的方式是打开手机的<code>电话</code>, 输入</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">*#06#</span></pre></td></tr></table></figure>
+<p> 就会自动弹出的了. 现在手机一般有两个卡槽, 对应会有两个<code>IMEI</code></p>
+</li>
+<li><p>另一种方法就是读取<code>CompatibleInfo.cfg</code>文件.<br> 不过我导出的文件会读取失败, 报错</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">java.io.StreamCorruptedException: invalid stream header: 01027400</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:866)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    at java.io.ObjectInputStream.&lt;init&gt;(ObjectInputStream.java:358)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    at IMEI.main(IMEI.java:14)</span></pre></td></tr></table></figure>
+<p> 所以只好用第一种方法了, 也就麻烦了一丢丢.</p>
+</li>
+</ol>
+<h2 id="微信iduin"><a href="#微信iduin" class="headerlink" title="微信iduin"></a>微信id<code>uin</code></h2><p>读取<code>systemInfo.cfg</code>.</p>
+<h1 id="破解聊天记录数据库密码"><a href="#破解聊天记录数据库密码" class="headerlink" title="破解聊天记录数据库密码"></a>破解聊天记录数据库密码</h1><p>拼接字符串<code>IMEI</code>和<code>uin</code>, 即上面得到的两串码.</p>
+<p><a href="http://tool.chinaz.com/tools/md5.aspx" target="_blank" rel="noopener">MD5加密</a>取前七位, 注意英文小写.</p>
+<blockquote>
+<p>因为一般手机<code>IMEI</code>有两个, 分别试试就好了</p>
+</blockquote>
+<h1 id="破解数据库"><a href="#破解数据库" class="headerlink" title="破解数据库"></a>破解数据库</h1><p>打开<code>sqlcipher.exe</code>软件，<code>ctrl+O</code>打开<code>EnMicroMsg.db</code>数据库, 输入密码</p>
+<p>点击菜单栏的<code>File</code>-<code>Export</code>-<code>Table as CSV file</code>，选择<code>message</code>.</p>
+<p>然后数据就完美导出啦~<br>慢慢分析玩耍吧</p>
+<hr>
+<p>reference:</p>
+<ul>
+<li><a href="https://github.com/Heyxk/notes/issues/1" target="_blank" rel="noopener">https://github.com/Heyxk/notes/issues/1</a></li>
+<li><a href="https://godweiyang.com/2019/08/09/wechat-explore/#toc-heading-4" target="_blank" rel="noopener">https://godweiyang.com/2019/08/09/wechat-explore/#toc-heading-4</a></li>
+<li><a href="https://zh.wikihow.com/%E6%9F%A5%E6%89%BE%E6%89%8B%E6%9C%BA%E7%9A%84IMEI%E6%88%96MEID%E5%8F%B7" target="_blank" rel="noopener">https://zh.wikihow.com/%E6%9F%A5%E6%89%BE%E6%89%8B%E6%9C%BA%E7%9A%84IMEI%E6%88%96MEID%E5%8F%B7</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/devices/mac-vs-windows/" rel="next" title="Mac V.S. Windows 个人感受对比">
+                  <i class="fa fa-chevron-left"></i> Mac V.S. Windows 个人感受对比
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/web/hexo-plugin/" rel="prev" title="web/hexo-plugin">
+                  web/hexo-plugin <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从手机提取记录文件"><span class="nav-number">1.</span> <span class="nav-text">从手机提取记录文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取手机IMEI码和微信iduserinformation"><span class="nav-number">2.</span> <span class="nav-text">获取手机IMEI码和微信iduserinformation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IMEI"><span class="nav-number">2.1.</span> <span class="nav-text">IMEI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信iduin"><span class="nav-number">2.2.</span> <span class="nav-text">微信iduin</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#破解聊天记录数据库密码"><span class="nav-number">3.</span> <span class="nav-text">破解聊天记录数据库密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#破解数据库"><span class="nav-number">4.</span> <span class="nav-text">破解数据库</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Benature">
+  <p class="site-author-name" itemprop="name">Benature</p>
+  <div class="site-description" itemprop="description">Code is Love, Physics is Beauty.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Benature" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;Benature" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Benature</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'NDPjtMpj5SvSbQmbwMyLtfpj-gzGzoHsz',
+    appKey: 'Q1VhCyLWedMCqjtVYHwcOkAP',
+    placeholder: 'Plz comment with ur HEART:)',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

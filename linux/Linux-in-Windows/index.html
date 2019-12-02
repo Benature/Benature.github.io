@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="NEgRUIAPSdI4EIT2F1A-ghYVK8VHjIP_CsLu8FLT89k">
+  <meta name="msvalidate.01" content="66EAAE184516448376FDFCCD019A500B">
+  <meta name="yandex-verification" content="fed2548ee2f049bc">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="在Windows系统安装Ubantu子系统">
+<meta name="keywords" content="配置,Linux,安装,入门教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows的Linux子系统(Ubuntu)安装教程">
+<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;index.html">
+<meta property="og:site_name" content="Benature">
+<meta property="og:description" content="在Windows系统安装Ubantu子系统">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;开发者.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;控制面板.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;store.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;setting-storage.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;mstsc.png">
+<meta property="og:updated_time" content="2019-10-11T02:25:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-in-Windows&#x2F;开发者.png">
+  <link rel="canonical" href="https://benature.github.io/linux/Linux-in-Windows/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Windows的Linux子系统(Ubuntu)安装教程 | Benature</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Benature</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">75</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-python">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/categories/Python/" rel="section"><i class="fa fa-fw fa-code"></i>Python</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/linux/Linux-in-Windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Benature">
+      <meta itemprop="description" content="Code is Love, Physics is Beauty.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benature">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">Windows的Linux子系统(Ubuntu)安装教程
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-02-17 21:54:16" itemprop="dateCreated datePublished" datetime="2019-02-17T21:54:16+08:00">2019-02-17</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-11 10:25:10" itemprop="dateModified" datetime="2019-10-11T10:25:10+08:00">2019-10-11</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/linux/Linux-in-Windows/" class="post-meta-item leancloud_visitors" data-flag-title="Windows的Linux子系统(Ubuntu)安装教程" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/linux/Linux-in-Windows/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/linux/Linux-in-Windows/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在Windows系统安装Ubantu子系统</p>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>其实对于正在使用Windows系统但是想使用Linux的同学, 我第一句建议其实是:<br><strong>“去买个MacBook吧”</strong></p>
+<p>当然, 如果你也和我一样 <em>贫穷限制了购买力</em> 的话, 我们就在windows电脑里面装linux吧.</p>
+<p>一般而言, 使用Linux系统有三种方法:</p>
+<ul>
+<li>安装双系统</li>
+<li>虚拟机安装 (如VMware)</li>
+<li>Windows子系统(WSL)</li>
+</ul>
+<p>本文主要谈论第三种方法, 前两种相对而言在网上比较常见.</p>
+<h1 id="Linux子系统"><a href="#Linux子系统" class="headerlink" title="Linux子系统"></a>Linux子系统</h1><h2 id="基本认识"><a href="#基本认识" class="headerlink" title="基本认识"></a>基本认识</h2><p>子系统的最底层其实不是Linux, 而还是基于Windows的.</p>
+<p>子系统的全名叫 <strong>Windows Subsystem for Linux（简称WSL）</strong><br>这大概是它与前两种方法最大的区别</p>
+<p>更多详情请转wiki(懒得copy…)</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>自身支持和Windows系统文件交互</li>
+<li>启动方便, 相对于双系统的重启启动</li>
+<li>比较安全(?)<ul>
+<li>陆陆续续见到一些装 <em>双系统</em> 把电脑装崩的同学</li>
+<li>也有同学表示就算把 <em>虚拟机</em> 卸载了电脑也比以前慢了</li>
+</ul>
+</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>图形界面?有! 但需要通过<code>mstsc</code>,且有一定的延迟性</li>
+<li>有一些不知名的小bug, 就算<code>apt-get install</code>也可能有点小问题</li>
+<li>…</li>
+</ul>
+<h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><h4 id="电脑"><a href="#电脑" class="headerlink" title="电脑"></a>电脑</h4><p>首先你要打开电脑, 而且是win10</p>
+<h4 id="开发人员模式"><a href="#开发人员模式" class="headerlink" title="开发人员模式"></a>开发人员模式</h4><p>设置-&gt;更新与安全-&gt;开发人员模式<br>(设置的快捷键是<code>win+I</code>)<br><img src="/linux/Linux-in-Windows/开发者.png" alt="开发人员"></p>
+<h4 id="控制面板"><a href="#控制面板" class="headerlink" title="控制面板"></a>控制面板</h4><p>控制面板-&gt;程序-&gt;启用和关闭Windows功能-&gt;框选“适用于Linux的Windows子系统”<br><img src="/linux/Linux-in-Windows/控制面板.png" alt></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Microsoft Store-&gt;搜索”Ubuntu”-&gt;选择第一个<br><img src="/linux/Linux-in-Windows/store.png" alt></p>
+<p>安装完成后, 点击Ubuntu打开, 会提示你稍等一会</p>
+<p>然后需要你设置你的<em>用户名</em><br>然后设置<em>密码</em></p>
+<p><strong><em>注意:</em></strong> <strong>看不见密码 很!正!常!</strong></p>
+<p>然后</p>
+<p>欢迎你进入Ubuntu</p>
+<h4 id="Problem"><a href="#Problem" class="headerlink" title="Problem(?)"></a>Problem(?)</h4><p>可能有些人的C盘比较小, 或者想把Ubuntu装到非系统盘的. 可以修改下Store的下载路径</p>
+<p>设置-&gt;存储-&gt;更改新内容的保存位置-&gt;新的引用将保存到(D:)</p>
+<p><img src="/linux/Linux-in-Windows/setting-storage.png" alt="存储"></p>
+<h2 id="一些配置-操作"><a href="#一些配置-操作" class="headerlink" title="一些配置/操作"></a>一些配置/操作</h2><h3 id="查看Ubuntu版本"><a href="#查看Ubuntu版本" class="headerlink" title="查看Ubuntu版本"></a>查看Ubuntu版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> lsb_release -a</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Distributor ID: Ubuntu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Description:    Ubuntu 16.04.2 LTS</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Release:        16.04</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Codename:       xenial</span></pre></td></tr></table></figure>
+<h3 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h3><p>使用国内的软件源, 速度可以快很多, 比如<a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank" rel="noopener">清华镜像</a></p>
+<p>Ubuntu 的软件源配置文件是 <code>/etc/apt/sources.list</code>。将系统自带的该文件做个备份，将该文件替换</p>
+<p>以Ubuntu 16.04 LTS 为例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 预发布软件源，不建议启用</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse</span></span></pre></td></tr></table></figure>
+<p>命令操作如下:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">  #</span><span class="bash"> 复制文件到/etc/apt/sources.list.bak中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo nano /etc/apt/sources.list</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">  #</span><span class="bash"> 将上文的源右键粘贴进去，编辑完后按Ctrl+X，再按Y和回车</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt update &amp;&amp; apt upgrade -y <span class="comment"># 更新</span></span></span></pre></td></tr></table></figure></p>
+<p>如果对上述nano编辑器的操作指引感到疑惑,可以参考<a href="https://benature.github.io/2019/02/22/Linux-nano/">这篇文章</a></p>
+<h3 id="安装中文环境"><a href="#安装中文环境" class="headerlink" title="安装中文环境"></a>安装中文环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt install  language-pack-zh-han* -y</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> locale-gen zh_CN.GB18030 &amp;&amp; locale-gen zh_CN.GB2312 %% locale-gen zh_CN.UTF8</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">  #</span><span class="bash">中文字体，别忘了同意eula</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt install fontconfig -y</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install ttf-mscorefonts-installer -y</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">  #</span><span class="bash">下面的再执行一遍以防万一</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install -y --force-yes --no-install-recommends fonts-wqy-microhei</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install -y --force-yes --no-install-recommends ttf-wqy-zenhei</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo dpkg-reconfigure locales</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">  #</span><span class="bash"> 选择zh_CN.UTF8回车, 下一页也是选择zh_CN.UTF8回车</span></span></pre></td></tr></table></figure>
+<p>然后重新打开Ubuntu命令行</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><h3 id="更新软件包"><a href="#更新软件包" class="headerlink" title="更新软件包"></a>更新软件包</h3><p>和Ubuntu一样</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get update</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get upgrade</span></span></pre></td></tr></table></figure>
+<h3 id="更新系统"><a href="#更新系统" class="headerlink" title="更新系统"></a>更新系统</h3><p>因为有时候安装东西会有依赖项奇奇怪怪的事情, 可能还是更新下系统比较好.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo -S apt-mark hold procps strace sudo</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo -S env RELEASE_UPGRADER_NO_SCREEN=1 <span class="keyword">do</span>-release-upgrade</span></span></pre></td></tr></table></figure>
+<h2 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>图形环境使用<code>xfce4</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt install xfce4 -y</span></span></pre></td></tr></table></figure></p>
+<p>如果想使用常见的Ubuntu桌面的话, 命令是<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pt install xubuntu-desktop -y</span></span></pre></td></tr></table></figure><br>据说这个会安装的软件比较多,想轻量级的话还是选择<code>xfce4</code>吧.<br>btw, 如果成功打开了xubuntu桌面的话,请告诉我怎么做,因为我还没成功过…</p>
+<h3 id="换端口"><a href="#换端口" class="headerlink" title="换端口"></a>换端口</h3><p>为了防止和你计算机本来带的远程桌面冲突,最好换一下端口.<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nano /etc/xrdp/xrdp.ini</span></span></pre></td></tr></table></figure><br>把<code>port=3389</code>改成别的(比如2333,好记哈哈哈)</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><pre><code class="lang-shell">$ service xrdp restart
+</code></pre>
+<p>然后回到Windows系统,打开<code>运行</code>(快捷键<code>win+R</code>),输入<code>mstsc</code>,回车.</p>
+<p>输入<code>localhost:&lt;刚才设置的端口&gt;</code>,以及你设置的用户名<br><img src="/linux/Linux-in-Windows/mstsc.png" alt></p>
+<p>进入远程桌面后有一段时间的雪花图, 不要惊慌, 等一会就好了.</p>
+<h2 id="Problems"><a href="#Problems" class="headerlink" title="Problems"></a>Problems</h2><h2 id="apt-install-依赖项"><a href="#apt-install-依赖项" class="headerlink" title="apt install 依赖项"></a>apt install 依赖项</h2><p>使用<code>aptitude</code>采取第二种解决方案</p>
+<hr>
+<p>参考资料:</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/windows/wsl/install-win10</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/39864061" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/39864061</a></li>
+<li><a href="https://blog.csdn.net/qq_20464153/article/details/79682274" target="_blank" rel="noopener">https://blog.csdn.net/qq_20464153/article/details/79682274</a></li>
+<li><a href="https://wsl-guide-cn.readthedocs.io/zh_CN/latest/update.html" target="_blank" rel="noopener">https://wsl-guide-cn.readthedocs.io/zh_CN/latest/update.html</a></li>
+<li><a href="https://solarianprogrammer.com/2017/04/16/windows-susbsystem-for-linux-xfce-4/" target="_blank" rel="noopener">https://solarianprogrammer.com/2017/04/16/windows-susbsystem-for-linux-xfce-4/</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag"># 配置</a>
+            
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+            
+              <a href="/tags/%E5%AE%89%E8%A3%85/" rel="tag"># 安装</a>
+            
+              <a href="/tags/%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" rel="tag"># 入门教程</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/python-code/python-mxnet/" rel="next" title="MXnet for GPU Install">
+                  <i class="fa fa-chevron-left"></i> MXnet for GPU Install
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/linux/Linux-nano/" rel="prev" title="nano编辑器">
+                  nano编辑器 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux子系统"><span class="nav-number">2.</span> <span class="nav-text">Linux子系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本认识"><span class="nav-number">2.1.</span> <span class="nav-text">基本认识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优缺点"><span class="nav-number">2.2.</span> <span class="nav-text">优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">2.2.1.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">2.2.2.</span> <span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装教程"><span class="nav-number">2.3.</span> <span class="nav-text">安装教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.3.1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电脑"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">电脑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发人员模式"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">开发人员模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制面板"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">控制面板</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.3.2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Problem"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">Problem(?)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些配置-操作"><span class="nav-number">2.4.</span> <span class="nav-text">一些配置/操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看Ubuntu版本"><span class="nav-number">2.4.1.</span> <span class="nav-text">查看Ubuntu版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换软件源"><span class="nav-number">2.4.2.</span> <span class="nav-text">更换软件源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装中文环境"><span class="nav-number">2.4.3.</span> <span class="nav-text">安装中文环境</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新"><span class="nav-number">2.5.</span> <span class="nav-text">更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新软件包"><span class="nav-number">2.5.1.</span> <span class="nav-text">更新软件包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新系统"><span class="nav-number">2.5.2.</span> <span class="nav-text">更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形界面"><span class="nav-number">2.6.</span> <span class="nav-text">图形界面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-1"><span class="nav-number">2.6.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换端口"><span class="nav-number">2.6.2.</span> <span class="nav-text">换端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">2.6.3.</span> <span class="nav-text">运行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problems"><span class="nav-number">2.7.</span> <span class="nav-text">Problems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apt-install-依赖项"><span class="nav-number">2.8.</span> <span class="nav-text">apt install 依赖项</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Benature">
+  <p class="site-author-name" itemprop="name">Benature</p>
+  <div class="site-description" itemprop="description">Code is Love, Physics is Beauty.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Benature" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;Benature" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Benature</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'NDPjtMpj5SvSbQmbwMyLtfpj-gzGzoHsz',
+    appKey: 'Q1VhCyLWedMCqjtVYHwcOkAP',
+    placeholder: 'Plz comment with ur HEART:)',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>

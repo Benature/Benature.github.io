@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <meta name="google-site-verification" content="NEgRUIAPSdI4EIT2F1A-ghYVK8VHjIP_CsLu8FLT89k">
+  <meta name="msvalidate.01" content="66EAAE184516448376FDFCCD019A500B">
+  <meta name="yandex-verification" content="fed2548ee2f049bc">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"flat"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="算法知识简要大纲">
+<meta name="keywords" content="C,数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法分析简要">
+<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;index.html">
+<meta property="og:site_name" content="Benature">
+<meta property="og:description" content="算法知识简要大纲">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;时间复杂度.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;bucket-1257126549.cos.ap-guangzhou.myqcloud.com&#x2F;20181206161106.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;bucket-1257126549.cos.ap-guangzhou.myqcloud.com&#x2F;20181207112441.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;bucket-1257126549.cos.ap-guangzhou.myqcloud.com&#x2F;20181219084940.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;bucket-1257126549.cos.ap-guangzhou.myqcloud.com&#x2F;20181206161208.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;bucket-1257126549.cos.ap-guangzhou.myqcloud.com&#x2F;20181206161232.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2018.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201804&#x2F;849589-20180402133438219-1946132192.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015224719590-1433219824.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015225645277-1151100000.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2018.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201803&#x2F;849589-20180331170017421-364506073.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015230936371-1413523412.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015231308699-356134237.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015232453668-1397662527.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015231740840-6968181.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;images2017.cnblogs.com&#x2F;blog&#x2F;849589&#x2F;201710&#x2F;849589-20171015232107090-1920702011.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;图论类型.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;有向图与无向图.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;有权图与无权图.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20150516155955628">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20150516160122470">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20150516161118332">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20150516161601785">
+<meta property="og:updated_time" content="2019-10-11T12:13:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90&#x2F;时间复杂度.png">
+  <link rel="canonical" href="https://benature.github.io/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数据结构与算法分析简要 | Benature</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Benature</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags<span class="badge">31</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+      
+      
+        
+      
+        
+          
+        
+      
+        
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">75</span></a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-python">
+      
+    
+      
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <a href="/categories/Python/" rel="section"><i class="fa fa-fw fa-code"></i>Python</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" target="_blank" rel="noopener" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Benature">
+      <meta itemprop="description" content="Code is Love, Physics is Beauty.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Benature">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">数据结构与算法分析简要
+
+          
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2018-12-27 19:21:40" itemprop="dateCreated datePublished" datetime="2018-12-27T19:21:40+08:00">2018-12-27</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-10-11 20:13:54" itemprop="dateModified" datetime="2019-10-11T20:13:54+08:00">2019-10-11</time>
+              </span>
+            
+          
+
+          
+            <span id="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" class="post-meta-item leancloud_visitors" data-flag-title="数据结构与算法分析简要" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><em>算法知识简要大纲</em><br><a id="more"></a></p>
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#算法分析">算法分析</a><ul>
+<li><a href="#递归简论">递归简论</a></li>
+<li><a href="#时间复杂度">时间复杂度</a></li>
+</ul>
+</li>
+<li><a href="#表-栈-队列">表、栈、队列</a><ul>
+<li><a href="#表adt链表-list">表ADT(链表) List</a></li>
+<li><a href="#栈adt-stack">栈ADT Stack</a></li>
+<li><a href="#队列-queue">队列 Queue</a></li>
+</ul>
+</li>
+<li><a href="#树-tree">树 Tree</a><ul>
+<li><a href="#预备知识">预备知识</a></li>
+<li><a href="#遍历">遍历</a></li>
+<li><a href="#二叉树">二叉树</a></li>
+<li><a href="#avl树-adelson-velsky-和-landis">AVL树 (Adelson-Velsky 和 Landis)</a></li>
+<li><a href="#伸展树-splay-tree">伸展树 splay tree</a></li>
+<li><a href="#b-树-b-tree">B-树 (B-tree)</a></li>
+<li><a href="#分析树">分析树</a></li>
+</ul>
+</li>
+<li><a href="#哈希-hash">哈希 Hash</a><ul>
+<li><a href="#哈希函数">哈希函数</a></li>
+<li><a href="#分离链表法拉链法">分离链表法(拉链法)</a></li>
+<li><a href="#开放定址法">开放定址法</a><ul>
+<li><a href="#线性探测法">线性探测法</a></li>
+<li><a href="#平方散列法">平方散列法</a></li>
+<li><a href="#双倍散列">双(倍)散列</a></li>
+<li><a href="#再散列">再散列</a></li>
+</ul>
+</li>
+<li><a href="#可扩散列">可扩散列</a></li>
+</ul>
+</li>
+<li><a href="#优先队列堆-heap">优先队列（堆） Heap</a><ul>
+<li><a href="#二叉堆-binary-heap">二叉堆 binary heap</a><ul>
+<li><a href="#基本堆操作">基本堆操作</a></li>
+<li><a href="#应用">应用</a></li>
+</ul>
+</li>
+<li><a href="#d-堆">d-堆</a></li>
+<li><a href="#左式堆">左式堆</a></li>
+<li><a href="#斜堆">斜堆</a></li>
+<li><a href="#二项队列">二项队列</a></li>
+</ul>
+</li>
+<li><a href="#排序-sort">排序 Sort</a><ul>
+<li><a href="#冒泡排序-bubble">冒泡排序 Bubble</a></li>
+<li><a href="#选择排序-select">选择排序 Select</a></li>
+<li><a href="#插入排序-insert">插入排序 Insert</a></li>
+<li><a href="#希尔排序-shell">希尔排序 Shell</a></li>
+<li><a href="#归并排序-merge">归并排序 Merge</a></li>
+<li><a href="#快速排序-quick">快速排序 Quick</a></li>
+<li><a href="#堆排序-heap">堆排序 Heap</a></li>
+<li><a href="#基数排序">基数排序</a></li>
+<li><a href="#计数排序">计数排序</a></li>
+<li><a href="#桶排序">桶排序</a></li>
+<li><a href="#随机快速排序">随机快速排序</a></li>
+</ul>
+</li>
+<li><a href="#图论-graph">图论 Graph</a><ul>
+<li><a href="#基本概念">基本概念</a><ul>
+<li><a href="#基本术语">基本术语</a></li>
+<li><a href="#图的分类">图的分类</a></li>
+</ul>
+</li>
+<li><a href="#存储显示方式">存储显示方式</a><ul>
+<li><a href="#邻接矩阵-adjacency-matrices">邻接矩阵 adjacency matrices</a></li>
+<li><a href="#邻接表">邻接表</a></li>
+<li><a href="#链接多重表">链接多重表</a></li>
+</ul>
+</li>
+<li><a href="#操作">操作</a><ul>
+<li><a href="#拓扑排序httpswwwcnblogscomen-hengp5085690html">拓扑排序</a></li>
+<li><a href="#最短路径">最短路径</a></li>
+<li><a href="#略">略……</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /code_chunk_output -->
+<p><strong>抽象数据类型(Abstract Data Type, ADT)</strong><br>抽象数据类型的特征是 <strong>实现</strong> 与 <strong>操作</strong> 分离，从而实现 <strong>封装</strong> 。<br>抽象数据类型体现了程序设计中 <strong>问题分解</strong> 和 <strong>信息隐藏</strong> 的特征。它把问题分解为多个规模较小且容易处理的问题，然后把每个功能模块的实现为一个独立单元，通过一次或多次调用来实现整个问题。</p>
+<ul>
+<li>可视化网站<ul>
+<li><a href="https://visualgo.net/zh" target="_blank" rel="noopener">VisuAlgo</a></li>
+<li><a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">LeetCodeAnimation</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="递归简论"><a href="#递归简论" class="headerlink" title="递归简论"></a>递归简论</h2><ol>
+<li><strong>基准情况</strong>：在某一情况下无须递归就会return。</li>
+<li><strong>不断推进</strong>：每一次递归都往基准推进。</li>
+<li><strong>设计法则</strong>：所有递归都能调用。</li>
+<li><strong>合成效益法则</strong>：在同一个问题中，勿在不同递归调用中做同一个工作</li>
+</ol>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>(大概是看看就好了吧)</p>
+<ul>
+<li>定义：如果存在正常数$𝑐$和$𝑛_0$, 使当$𝑁≥𝑛_0$时$𝑇(𝑁)≤𝑐𝑓(𝑁)$, 则记为$𝑇(𝑁)=\mathcal{O}(𝑓(𝑁))$</li>
+<li>定义：如果存在正常数$𝑐$和$𝑛_0$, 使当$𝑁≥𝑛_0$时$𝑇(𝑁)≥𝑐𝑔(𝑁)$, 则记为$𝑇(𝑁)=Ω(𝑔(𝑁))$</li>
+<li>定义：$𝑇(𝑁)=Θ(ℎ(𝑁)$当且仅当$𝑇(𝑁)=\mathcal{O}(ℎ(𝑁))$且$𝑇(𝑁)=Ω(ℎ(𝑁))$</li>
+<li>定义：如果$𝑇(𝑁)=\mathcal{O}(𝑝(𝑁))$且$𝑇(𝑁)≠Ω(𝑝(𝑁))$, $𝑇(𝑁)=\mathcal{O}(𝑝(𝑁))$</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">运行时间T(N)</th>
+<th style="text-align:center">算法举例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">常数时间</td>
+<td style="text-align:center">$\mathcal{O}(1)$</td>
+<td style="text-align:center">判断一个二进制数的奇偶</td>
+</tr>
+<tr>
+<td style="text-align:center">对数时间</td>
+<td style="text-align:center">$\mathcal{O}(log⁡N)$</td>
+<td style="text-align:center">二分搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">（小于1次）幂时间</td>
+<td style="text-align:center">$\mathcal{O}(N^c)$其中$0&lt;c&lt;1$</td>
+<td style="text-align:center">K-d树的搜索操作</td>
+</tr>
+<tr>
+<td style="text-align:center">线性时间</td>
+<td style="text-align:center">$\mathcal{O}(N)$</td>
+<td style="text-align:center">无序数组的搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">线性对数时间</td>
+<td style="text-align:center">$\mathcal{O}(N\log{⁡N})$</td>
+<td style="text-align:center">最快的比较排序</td>
+</tr>
+<tr>
+<td style="text-align:center">二次时间</td>
+<td style="text-align:center">$\mathcal{O}(N^2)$</td>
+<td style="text-align:center">冒泡排序、插入排序</td>
+</tr>
+<tr>
+<td style="text-align:center">三次时间</td>
+<td style="text-align:center">$\mathcal{O}(N^3)$</td>
+<td style="text-align:center">矩阵乘法的基本实现，计算部分相关性</td>
+</tr>
+<tr>
+<td style="text-align:center">指数时间</td>
+<td style="text-align:center">$\mathcal{O}(2^N)$</td>
+<td style="text-align:center">/</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/时间复杂度.png" alt="时间复杂度"></p>
+<ul>
+<li>计算时间复杂度<ul>
+<li>一层循环的时间复杂度为$𝑂(𝑁)$ </li>
+<li>多层嵌套循环的时间复杂度是每层循环的时间复杂度之积$𝑂(𝑁^n)$ </li>
+<li><code>if…else…</code> /<code>case…switch…</code>语句中取各个分支中<strong>最长</strong>的时间作为时间开销</li>
+</ul>
+</li>
+</ul>
+<h1 id="表、栈、队列"><a href="#表、栈、队列" class="headerlink" title="表、栈、队列"></a>表、栈、队列</h1><h2 id="表ADT-链表-List"><a href="#表ADT-链表-List" class="headerlink" title="表ADT(链表) List"></a>表ADT(链表) List</h2><p>习惯上会留出一个 <strong>标志节点</strong> , 有时称之为 <strong>表头(header)</strong> 或 <strong>哑节点(dummy node)</strong> </p>
+<ul>
+<li><a href="https://visualgo.net/en/list" target="_blank" rel="noopener">动画</a></li>
+<li><p>Head File</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">PtrToNode</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode List;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode Position;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// series of functions</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span></pre></td></tr></table></figure>
+</li>
+<li><p>结构体定义 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 可以加一个前置节点, 则成为双链表</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Find 查询<br>其实就是从头遍历</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, List L)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    P = L-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>( P != <span class="literal">NULL</span> &amp;&amp; P-&gt;Element != X)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        P = P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>FindPrevious 查询前一个节点<br>和Find类似, 区别仅在line2,3</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">FindPrevious</span><span class="params">( ElementType X, List L)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    P = L;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>(P-&gt;Next != <span class="literal">NULL</span> &amp;&amp; P-&gt;Next-&gt;Element != X)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        P = P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Delete 删除</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">( ElementType X, List L)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position P, TmpCell;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    P = FindPrevious(X, L);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> ( !IsLast( P, L) )&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        TmpCell = P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        P-&gt;Next = TmpCell-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">free</span>(TmpCell); <span class="comment">// 及时释放内存空间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Insert 插入 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">( ElementType X, List L, Position P)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position TmpCell;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    TmpCell = <span class="built_in">malloc</span>( <span class="keyword">sizeof</span> (struct Node));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (TmpCell == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">// FatalError("Out of space!!!");</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"Out of space!!!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    TmpCell-&gt;Element = X;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    TmpCell-&gt;Next = P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    P-&gt;Next = TmpCell;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li>其他类型<ul>
+<li>双链表</li>
+<li>循环链表</li>
+<li>多重表</li>
+</ul>
+</li>
+<li><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">基数排序(radix sort)</a><ul>
+<li>低位排序LSD</li>
+<li>高位排序MSD</li>
+</ul>
+</li>
+<li>游标(cursor)实现法<br>需要链表又不能使用指针(如 BASIC 和 FORTRAN 等)</li>
+</ul>
+<h2 id="栈ADT-Stack"><a href="#栈ADT-Stack" class="headerlink" title="栈ADT Stack"></a>栈ADT Stack</h2><p>又名 <strong>LIFO(先进后出)表</strong><br>基本上就<code>Pop(出栈)</code>和<code>Push(进栈)</code>操作</p>
+<ul>
+<li><p>实现</p>
+<ul>
+<li>链表实现<br>主要时间花费在于分配新空间和删除弹出的结点 </li>
+<li>数组实现<br>唯一潜在危害: 需要提前声明一个数组大小</li>
+</ul>
+</li>
+<li><p>应用</p>
+<ul>
+<li>后缀表达式<ul>
+<li><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483834&amp;idx=1&amp;sn=27cbff99f10dfcdb56cb37c237d7f2bb&amp;chksm=fa0e6e3bcd79e72dc430bf81aed9dde9bd01634239dcf7820d6befa881efd323d9d58d76d90d&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">逆波兰表达式</a></li>
+</ul>
+</li>
+<li>中缀到后缀的转换</li>
+<li>函数调用<ul>
+<li><a href="https://www.bing.com/search?q=%E5%B0%BE%E9%80%92%E5%BD%92" target="_blank" rel="noopener">尾递归(TODO:未懂)</a><br>执行的任何递归调用是在这种情况下的最后操作,而且通过封闭递归,递归调用的返回值(若有)立即返回.<br>必须是 <strong>线性递归</strong> (递归内只调用一个新的递归)</li>
+</ul>
+</li>
+<li>平衡符号<br><img src="https://bucket-1257126549.cos.ap-guangzhou.myqcloud.com/20181206161106.gif" alt="平衡符号"></li>
+</ul>
+</li>
+</ul>
+<h2 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列 Queue"></a>队列 Queue</h2><ul>
+<li>基本操作<ul>
+<li><code>Enqueue</code> 入队 : 在表的末端(队尾rear)插入一个元素</li>
+<li><code>Dequeue</code> 出队 : 删除 / 返回 表的开头(队头front)</li>
+</ul>
+</li>
+<li>实现<ul>
+<li>链表实现 </li>
+<li>数组实现(循环数组circular array实现)</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>排队论(queueing theory)</li>
+</ul>
+</li>
+</ul>
+<h1 id="树-Tree"><a href="#树-Tree" class="headerlink" title="树 Tree"></a>树 Tree</h1><h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><ul>
+<li>基本术语</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">术语</th>
+<th style="text-align:center">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">根(root)</td>
+<td style="text-align:center">/</td>
+</tr>
+<tr>
+<td style="text-align:center">边(edge)</td>
+<td style="text-align:center">连接节点的有向线</td>
+</tr>
+<tr>
+<td style="text-align:center">—-</td>
+<td style="text-align:center">—-</td>
+</tr>
+<tr>
+<td style="text-align:center">子节点(child)</td>
+<td style="text-align:center">一个节点含有的子树的根节点称为该节点的<code>子节点</code></td>
+</tr>
+<tr>
+<td style="text-align:center">父节点(parent)</td>
+<td style="text-align:center">若一个节点含有<code>子节点</code>，则这个节点称为其<code>子节点</code>的<code>父节点</code></td>
+</tr>
+<tr>
+<td style="text-align:center">兄弟节点(sibling)</td>
+<td style="text-align:center">具有相同<code>父节点</code>的节点互称为兄弟节点</td>
+</tr>
+<tr>
+<td style="text-align:center">堂兄弟节点</td>
+<td style="text-align:center">双亲在同一层的节点互为堂兄弟</td>
+</tr>
+<tr>
+<td style="text-align:center">祖先(grandparent)</td>
+<td style="text-align:center">从根到该节点所经分支上的所有节点</td>
+</tr>
+<tr>
+<td style="text-align:center">子孙(grandchild)</td>
+<td style="text-align:center">以某节点为根的子树中任一节点都称为该节点的子孙</td>
+</tr>
+<tr>
+<td style="text-align:center">—-</td>
+<td style="text-align:center">—-</td>
+</tr>
+<tr>
+<td style="text-align:center">树叶(leaf)</td>
+<td style="text-align:center">没有<code>子节点</code>的节点</td>
+</tr>
+<tr>
+<td style="text-align:center">从节点$n_1$到$n_k$的路径(path)</td>
+<td style="text-align:center">节点$n_1, n_2, \cdots,n_k$的一个序列</td>
+</tr>
+<tr>
+<td style="text-align:center">路径的长(length)</td>
+<td style="text-align:center">路径上边的条数</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>深度(depth)</strong></td>
+<td style="text-align:center">从根到$n_i$的位移路径的长</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>高度(height)</strong></td>
+<td style="text-align:center">从$n_i$到一片树叶的最长路径的长</td>
+</tr>
+<tr>
+<td style="text-align:center">树的高度或深度</td>
+<td style="text-align:center">树中节点的最大层次</td>
+</tr>
+<tr>
+<td style="text-align:center">—-</td>
+<td style="text-align:center">—-</td>
+</tr>
+<tr>
+<td style="text-align:center">非终端节点或分支节点</td>
+<td style="text-align:center">度不为0的节点</td>
+</tr>
+<tr>
+<td style="text-align:center">节点的层次</td>
+<td style="text-align:center">从根开始定义起，根为第1层，根的<code>子节点</code>为第2层，以此类推</td>
+</tr>
+<tr>
+<td style="text-align:center">节点的度</td>
+<td style="text-align:center">一个节点含有的子树的个数称为该节点的度</td>
+</tr>
+<tr>
+<td style="text-align:center">树的度</td>
+<td style="text-align:center">一棵树中，最大的节点的度称为树的度</td>
+</tr>
+<tr>
+<td style="text-align:center">森林</td>
+<td style="text-align:center">由m（m&gt;=0）棵互不相交的树的集合称为森林</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>种类<ul>
+<li>无序树：树中任意节点的子结点之间没有顺序关系，这种树称为无序树,也称为自由树;</li>
+</ul>
+<ul>
+<li>有序树：树中任意节点的子结点之间有顺序关系，这种树称为有序树；</li>
+<li><strong>二叉树</strong>：每个节点最多含有两个子树的树称为二叉树；</li>
+<li><strong>完全二叉树</strong></li>
+<li>满二叉树</li>
+<li>霍夫曼树：带权路径最短的二叉树称为哈夫曼树或最优二叉树；</li>
+</ul>
+</li>
+</ul>
+<h2 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>遍历顺序</th>
+<th>应用</th>
+<th>顺序</th>
+<th style="text-align:left">动画</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483843&amp;idx=1&amp;sn=994bf0d42dd9941a879a3a3ed500a4d6&amp;chksm=fa0e6e42cd79e75472404eb5da7ee98f20d303efe230eb4f41efec57164630f555e7111e62ff&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">先序遍历</a></td>
+<td>显示文件夹结构</td>
+<td>中-&gt;左-&gt;右</td>
+<td style="text-align:left"><img src="https://bucket-1257126549.cos.ap-guangzhou.myqcloud.com/20181207112441.gif" alt="前序遍历"></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483853&amp;idx=1&amp;sn=94cd4b4ee8dc2268290a72334c6af57b&amp;chksm=fa0e6e4ccd79e75a41a6b78397b80cdfccda332823874475b516f997f89e786488599fc5cc1e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">后序遍历</a></td>
+<td>计算文件夹总大小</td>
+<td>左-&gt;右-&gt;中</td>
+<td style="text-align:left"><img src="https://bucket-1257126549.cos.ap-guangzhou.myqcloud.com/20181219084940.gif" alt="后序遍历"></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483853&amp;idx=1&amp;sn=94cd4b4ee8dc2268290a72334c6af57b&amp;chksm=fa0e6e4ccd79e75a41a6b78397b80cdfccda332823874475b516f997f89e786488599fc5cc1e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">中序遍历</a></td>
+<td>表达式树</td>
+<td>左-&gt;中-&gt;右</td>
+<td style="text-align:left"><img src="https://bucket-1257126549.cos.ap-guangzhou.myqcloud.com/20181206161208.gif" alt="中序遍历"></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483868&amp;idx=1&amp;sn=d50041789fcd13a75a2296f620b69d71&amp;chksm=fa0e6e5dcd79e74b0030ac5129f10ec4ba87c98da63c5904affe9f06e06ecf28695c410d3ec7&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">层序遍历</a></td>
+<td></td>
+<td></td>
+<td style="text-align:left"><img src="https://bucket-1257126549.cos.ap-guangzhou.myqcloud.com/20181206161232.gif" alt="层序遍历"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h2><p><a href="https://visualgo.net/zh/bst" target="_blank" rel="noopener">动画</a></p>
+<ul>
+<li>种类: 表达式树, <strong>查找树ADT——二叉查找树</strong></li>
+<li><p>Head File</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">Position</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> *<span class="title">SearchTree</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// series of functions</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span></pre></td></tr></table></figure>
+</li>
+<li><p>结构体定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    SearchTree Left;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    SearchTree Right;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Find 查询</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, SearchTree T)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (T==<span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(X&lt;T-&gt;Element)&#123;<span class="comment">// 元素大了</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> Find(X,T-&gt;Left);<span class="comment">// 去找左边小一点的</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(X&gt;T-&gt;Element)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> Find(X,T-&gt;Right);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> T;<span class="comment">// 返回后类型变为Position了</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Insert 插入</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">SearchTree <span class="title">Insert</span><span class="params">( ElementType X, SearchTree T)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (T==<span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//创建并返回一个一节点树</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        T = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct TreeNode));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (T==<span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">printf</span>(<span class="string">"out of space!!!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            T-&gt;Element = X;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            T-&gt;Left = T-&gt;Right = <span class="literal">NULL</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(X &lt; T-&gt;Element)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        T-&gt;Left = Insert(X,T-&gt;Left);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(X &gt; T-&gt;Element)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        T-&gt;Right = Insert(X,T-&gt;Right);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d is already in tree...\n"</span>,X);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> T;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Delete 删除节点</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//<span class="doctag">TODO:</span></span></span></pre></td></tr></table></figure>
+</li>
+<li><p>PrintTree 打印树</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PrintTree</span><span class="params">( SearchTree T,<span class="keyword">int</span> space,<span class="keyword">int</span> LR,<span class="keyword">int</span> *N)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// LR: 标志左右节点的参数,用以打印`/`或`\`</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// *N: 打印前N个节点</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> len = <span class="number">10</span>; <span class="comment">// 每一层的打印间距(空格)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (T!=<span class="literal">NULL</span> &amp;&amp; (*N)&gt;<span class="number">0</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        (*N)--;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        PrintTree(T-&gt;Right,space+len,<span class="number">1</span>,N);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> loop = <span class="number">0</span>;loop&lt;space; loop++)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">printf</span>(<span class="string">" "</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(LR==<span class="number">1</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">printf</span>(<span class="string">"/"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(LR==<span class="number">0</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">printf</span>(<span class="string">"\\"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"%-6d\n"</span>,T-&gt;Element);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        PrintTree(T-&gt;Left,space+len,<span class="number">0</span>,N);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="AVL树-Adelson-Velsky-和-Landis"><a href="#AVL树-Adelson-Velsky-和-Landis" class="headerlink" title="AVL树 (Adelson-Velsky 和 Landis)"></a>AVL树 (Adelson-Velsky 和 Landis)</h2><p><a href="https://visualgo.net/zh/bst" target="_blank" rel="noopener">动画</a></p>
+<ul>
+<li>定义: 每个节点的左子树和有字数的高度最大相差1的二叉查找树</li>
+<li>深度: $\mathcal{O}(\log{N})$</li>
+<li>旋转<ul>
+<li>单旋转<br>相邻子树高度相差大于等于2</li>
+<li>双旋转<br>相邻子树高度相差为1<!-- ![旋转树](http://img.my.csdn.net/uploads/201210/10/1349877565_2986.png) -->
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="伸展树-splay-tree"><a href="#伸展树-splay-tree" class="headerlink" title="伸展树 splay tree"></a>伸展树 splay tree</h2><ul>
+<li>基本想法: 当一个节点被访问后,它就要经过一系列AVL树的旋转被放到根上</li>
+<li>两种情况<ul>
+<li>之字形(zig-zag): AVL双旋转<!-- ![之字形](http://img.my.csdn.net/uploads/201210/10/1349877709_4105.png) --></li>
+<li>一字形(zig-zig): AVL单旋转两次<!-- ![一字形](http://img.my.csdn.net/uploads/201210/10/1349877744_7090.png) -->
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="B-树-B-tree"><a href="#B-树-B-tree" class="headerlink" title="B-树 (B-tree)"></a>B-树 (B-tree)</h2><p>不是二叉树的查找树</p>
+<ul>
+<li>称呼<ul>
+<li>4阶B-树 == 2-3-4树</li>
+<li>3阶B-树 == 2-3树</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/7dedb7ebe033" target="_blank" rel="noopener">考试好像不考但是先马克这个博客吧</a></p>
+<h2 id="分析树"><a href="#分析树" class="headerlink" title="分析树"></a>分析树</h2><p><em>这个好像也不考</em></p>
+<h1 id="哈希-Hash"><a href="#哈希-Hash" class="headerlink" title="哈希 Hash"></a>哈希 Hash</h1><p>又名散列</p>
+<h2 id="哈希函数"><a href="#哈希函数" class="headerlink" title="哈希函数"></a>哈希函数</h2><ul>
+<li>简单<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Index <span class="title">HashNormal</span><span class="params">(ElementType Key, <span class="keyword">int</span> TableSize)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> Key%TableSize;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li>优秀<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Index <span class="title">HashBeautifully</span><span class="params">(ElementType Key, <span class="keyword">int</span> TableSize)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">ElementType * ptrKey = &amp;Key;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> HashVal = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (*ptrKey !=<span class="string">'\0'</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    HashVal = (HashVal &lt;&lt; <span class="number">5</span>) + *ptrKey++;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> HashVal % TableSize;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<h2 id="分离链表法-拉链法"><a href="#分离链表法-拉链法" class="headerlink" title="分离链表法(拉链法)"></a>分离链表法(拉链法)</h2></li>
+<li><p>头文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span> *<span class="title">Position</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span> *<span class="title">HashTable</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Index;</span></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HashTable </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">InitializeTable(<span class="keyword">int</span> TableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">  HashTable H;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">int</span> i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span> (TableSize &lt; MinTableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">      <span class="built_in">printf</span>(<span class="string">"Table size too small"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">return</span> <span class="literal">NULL</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// allocate table</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">  H = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct HashTbl));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">if</span>(H == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">      <span class="built_in">printf</span>(<span class="string">"out of sapce !!!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">  <span class="comment">// allocate list headers</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;H-&gt;TableSize; i++)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">      H-&gt;TheLists[i] = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">      <span class="keyword">if</span> (H-&gt;TheLists[i]==<span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">          <span class="built_in">printf</span>(<span class="string">"out of space !!!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">      &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">          H-&gt;TheLists[i]-&gt;Next = <span class="literal">NULL</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">      &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">  &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">  <span class="keyword">return</span> H;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li><p>结构体定义 </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> Position List;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> TableSize;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    List *TheLists;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Find</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Position </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Find( ElementType Key, HashTable H, Index HashNum)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    List L;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// L = H-&gt;TheLists[Hash(Key, H-&gt;TableSize)];</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    L = H-&gt;TheLists[HashNum];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    P = L-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>(P!=<span class="literal">NULL</span> &amp;&amp; P-&gt;Element!=Key)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        P=P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Insert</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Insert( ElementType Key, HashTable H, Index HashNum)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position Pos, NewCell;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    List L;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    Pos = Find(Key,H,HashNum);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(Pos == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        NewCell = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct ListNode));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (NewCell == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">printf</span>(<span class="string">"out of space!!!"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            <span class="comment">// L = H-&gt;TheLists[Hash(Key,H-&gt;TableSize)];</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            L = H-&gt;TheLists[HashNum];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            NewCell-&gt;Next = L-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            NewCell-&gt;Element = Key;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            L-&gt;Next = NewCell;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"already have it!\n"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p><strong>装填因子(load factor) $\lambda$</strong></p>
+<script type="math/tex; mode=display">\lambda = \frac{\text{元素个数}}{\text{散列表大小}}</script><p>尽量让表的大小与预料的元素个数差不多,即 $\lambda\approx 1$ .</p>
+</li>
+</ul>
+<h2 id="开放定址法"><a href="#开放定址法" class="headerlink" title="开放定址法"></a>开放定址法</h2><ul>
+<li>头文件<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> Index;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> Index Position;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span> *<span class="title">HashTable</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// series of functions</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span></pre></td></tr></table></figure></li>
+<li><p>基础声明</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MinTableSize 10</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="keyword">int</span> Collision_Square,Collision_Liner,Collision_Double;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> KindOfEntry&#123;Legitimate,Empty,Deleted&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashEntry</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">enum</span> KindOfEntry Info;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">HashEntry</span> <span class="title">Cell</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 哈希表</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">HashTbl</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> TableSize;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    Cell *TheCells;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
+</li>
+<li><p>初始化</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">HashTable </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">InitializeTable(<span class="keyword">int</span> TableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    HashTable H;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(TableSize&lt;MinTableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"Table Size too small"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// allocate table</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    H = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(struct HashTbl));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (H == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"out of space!!!\n"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    H-&gt;TableSize = NextPrime(TableSize);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// allocate array of cells</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    H-&gt;TheCells = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Cell) * H-&gt;TableSize);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (H-&gt;TheCells == <span class="literal">NULL</span>)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">printf</span>(<span class="string">"out of space!!!\n"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>;i&lt;H-&gt;TableSize;i++)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[i].Info = Empty;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> H;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="线性探测法"><a href="#线性探测法" class="headerlink" title="线性探测法"></a>线性探测法</h3><script type="math/tex; mode=display">F(i) = \text{Hash}(i) + \text{冲突次数} \mod{M}</script><ul>
+<li>Find<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Position </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">FindByLiner(ElementType Key, HashTable H)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> CollisionNum;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    CollisionNum = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    CurrentPos = HashNormal(Key,H-&gt;TableSize);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>(H-&gt;TheCells[CurrentPos].Info != Empty &amp;&amp;  <span class="comment">// 非空</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">          H-&gt;TheCells[CurrentPos].Element != Key)&#123;  <span class="comment">// 不等于查询值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        CurrentPos++;       </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        CollisionNum++;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(CurrentPos &gt;= H-&gt;TableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            CurrentPos -= H-&gt;TableSize;             <span class="comment">// 循环查找</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="comment">// 一旦找到就跳出循环</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    Collision_Liner += CollisionNum;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li><p>Insert</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertByLiner</span><span class="params">(ElementType Key, HashTable H)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position Pos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Pos = FindByLiner(Key,H);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(H-&gt;TheCells[Pos].Info != Legitimate)&#123;<span class="comment">// 该位置没有数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Info = Legitimate;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Element = Key;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>一次聚集(primary clustering)<br>占据的单元形成一些区块</p>
+</li>
+<li><p>预期探测次数</p>
+<ul>
+<li>插入 / 不成功的查找 <script type="math/tex">\frac{1}{2}\left(1+ \frac{1}{(1-\lambda)^2}\right)</script></li>
+<li>成功的查找  <script type="math/tex">\frac{1}{2}\left(1+ \frac{1}{(1-\lambda)}\right)</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="平方散列法"><a href="#平方散列法" class="headerlink" title="平方散列法"></a>平方散列法</h3><script type="math/tex; mode=display">F(i) = \text{Hash}(i) + \text{冲突次数}^2 \mod{M}</script><ul>
+<li>快速公式<br><code>CurrentPos += 2 * ++CollisionNum - 1</code><script type="math/tex; mode=display">F(i) = F(i-1) + 2i -1</script></li>
+<li>Find<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Position </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">FindBySquare(ElementType Key, HashTable H)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> CollisionNum;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    CollisionNum = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    CurrentPos = HashNormal(Key,H-&gt;TableSize);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>(H-&gt;TheCells[CurrentPos].Info != Empty &amp;&amp;  <span class="comment">// 非空</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">          H-&gt;TheCells[CurrentPos].Element != Key)&#123;  <span class="comment">// 不等于查询值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        CurrentPos += <span class="number">2</span> * ++CollisionNum - <span class="number">1</span>;       <span class="comment">// 平方探测 快速方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(CurrentPos &gt;= H-&gt;TableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            CurrentPos -= H-&gt;TableSize;             <span class="comment">// 循环查找</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="comment">// 一旦找到就跳出循环</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    Collision_Square += CollisionNum;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li>Insert<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertBySquare</span><span class="params">(ElementType Key, HashTable H)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position Pos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Pos = FindBySquare(Key,H);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(H-&gt;TheCells[Pos].Info != Legitimate)&#123;        <span class="comment">// 该位置没有数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Info = Legitimate;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Element = Key;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="双-倍-散列"><a href="#双-倍-散列" class="headerlink" title="双(倍)散列"></a>双(倍)散列</h3><script type="math/tex; mode=display">F(i) = \text{Hash}(i) + \text{冲突次数} \times \left(M_2 - \text{Hash}_2(i)\right) \mod{M}</script><ul>
+<li><p>Find</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Position </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">FindByDouble(ElementType Key, HashTable H)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> CollisionNum = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> addDouble = HashDoubel(Key,<span class="number">7</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    CurrentPos = HashNormal(Key,H-&gt;TableSize);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>(H-&gt;TheCells[CurrentPos].Info != Empty &amp;&amp;  <span class="comment">// 非空</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">          H-&gt;TheCells[CurrentPos].Element != Key)&#123;  <span class="comment">// 不等于查询值</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        CurrentPos += addDouble;       </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        CollisionNum++;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(CurrentPos &gt;= H-&gt;TableSize)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            CurrentPos -= H-&gt;TableSize;             <span class="comment">// 循环查找</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;<span class="comment">// 一旦找到就跳出循环</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    Collision_Double += CollisionNum;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> CurrentPos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+<li><p>Insert</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertByDouble</span><span class="params">(ElementType Key, HashTable H)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position Pos;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Pos = FindByDouble(Key,H);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(H-&gt;TheCells[Pos].Info != Legitimate)&#123;        <span class="comment">// 该位置没有数据</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Info = Legitimate;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        H-&gt;TheCells[Pos].Element = Key;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="再散列"><a href="#再散列" class="headerlink" title="再散列"></a>再散列</h3><p>当表有超过 <strong>70%</strong> 的单元是满的, 建立新表<br>新表大小是原表大小两倍后的第一个素数 <script type="math/tex">\text{new} = \text{PrimeNumber}(2\times\text{old})</script></p>
+<ul>
+<li>实现<ul>
+<li>表满一半就<code>再散列</code></li>
+<li>当插入失败是才<code>再散列</code></li>
+<li><strong>途中(middle-of-the-road)策略</strong> : 当表达到某个装填因子时进行<code>再散列</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="可扩散列"><a href="#可扩散列" class="headerlink" title="可扩散列"></a>可扩散列</h2><p>略</p>
+<h1 id="优先队列（堆）-Heap"><a href="#优先队列（堆）-Heap" class="headerlink" title="优先队列（堆） Heap"></a>优先队列（堆） Heap</h1><h2 id="二叉堆-binary-heap"><a href="#二叉堆-binary-heap" class="headerlink" title="二叉堆 binary heap"></a>二叉堆 binary heap</h2><p><a href="https://visualgo.net/en/heap" target="_blank" rel="noopener">动画</a><br>堆是一刻完全二叉树(complete binary tree)</p>
+<ul>
+<li>堆序性 heap order<ul>
+<li>最小元在根上</li>
+<li>任意节点小于其所有后裔</li>
+</ul>
+</li>
+</ul>
+<h3 id="基本堆操作"><a href="#基本堆操作" class="headerlink" title="基本堆操作"></a>基本堆操作</h3><ul>
+<li><p>Insert</p>
+<ul>
+<li><strong>上滤</strong><br>加在队尾然后向上排序</li>
+<li>标记 sentinel<br>通过添加一条 哑信息(dummy piece of information) , 避免在<u>插入新的最小值</u>时每个循环都执行一次的测试</li>
+</ul>
+</li>
+<li><p>DeleteMin</p>
+<ul>
+<li><strong>下滤</strong><br>删除根, 队尾换到队头, 向下排序</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>选择问题</li>
+<li>时间模拟</li>
+</ul>
+<h2 id="d-堆"><a href="#d-堆" class="headerlink" title="d-堆"></a>d-堆</h2><p>略TODO:</p>
+<h2 id="左式堆"><a href="#左式堆" class="headerlink" title="左式堆"></a>左式堆</h2><p>略TODO:</p>
+<h2 id="斜堆"><a href="#斜堆" class="headerlink" title="斜堆"></a>斜堆</h2><p>略TODO:</p>
+<h2 id="二项队列"><a href="#二项队列" class="headerlink" title="二项队列"></a>二项队列</h2><p>略TODO:</p>
+<h1 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h1><p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">动画</a></p>
+<ul>
+<li>算法复杂度<br><img src="https://images2018.cnblogs.com/blog/849589/201804/849589-20180402133438219-1946132192.png" alt="算法复杂度"><h2 id="冒泡排序-Bubble"><a href="#冒泡排序-Bubble" class="headerlink" title="冒泡排序 Bubble"></a>冒泡排序 Bubble</h2>相邻比较+换位<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span>  </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                tmp = arr[j];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                arr[j] = arr[j+<span class="number">1</span>];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                arr[j+<span class="number">1</span>] = tmp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">``` </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">![冒泡](https:<span class="comment">//images2017.cnblogs.com/blog/849589/201710/849589-20171015223238449-2146169197.gif)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">## 选择排序 Select</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">向后查找最小元, 与每一轮首位换位</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">```c </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> SelectionSort(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, <span class="built_in">min</span>, tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">min</span> = i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[<span class="built_in">min</span>]) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">                <span class="built_in">min</span> = j;<span class="comment">// 修改最小元</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">        tmp = arr[<span class="built_in">min</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">        arr[<span class="built_in">min</span>] = arr[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">        arr[i] = tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015224719590-1433219824.gif" alt="选择"></li>
+</ul>
+<h2 id="插入排序-Insert"><a href="#插入排序-Insert" class="headerlink" title="插入排序 Insert"></a>插入排序 Insert</h2><p>从第二个开始抽出来, 和前面的比较并排位<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertionSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span>    </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; len; i++) &#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//从第二个开始   </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &lt; arr[i<span class="number">-1</span>]) &#123;   <span class="comment">// 如果小于前一个 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            tmp = arr[i];          <span class="comment">// 要移动的元放到temp中</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; tmp; j--) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                <span class="comment">//向前顺位</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                arr[j+<span class="number">1</span>] = arr[j];    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            arr[j+<span class="number">1</span>] = tmp;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;          </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015225645277-1151100000.gif" alt="插入"></p>
+<h2 id="希尔排序-Shell"><a href="#希尔排序-Shell" class="headerlink" title="希尔排序 Shell"></a>希尔排序 Shell</h2><p>按增量分批做插入排序<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// 希尔排序</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> <span class="built_in">size</span>)</span>  </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp, increment;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (increment = <span class="built_in">size</span>/ <span class="number">2</span>; increment &gt; <span class="number">0</span>; increment /= <span class="number">2</span>) &#123;    </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (i = increment; i &lt; <span class="built_in">size</span>; i++) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">            <span class="comment">// 做插入排序</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            tmp = arr[i];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">for</span> (j = i - increment; j &gt;= <span class="number">0</span> &amp;&amp; tmp &lt; arr[j]; j -= increment) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">                arr[j + increment] = arr[j];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            arr[j + increment] = tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2018.cnblogs.com/blog/849589/201803/849589-20180331170017421-364506073.gif" alt="希尔"></p>
+<h2 id="归并排序-Merge"><a href="#归并排序-Merge" class="headerlink" title="归并排序 Merge"></a>归并排序 Merge</h2><p>分治法<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> mid, <span class="keyword">int</span> high)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, k;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> *tmp = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>((high-low+<span class="number">1</span>)*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">//申请空间，使其大小为两个</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> left_low = low;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> left_high = mid;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> right_low = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> right_high = high;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span>(k=<span class="number">0</span>; left_low&lt;=left_high &amp;&amp; right_low&lt;=right_high; k++)&#123;  <span class="comment">// 比较两个指针所指向的元素</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(arr[left_low]&lt;=arr[right_low])&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            tmp[k] = arr[left_low++];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            tmp[k] = arr[right_low++];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(left_low &lt;= left_high)&#123;  <span class="comment">//若第一个序列有剩余，直接复制出来粘到合并序列尾</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//memcpy(tmp+k, arr+left_low, (left_high-left_low+l)*sizeof(int));</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span>(i=left_low;i&lt;=left_high;i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">            tmp[k++] = arr[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(right_low &lt;= right_high)&#123; <span class="comment">//若第二个序列有剩余，直接复制出来粘到合并序列尾</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//memcpy(tmp+k, arr+right_low, (right_high-right_low+1)*sizeof(int));</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span>(i=right_low; i&lt;=right_high; i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">            tmp[k++] = arr[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 从tmp复制回arr内</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;high-low+<span class="number">1</span>; i++)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">        arr[low+i] = tmp[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">    <span class="built_in">free</span>(tmp);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">unsigned</span> <span class="keyword">int</span> first, <span class="keyword">unsigned</span> <span class="keyword">int</span> last)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> mid = <span class="number">0</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span>(first&lt;last)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">        mid = (first+last)/<span class="number">2</span>; <span class="comment">/* 注意防止溢出 */</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">/*mid = first/2 + last/2;*/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">        <span class="comment">//mid = (first &amp; last) + ((first ^ last) &gt;&gt; 1);</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">        MergeSort(arr, first, mid);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">        MergeSort(arr, mid+<span class="number">1</span>,last);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">        merge(arr,first,mid,last);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></p>
+<h2 id="快速排序-Quick"><a href="#快速排序-Quick" class="headerlink" title="快速排序 Quick"></a>快速排序 Quick</h2><p>分块排序, 且左块皆小于右块<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span>&#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> temp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    temp = *a;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    *a = *b;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    *b = temp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> maxlen, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (<span class="built_in">begin</span> &lt; <span class="built_in">end</span>) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        i = <span class="built_in">begin</span> + <span class="number">1</span>;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        j = <span class="built_in">end</span>;        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span>(arr[i] &gt; arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">                swap(&amp;arr[i], &amp;arr[j]); </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">                j--;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">            &#125; <span class="keyword">else</span> &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">                i++;        <span class="comment">// 否则继续往后看</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">        &#125;                   <span class="comment">// 循环跳出后i,j一样</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &gt;= arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">            i--;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        swap(&amp;arr[<span class="built_in">begin</span>], &amp;arr[i]);      </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, <span class="built_in">begin</span>, i);  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, j, <span class="built_in">end</span>);  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015230936371-1413523412.gif" alt="快速"></p>
+<h2 id="堆排序-Heap"><a href="#堆排序-Heap" class="headerlink" title="堆排序 Heap"></a>堆排序 Heap</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LeftChild(i) (2*(i)+1)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PercDown</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> i, <span class="keyword">int</span> N)</span></span>&#123;                  <span class="comment">// 下滤</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> Child;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> Tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (Tmp=A[i];LeftChild(i)&lt;N;i=Child)&#123;            <span class="comment">// Tmp为第一个本体的值 , 每次更新i为指向的子节点(较大者)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        Child = LeftChild(i);                         <span class="comment">// 指向左子节点</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(Child != N<span class="number">-1</span> &amp;&amp; A[Child + <span class="number">1</span>] &gt; A[Child])&#123;  <span class="comment">// 子节点不在最末(不然会爆) 且 右子节点&gt;左子节点</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">            Child++;                                  <span class="comment">// 从左子节点指向右子节点</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span>(Tmp &lt; A[Child])&#123;                           <span class="comment">// 如果本体小于子节点最大的那个,</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">            A[i] = A[Child];                          <span class="comment">// 把子节点覆盖到本体.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">break</span>;                                    <span class="comment">// 一旦本体已经最大则跳出</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    A[i] = Tmp;                                       <span class="comment">// 把元初本体的值放到最后指向的子节点</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> N)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i=N/<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)&#123;                             <span class="comment">// 从倒数第二层向上过滤排序</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        PercDown(A,i,N);                              <span class="comment">// 构造大顶堆</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = N<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        swap(&amp;A[<span class="number">0</span>],&amp;A[i]);                            <span class="comment">// 每换一次位(提取最大值到最后),</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        PercDown(A,<span class="number">0</span>,i);                              <span class="comment">// 又要再做一次下滤.</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231308699-356134237.gif" alt="堆"></p>
+<h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 略</span></span></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015232453668-1397662527.gif" alt="基数"></p>
+<h2 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 略</span></span></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231740840-6968181.gif" alt="计数"></p>
+<h2 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 略</span></span></pre></td></tr></table></figure>
+<p><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015232107090-1920702011.png" alt="桶"></p>
+<h2 id="随机快速排序"><a href="#随机快速排序" class="headerlink" title="随机快速排序"></a>随机快速排序</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 略</span></span></pre></td></tr></table></figure>
+<h1 id="图论-Graph"><a href="#图论-Graph" class="headerlink" title="图论 Graph"></a>图论 Graph</h1><ul>
+<li><a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">详细总论</a></li>
+<li>可视化网站<ul>
+<li><a href="https://visualgo.net/zh" target="_blank" rel="noopener">算法可视化</a></li>
+<li><a href="https://mrpandey.github.io/d3graphTheory/index.html" target="_blank" rel="noopener">对于图的一些基本概念的介绍和一些有趣的问题</a></li>
+<li><a href="http://graph.lindongzhou.com/" target="_blank" rel="noopener">图的一些基本操作的实现的可视化</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ul>
+<li><strong>图(Graph)</strong> 是 <strong>顶点(Vertex)</strong> 和 <strong>边(Edge)</strong> 的集合。边是对任意两个顶点的连接。<script type="math/tex">G=(V,E)</script></li>
+<li><h3 id="基本术语"><a href="#基本术语" class="headerlink" title="基本术语"></a>基本术语</h3></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">术语</th>
+<th style="text-align:center">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">阶（Order）</td>
+<td style="text-align:center">图中顶点的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">尺寸（Size）</td>
+<td style="text-align:center">图中边的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">子图（Sub-graph）</td>
+<td style="text-align:center">一个图的顶点与边的子集。即，当$𝑉(𝐺’)∈𝑉(𝐺)$并且$𝐸(𝐺’ )∈𝐸(𝐺)$时，$𝐺’$是$𝐺$的一个子图</td>
+</tr>
+<tr>
+<td style="text-align:center">生成子图（Sub-graph）</td>
+<td style="text-align:center">当$𝐺’$是$𝐺$的子集，并且$𝑉(𝐺’ )=𝑉(𝐺)$时， $𝐺’$是$𝐺$的一个生成子图</td>
+</tr>
+<tr>
+<td style="text-align:center">度（Degree）</td>
+<td style="text-align:center">一个顶点𝑣的度是与它相连的边的数量，记作𝑑(𝑣)。$\sum_{\nu \in V}d(\nu)=2 \mid E \mid$</td>
+</tr>
+<tr>
+<td style="text-align:center">出度（In-degree）</td>
+<td style="text-align:center">出度为从该顶点出发的边的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">入度（Out-degree）</td>
+<td style="text-align:center">入度为终点时该节点的边的个数</td>
+</tr>
+<tr>
+<td style="text-align:center">路径（Path）</td>
+<td style="text-align:center">路径经过的边数为𝑘，即路径长度为$𝑘$</td>
+</tr>
+<tr>
+<td style="text-align:center">简单路径（simple-path）</td>
+<td style="text-align:center">路径的所有顶点都不相同或只有起点$𝑣_0$和终点$𝑣_𝑘$两个顶点相同</td>
+</tr>
+<tr>
+<td style="text-align:center">圈（cycle）</td>
+<td style="text-align:center">在有向图中路径起点$𝑣_0$和终点$𝑣_𝑘$相同。若满足简单路径的条件则是一个简单圈。</td>
+</tr>
+<tr>
+<td style="text-align:center">距离</td>
+<td style="text-align:center">两个顶点之间的最短路径长度就是两点之间的距离</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="图的分类"><a href="#图的分类" class="headerlink" title="图的分类"></a>图的分类</h3><ul>
+<li>按边</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">简单图（simple graph）</td>
+<td style="text-align:center">既没有平行边，也没有自环</td>
+</tr>
+<tr>
+<td style="text-align:center">多重图（multi-graph）</td>
+<td style="text-align:center">有平行边的图</td>
+</tr>
+<tr>
+<td style="text-align:center">伪图（Pseudograph）</td>
+<td style="text-align:center">既有平行边的图，也有自环的图</td>
+</tr>
+<tr>
+<td style="text-align:center">完全图</td>
+<td style="text-align:center">每对顶点之间都有边的图是完全图</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>有的作者也允许多重图有自环<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/图论类型.png" alt="类型"></p>
+<ul>
+<li>按路径</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">连通图</td>
+<td style="text-align:center">一个图中的每个顶点到其他顶点都有路径</td>
+</tr>
+<tr>
+<td style="text-align:center">强连通图</td>
+<td style="text-align:center">有向图满足该条件</td>
+</tr>
+<tr>
+<td style="text-align:center">弱连通图</td>
+<td style="text-align:center">有向图不连通，但是它的基础图连通</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>基础图: 边去掉方向的图</p>
+<ul>
+<li><p>按方向<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/有向图与无向图.png" alt="有向图与无向图"></p>
+</li>
+<li><p>按权重<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/有权图与无权图.png" alt="有权图与无权图"></p>
+</li>
+</ul>
+<h2 id="存储显示方式"><a href="#存储显示方式" class="headerlink" title="存储显示方式"></a>存储显示方式</h2><h3 id="邻接矩阵-adjacency-matrices"><a href="#邻接矩阵-adjacency-matrices" class="headerlink" title="邻接矩阵 adjacency matrices"></a>邻接矩阵 adjacency matrices</h3><p>邻接矩阵使用$|V|∗|V|$的二维数组来表示图。$g[i][j]$表示的是顶点$i$和顶点$j$的关系。</p>
+<ul>
+<li>无向图<br>只需要知道顶点$i$和顶点$j$是否是相连的，因此我们只需要将$g[i][j]$和$g[j][j]$设置为1或是0表示相连或不相连即可。<br><img src="https://img-blog.csdn.net/20150516155955628" alt="邻接矩阵"></li>
+<li>有向图<br>只需要知道是否有从顶点$i$到顶点$j$的边，因此如果顶点$i$有一条指向顶点$j$的边，那么$g[i][j]$就设为1，否则设为0。有向图与无向图不同，并不需要满足$g[i][j]=g[j][i]$<br><img src="https://img-blog.csdn.net/20150516160122470" alt="邻接矩阵"></li>
+<li><p>有权图<br>在带权值的图中，g[i][j]表示的是顶点i到顶点j的边的权值。由于在边不存在的情况下，如果将g[i][j]设为0，就无法和权值为0的情况区分开来，因此选取适当的较大的常数INF（只要能和普通的权值区别开来就可以了），然后令g[i][j]=INF就好了。当然，在无向图中还是要保持g[i][j]=g[j][i]。在一条边上有多种不带权值的情况下，定义多个同样的|V|∗|V|数组，或者是使用结构体或类作为数组的元素，就可以和原来一样对图进行处理了。<br><img src="https://img-blog.csdn.net/20150516161118332" alt="邻接矩阵"></p>
+</li>
+<li><p>优点<br>很方便地判断任意两个顶点之间是否有边以及确定顶点的度 <script type="math/tex">\text{度}_i = \sum_{j=0}^{n-1} g[i][j]</script></p>
+</li>
+<li>缺点<br>在这种表示法中扫描所有边至少需要O(n2)时间，因为必须检查矩阵中的n2−n个元素才能确定图中边的条数（邻接矩阵对角线上的n个元素都是0，因此不用检查。又因为无向图的邻接矩阵是对称的，实际只需检查邻接矩阵的一半元素）。<br>通常把边很少的图成为稀疏图（sparse graphs）。如果用邻接矩阵表示稀疏图就会浪费大量内存空间</li>
+</ul>
+<h3 id="邻接表"><a href="#邻接表" class="headerlink" title="邻接表"></a>邻接表</h3><ul>
+<li>优点: 只需$\mathcal{O}(|V|+|E|)$的内存空间<br><img src="https://img-blog.csdn.net/20150516161601785" alt="领接表"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_VERTICES 50 </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">node</span>-<span class="title">pointer</span>;</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> vertex; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">link</span>;</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">node_pointer graph[MAX_VERTICES]; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n=<span class="number">0</span>;</span></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="链接多重表"><a href="#链接多重表" class="headerlink" title="链接多重表"></a>链接多重表</h3><p>在无向图的邻接表存储表示中，每一条边$(v_i，v_j)$<br>都表示为两项：一项在顶点vi 的邻接表中，而另一项在顶点 $v_j$ 的邻接表中。在多重表中，各链表中的结点可以被几个链表共享，此时图中的每一条边只对应于一个结点，而这个结点出现在该边所关联的两个顶点的每个邻接链表中。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">edge</span> *<span class="title">edge</span>-<span class="title">pointer</span> </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="title">typedef</span> <span class="title">struct</span> <span class="title">edge</span> &#123;</span> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">short</span> <span class="keyword">int</span> marked; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> vertex1; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> vertex2; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    edge_pointer path1; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    edge_pointer path2; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure></p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a><a href="https://www.cnblogs.com/en-heng/p/5085690.html" target="_blank" rel="noopener">拓扑排序</a></h3><ul>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/TopoSortIndegree.html" target="_blank" rel="noopener">入度表可视化</a></li>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/TopoSortDFS.html" target="_blank" rel="noopener">拓扑DFS可视化</a></li>
+</ul>
+<h3 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h3><h3 id="略……"><a href="#略……" class="headerlink" title="略……"></a>略……</h3><hr>
+<blockquote>
+<p>参考资料：  </p>
+<ul>
+<li>《数据结构与算法分析——C语言描述》  </li>
+<li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a>  </li>
+<li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a>  </li>
+<li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a>  </li>
+</ul>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/C/" rel="tag"># C</a>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/others/code-intro/" rel="next" title="编程入门——抬脚第一步">
+                  <i class="fa fa-chevron-left"></i> 编程入门——抬脚第一步
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/others/little_stories/" rel="prev" title="代码轶闻录">
+                  代码轶闻录 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+    <div class="comments" id="comments"></div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法分析"><span class="nav-number">1.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归简论"><span class="nav-number">1.1.</span> <span class="nav-text">递归简论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表、栈、队列"><span class="nav-number">2.</span> <span class="nav-text">表、栈、队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#表ADT-链表-List"><span class="nav-number">2.1.</span> <span class="nav-text">表ADT(链表) List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈ADT-Stack"><span class="nav-number">2.2.</span> <span class="nav-text">栈ADT Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列-Queue"><span class="nav-number">2.3.</span> <span class="nav-text">队列 Queue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树-Tree"><span class="nav-number">3.</span> <span class="nav-text">树 Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#预备知识"><span class="nav-number">3.1.</span> <span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历"><span class="nav-number">3.2.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树"><span class="nav-number">3.3.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AVL树-Adelson-Velsky-和-Landis"><span class="nav-number">3.4.</span> <span class="nav-text">AVL树 (Adelson-Velsky 和 Landis)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伸展树-splay-tree"><span class="nav-number">3.5.</span> <span class="nav-text">伸展树 splay tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-树-B-tree"><span class="nav-number">3.6.</span> <span class="nav-text">B-树 (B-tree)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析树"><span class="nav-number">3.7.</span> <span class="nav-text">分析树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希-Hash"><span class="nav-number">4.</span> <span class="nav-text">哈希 Hash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希函数"><span class="nav-number">4.1.</span> <span class="nav-text">哈希函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分离链表法-拉链法"><span class="nav-number">4.2.</span> <span class="nav-text">分离链表法(拉链法)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开放定址法"><span class="nav-number">4.3.</span> <span class="nav-text">开放定址法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性探测法"><span class="nav-number">4.3.1.</span> <span class="nav-text">线性探测法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平方散列法"><span class="nav-number">4.3.2.</span> <span class="nav-text">平方散列法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双-倍-散列"><span class="nav-number">4.3.3.</span> <span class="nav-text">双(倍)散列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再散列"><span class="nav-number">4.3.4.</span> <span class="nav-text">再散列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可扩散列"><span class="nav-number">4.4.</span> <span class="nav-text">可扩散列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优先队列（堆）-Heap"><span class="nav-number">5.</span> <span class="nav-text">优先队列（堆） Heap</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉堆-binary-heap"><span class="nav-number">5.1.</span> <span class="nav-text">二叉堆 binary heap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本堆操作"><span class="nav-number">5.1.1.</span> <span class="nav-text">基本堆操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">5.1.2.</span> <span class="nav-text">应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d-堆"><span class="nav-number">5.2.</span> <span class="nav-text">d-堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#左式堆"><span class="nav-number">5.3.</span> <span class="nav-text">左式堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斜堆"><span class="nav-number">5.4.</span> <span class="nav-text">斜堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二项队列"><span class="nav-number">5.5.</span> <span class="nav-text">二项队列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序-Sort"><span class="nav-number">6.</span> <span class="nav-text">排序 Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序-Bubble"><span class="nav-number">6.1.</span> <span class="nav-text">冒泡排序 Bubble</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序-Insert"><span class="nav-number">6.2.</span> <span class="nav-text">插入排序 Insert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序-Shell"><span class="nav-number">6.3.</span> <span class="nav-text">希尔排序 Shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序-Merge"><span class="nav-number">6.4.</span> <span class="nav-text">归并排序 Merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序-Quick"><span class="nav-number">6.5.</span> <span class="nav-text">快速排序 Quick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序-Heap"><span class="nav-number">6.6.</span> <span class="nav-text">堆排序 Heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基数排序"><span class="nav-number">6.7.</span> <span class="nav-text">基数排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计数排序"><span class="nav-number">6.8.</span> <span class="nav-text">计数排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排序"><span class="nav-number">6.9.</span> <span class="nav-text">桶排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机快速排序"><span class="nav-number">6.10.</span> <span class="nav-text">随机快速排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图论-Graph"><span class="nav-number">7.</span> <span class="nav-text">图论 Graph</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">7.1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本术语"><span class="nav-number">7.1.1.</span> <span class="nav-text">基本术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图的分类"><span class="nav-number">7.1.2.</span> <span class="nav-text">图的分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存储显示方式"><span class="nav-number">7.2.</span> <span class="nav-text">存储显示方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#邻接矩阵-adjacency-matrices"><span class="nav-number">7.2.1.</span> <span class="nav-text">邻接矩阵 adjacency matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邻接表"><span class="nav-number">7.2.2.</span> <span class="nav-text">邻接表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接多重表"><span class="nav-number">7.2.3.</span> <span class="nav-text">链接多重表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">7.3.</span> <span class="nav-text">操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拓扑排序"><span class="nav-number">7.3.1.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最短路径"><span class="nav-number">7.3.2.</span> <span class="nav-text">最短路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#略……"><span class="nav-number">7.3.3.</span> <span class="nav-text">略……</span></a></li></ol></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/avatar.gif"
+      alt="Benature">
+  <p class="site-author-name" itemprop="name">Benature</p>
+  <div class="site-description" itemprop="description">Code is Love, Physics is Beauty.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/%20%7C%7C%20archive">
+        
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/%20%7C%7C%20th">
+          
+        
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/%20%7C%7C%20tags">
+          
+        
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Benature" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;Benature" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Benature</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+    
+  
+  <script color='0,0,0' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/pisces.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'NDPjtMpj5SvSbQmbwMyLtfpj-gzGzoHsz',
+    appKey: 'Q1VhCyLWedMCqjtVYHwcOkAP',
+    placeholder: 'Plz comment with ur HEART:)',
+    avatar: 'identicon',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: true,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+</body>
+</html>
