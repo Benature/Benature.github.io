@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>web/hexo-plugin</title>
+    <title>Hexo 插件记录</title>
     <url>/web/hexo-plugin/</url>
     <content><![CDATA[<ul>
 <li>deploy</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deploer-git --save</span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-deployer-git --save</span></pre></td></tr></table></figure>
 <ul>
 <li>image</li>
 </ul>
@@ -16,12 +16,17 @@
 <li>mathjax</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-math --save</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install hexo-renderer-kramed --save</span></pre></td></tr></table></figure>
+<p>然后删改👇</p>
 <ul>
 <li><a href="https://www.sail.name/2018/05/31/use-mathjax-in-hexo/" target="_blank" rel="noopener">https://www.sail.name/2018/05/31/use-mathjax-in-hexo/</a></li>
 <li><a href="https://abelsu7.top/2018/10/29/hexo-mathjax/" target="_blank" rel="noopener">https://abelsu7.top/2018/10/29/hexo-mathjax/</a><!-- 支持还比较菜, 放弃. -->
 </li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>配置</tag>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>微信文本记录破解数据库导出</title>
