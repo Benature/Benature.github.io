@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Mac MenuBar 基础控制</title>
+    <url>/devices/mac-menubar-basic/</url>
+    <content><![CDATA[<p>Mac MenuBar 基础控制</p>
+<a id="more"></a>
+<h1 id="Mac-MenuBar-基础控制"><a href="#Mac-MenuBar-基础控制" class="headerlink" title="Mac MenuBar 基础控制"></a>Mac MenuBar 基础控制</h1><p>因为用了 iStat Menu, 所以关掉一些系统自带的 menubar</p>
+<h2 id="电池"><a href="#电池" class="headerlink" title="电池"></a>电池</h2><p><code>系统偏好设置</code>-&gt;<code>节能</code>(最下): ☑︎ 在菜单栏中显示电池状态</p>
+<h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><p><code>系统偏好设置</code>-&gt;<code>日期与时间</code>-&gt;<code>时钟</code>: ☑︎ 在菜单栏中显示日期和时间</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac装机必备</title>
+    <url>/devices/mac-app-must/</url>
+    <content><![CDATA[<p>装机必备</p>
+<a id="more"></a>
+<h1 id="Mac-装机清单"><a href="#Mac-装机清单" class="headerlink" title="Mac 装机清单"></a>Mac 装机清单</h1><ul>
+<li>Alfred: 键盘流利剑</li>
+<li>Sortcat: 键盘流<ul>
+<li>Workflow</li>
+</ul>
+</li>
+<li>切换软件类<ul>
+<li>Contexts: (一言难尽)</li>
+<li>CmdTap: 双击<code>option</code>切换软件, 自动分配 keyword</li>
+<li>Thor: 匹配软件快捷键</li>
+<li>Manico: (一个顶不过上面两个)</li>
+</ul>
+</li>
+<li><a href="https://mediaatelier.com/CheatSheet/" target="_blank" rel="noopener">CheatSheet</a> <del>/ KeyCue(付费)</del>: 长按⌘看快捷键 manual</li>
+<li>Karabiner-Elements: 改键神器</li>
+<li>Snipaste: 截图+贴屏</li>
+<li>Workspaces: 一键开启工作区(所有所需软件 or 文件夹)</li>
+<li>搜狗输入法:<ol>
+<li>按软件改默认中英符号</li>
+<li>自定词库(支持基本变量如时间)</li>
+<li>多种候选翻页键</li>
+<li>自动中英文检空格</li>
+<li>候选词 2,3 位快捷键</li>
+</ol>
+</li>
+<li>Mission Control Plus: 便捷直接关闭窗口</li>
+<li>Paste: 剪贴板管理</li>
+<li>NightOwl: 随意切换暗夜模式</li>
+<li>iStat Menu:<ul>
+<li>增强电池信息</li>
+<li>增强时间显示配置</li>
+<li>CPU, 内存, 磁盘, 传感器</li>
+</ul>
+</li>
+<li>Itsyal: 日历📆</li>
+<li>IINA: 变速视频播放器</li>
+<li>iTerm2: 命令行</li>
+<li>Magent: 像 Windows 一样对窗口进行分区</li>
+<li>1KeyBoard: 电脑作为 ipad, 手机的蓝牙键盘</li>
+<li><p>Vanilla: 隐藏 menubar 的一些 icon</p>
+</li>
+<li><p>CCleaner / Dr. Cleaner / CleanMyMac: 卸载软件的软件</p>
+</li>
+<li><p>Negative: 暗夜模式 pdf 阅读器</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+        <tag>效率</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 插件记录</title>
     <url>/web/hexo-plugin/</url>
     <content><![CDATA[<p>plugins</p>
@@ -29,6 +99,14 @@
         <tag>配置</tag>
         <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>mac-iterm2-zsh</title>
+    <url>/mac-iterm2-zsh/</url>
+    <content><![CDATA[<h1 id="下载-iterm2"><a href="#下载-iterm2" class="headerlink" title="下载 iterm2"></a>下载 iterm2</h1><h1 id="安装-brew"><a href="#安装-brew" class="headerlink" title="安装 brew"></a>安装 brew</h1><p>按照<a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">官网</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></pre></td></tr></table></figure>
+<p>后面用的着</p>
+]]></content>
   </entry>
   <entry>
     <title>微信文本记录破解数据库导出</title>
@@ -892,6 +970,70 @@ here are hiden things
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g npm</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 6.10.3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cnpm@6.1.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\lib\parse_argv.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm@6.10.3 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\_npm@6.10.3@npm\lib\npm.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> node@8.9.3 (D:\MUYI Program Files\Nodejs\node.exe)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npminstall@3.23.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\_npminstall@3.23.0@npminstall\lib\index.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> prefix=D:\MUYI Program Files\Nodejs\node_global</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> win32 x64 10.0.18362</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> registry=https://r.npm.taobao.org</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm cache clean -f</span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm install -g n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> update all global packages</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm install -g</span></pre></td></tr></table></figure>
 <p>maybe you can try to run the install code again </p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span></pre></td></tr></table></figure>
+<h2 id="Unable-to-update-node"><a href="#Unable-to-update-node" class="headerlink" title="Unable to update node"></a>Unable to update node</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g n</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Downloading n to D:\MUYI Program Files\Nodejs\node_global\node_modules\n_tmp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Copying D:\MUYI Program Files\Nodejs\node_global\node_modules\n_tmp\_n@5.0.2@n to D:\MUYI Program Files\Nodejs\node_global\node_modules\n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Installing n<span class="string">'s dependencies to D:\MUYI Program Files\Nodejs\node_global\node_modules\n/node_modules</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> All packages installed (used 8ms(network 4ms), speed 0B/s, json 0(0B), tarball 0B)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> [n@5.0.2] link D:\MUYI Program Files\Nodejs\node_global\n@ -&gt; D:\MUYI Program Files\Nodejs\node_global\node_modules\n\bin\n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">n stable</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /bin/bash: D:\MUYI Program Files\Nodejs\node_global\node_modules\n\bin\n: 没有那个文件或目录</span></span></pre></td></tr></table></figure>
+<p>strange, but I decide to leave it alone.= =</p>
+<h2 id="Update-hexo"><a href="#Update-hexo" class="headerlink" title="Update hexo"></a>Update hexo</h2><p>As I decide to reinstall Hexo, why note update it to the latest version</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm i hexo-cli -g</span></pre></td></tr></table></figure>
+<p>this may take a really long time.</p>
+<p>As what I am scared about, it goes wrong</p>
+<p><b><details><summary>Error Info</summary></details></b></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm WARN checkPermissions Missing write access to D:\MUYI Program Files\Nodejs\node_global\node_modules\hexo-cli\node_modules\is-number\node_modules\kind-of</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm WARN checkPermissions Missing write access to D:\MUYI Program Files\Nodejs\node_global\node_modules\hexo-cli\node_modules\is-number\node_modules</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! path D:\MUYI Program Files\Nodejs\node_global\node_modules\hexo-cli\node_modules\is-number\node_modules\kind-of</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! code ENOENT</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! errno -4058</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! syscall access</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! enoent ENOENT: no such file or directory, access 'D:\MUYI Program Files\Nodejs\node_global\node_modules\hexo-cli\node_modules\is-number\node_modules\kind-of'</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! enoent This is related to npm not being able to find a file.</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! enoent</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! A complete log of this run can be found in:</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!     D:\MUYI Program Files\Nodejs\node_cache\_logs\2019-08-12T08_42_25_532Z-debug.log</span></pre></td></tr></table></figure>
+<p>&lt;/details&gt;</p>
+<p>After Googleing <a href="https://blog.csdn.net/qq_39629050/article/details/80863319" target="_blank" rel="noopener">some blogs</a>, I decide to reinstall the Hexo totally.</p>
+<h1 id="Reinstall-Hexo"><a href="#Reinstall-Hexo" class="headerlink" title="Reinstall Hexo"></a>Reinstall Hexo</h1><h2 id="uninstall"><a href="#uninstall" class="headerlink" title="uninstall"></a>uninstall</h2><p>Firstly I need to uninstall hexo.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm uninstall hexo-cli</span></pre></td></tr></table></figure>
+<p><b><details><summary>Something wrong</summary></details></b></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted &#123;"os":"darwin","arch":"any"&#125; (current: &#123;"os":"win32","arch":"x64"&#125;)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">added 55 packages from 56 contributors, removed 157 packages, updated 50 packages and audited 1290 packages in 149.763s</span></pre></td></tr><tr><td class="code"><pre><span class="line">found 30 vulnerabilities (10 low, 4 moderate, 15 high, 1 critical)</span></pre></td></tr><tr><td class="code"><pre><span class="line">  run `npm audit fix` to fix them, or `npm audit` for details</span></pre></td></tr></table></figure>
+<p>&lt;/details&gt;</p>
+<p>So I  </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm audit fix</span></pre></td></tr></table></figure>
+<p><b><details><summary>However, error again</summary></details></b></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm WARN tarball tarball data for swig-templates@^2.0.3 (sha1-a0xDtGIXXfKo2oV6IEM3nsbqb9A=) seems to be corrupted. Trying one more time.</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! code EPERM</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! syscall unlink</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! path D:\PROGRAMME PROJECT\Blog\node_modules\.staging\swig-templates-c7f20818\package.json</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! errno -4048</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! Error: EPERM: operation not permitted, unlink 'D:\PROGRAMME PROJECT\Blog\node_modules\.staging\swig-templates-c7f20818\package.json'</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!  &#123; Error: EPERM: operation not permitted, unlink 'D:\PROGRAMME PROJECT\Blog\node_modules\.staging\swig-templates-c7f20818\package.json'</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   cause:</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!    &#123; Error: EPERM: operation not permitted, unlink 'D:\PROGRAMME PROJECT\Blog\node_modules\.staging\swig-templates-c7f20818\package.json'</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!      errno: -4048,</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!      code: 'EPERM',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!      syscall: 'unlink',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!      path: 'D:\\PROGRAMME PROJECT\\Blog\\node_modules\\.staging\\swig-templates-c7f20818\\package.json' &#125;,</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   stack: 'Error: EPERM: operation not permitted, unlink \'D:\\PROGRAMME PROJECT\\Blog\\node_modules\\.staging\\swig-templates-c7f20818\\package.json\'',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   errno: -4048,</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   code: 'EPERM',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   syscall: 'unlink',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   path: 'D:\\PROGRAMME PROJECT\\Blog\\node_modules\\.staging\\swig-templates-c7f20818\\package.json',</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!   parent: 'hexo' &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! The operation was rejected by your operating system.</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! It's possible that the file was already in use (by a text editor or antivirus),</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! or that you lack permissions to access it.</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR!</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! If you believe this might be a permissions issue, please double-check the</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! permissions of the file and its containing directories, or try running</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm ERR! the command again as root/Administrator.</span></pre></td></tr></table></figure>
+<p>&lt;/details&gt;</p>
+<!-- well, let me delete the folder directily. -->
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-cli -g</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm uninstall hexo -g</span></pre></td></tr></table></figure>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><p>Once a again, I open the <a href="https://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">tutorial blog</a>.</p>
+<p>this time I open pewershell in admin.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-cli -g</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> hexo-cli: 1.1.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> os: Windows_NT 10.0.18362 win32 x64</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> http_parser: 2.7.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> node: 8.9.3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> v8: 6.1.534.48</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> uv: 1.15.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> zlib: 1.2.11</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ares: 1.10.1-DEV</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> modules: 57</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> nghttp2: 1.25.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> openssl: 1.0.2n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> icu: 59.1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> unicode: 9.0</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cldr: 31.0.1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tz: 2017b</span></span></pre></td></tr></table></figure>
+<p>But I feel like that I just failed to uninstall hexo.</p>
+<h1 id="Initialize-folder-of-blog"><a href="#Initialize-folder-of-blog" class="headerlink" title="Initialize folder of blog"></a>Initialize folder of blog</h1><p>make a folder for blog files.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir BenatureBlog</span></pre></td></tr><tr><td class="code"><pre><span class="line">cd BenatureBlog</span></pre></td></tr></table></figure>
+<p>initialize hexo (this may take a bit long time  )</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init</span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm install</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo g</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo s</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo d</span></pre></td></tr></table></figure>
+<h1 id="Configure"><a href="#Configure" class="headerlink" title="Configure"></a>Configure</h1><p>then modify the <code>_config.yml</code> to configure.</p>
+<h2 id="Mathjax"><a href="#Mathjax" class="headerlink" title="Mathjax"></a>Mathjax</h2><p>find mathjax config in <code>blog\themes\next\_config.yml</code> and modify</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm uninstall hexo-renderer-marked --save</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm ERR! code EINVALIDTAGNAME</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm ERR! Invalid tag name <span class="string">"^undefined"</span>: Tags may not have any characters that encodeURIComponent encodes.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm ERR! A complete <span class="built_in">log</span> of this run can be found <span class="keyword">in</span>:</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm ERR!     C:\Users\ben04\AppData\Roaming\npm-cache\_logs\2019-08-13T02_04_50_890Z-debug.log</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm i hexo-renderer-pandoc --save</span></pre></td></tr><tr><td class="code"><pre><span class="line">hexo clean</span></pre></td></tr></table></figure>
+<p>As I fialed to uninstall some packages, so I go to <code>/node_modules/</code> and found the coresspond folder and deleted it directily.</p>
+<p>then go to <code>node_modules\kramed\lib\rules\inline.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#$+\-.!_&gt;])/</span>,</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span></pre></td></tr></table></figure>
+<h1 id="img"><a href="#img" class="headerlink" title="img"></a>img</h1><p><a href="https://benature.github.io/2018/03/26/Hexo-Configuration/">https://benature.github.io/2018/03/26/Hexo-Configuration/</a></p>
+<h1 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-generator-feed --save</span></pre></td></tr></table></figure>
+<h1 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install hexo-generator-searchdb --save</span></pre></td></tr></table></figure>
+<hr>
+<p><strong>Reference</strong>:</p>
+<ul>
+<li><a href="https://blog.csdn.net/whjkm/article/details/81088518" target="_blank" rel="noopener">update hexo</a></li>
+<li><a href="https://blog.csdn.net/qq_39629050/article/details/80863319" target="_blank" rel="noopener">permission missing in windows</a></li>
+<li><a href="https://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">build a hexo blog hand by hand</a></li>
+<li><a href="https://hexo-guide.readthedocs.io/zh_CN/latest/theme/[NexT]%E9%85%8D%E7%BD%AEMathJax.html" target="_blank" rel="noopener">mathjax</a></li>
+<li><a href="https://walesexcitedmei.github.io/2018/08/30/HEXO-NexT-%E4%B8%BB%E9%A2%98%E6%8F%90%E9%AB%98%E5%8D%9A%E5%AE%A2%E9%A2%9C%E5%80%BC/" target="_blank" rel="noopener">RSS</a></li>
+<li><a href="https://www.npmjs.cn/getting-started/updating-global-packages/" target="_blank" rel="noopener">npm</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 重生记</title>
+    <url>/web/hexo-log/</url>
+    <content><![CDATA[<p>鉴于在Hexo玩崩过几次, 也就重装过几次, 这次重装终于决定把所有操作都记录一次了.</p>
+<a id="more"></a>
+<h1 id="Update-Hexo-at-first"><a href="#Update-Hexo-at-first" class="headerlink" title="Update Hexo at first"></a>Update Hexo at first</h1><h2 id="Update-npm-cnpm"><a href="#Update-npm-cnpm" class="headerlink" title="Update npm, cnpm"></a>Update npm, cnpm</h2><p>Firstly, let us check the version.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> v8.9.3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 6.4.1</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cnpm@5.2.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\lib\parse_argv.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm@5.8.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\npm\lib\npm.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> node@8.9.3 (D:\MUYI Program Files\Nodejs\node.exe)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npminstall@3.3.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\npminstall\lib\index.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> prefix=D:\MUYI Program Files\Nodejs\node_global</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> win32 x64 10.0.18362</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> registry=https://registry.npm.taobao.org</span></span></pre></td></tr></table></figure>
+<p>update</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g npm</span></pre></td></tr><tr><td class="code"><pre><span class="line">npm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 6.10.3</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm -v</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cnpm@6.1.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\lib\parse_argv.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npm@6.10.3 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\_npm@6.10.3@npm\lib\npm.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> node@8.9.3 (D:\MUYI Program Files\Nodejs\node.exe)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> npminstall@3.23.0 (D:\MUYI Program Files\Nodejs\node_global\node_modules\cnpm\node_modules\_npminstall@3.23.0@npminstall\lib\index.js)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> prefix=D:\MUYI Program Files\Nodejs\node_global</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> win32 x64 10.0.18362</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> registry=https://r.npm.taobao.org</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">npm cache clean -f</span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm install -g n</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> update all global packages</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">cnpm install -g</span></pre></td></tr></table></figure>
 <h2 id="Unable-to-update-node"><a href="#Unable-to-update-node" class="headerlink" title="Unable to update node"></a>Unable to update node</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cnpm install -g n</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Downloading n to D:\MUYI Program Files\Nodejs\node_global\node_modules\n_tmp</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Copying D:\MUYI Program Files\Nodejs\node_global\node_modules\n_tmp\_n@5.0.2@n to D:\MUYI Program Files\Nodejs\node_global\node_modules\n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Installing n<span class="string">'s dependencies to D:\MUYI Program Files\Nodejs\node_global\node_modules\n/node_modules</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> All packages installed (used 8ms(network 4ms), speed 0B/s, json 0(0B), tarball 0B)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> [n@5.0.2] link D:\MUYI Program Files\Nodejs\node_global\n@ -&gt; D:\MUYI Program Files\Nodejs\node_global\node_modules\n\bin\n</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">n stable</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> /bin/bash: D:\MUYI Program Files\Nodejs\node_global\node_modules\n\bin\n: 没有那个文件或目录</span></span></pre></td></tr></table></figure>
 <p>strange, but I decide to leave it alone.= =</p>
 <h2 id="Update-hexo"><a href="#Update-hexo" class="headerlink" title="Update hexo"></a>Update hexo</h2><p>As I decide to reinstall Hexo, why note update it to the latest version</p>
@@ -3371,6 +3513,85 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
   <entry>
     <title>Hexo Sooooo Cool</title>
     <url>/web/Hexo-Configuration/</url>
+    <content><![CDATA[<h1 id="1-常用命令"><a href="#1-常用命令" class="headerlink" title="1. 常用命令"></a>1. 常用命令</h1><ul>
+<li>更新博客</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo d -g</span></pre></td></tr></table></figure>
+<ul>
+<li>调试模式</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo s –debug</span></pre></td></tr></table></figure>
+<ul>
+<li>清理</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean</span></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>目录</strong><br><!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} --></p>
+<!-- code_chunk_output -->
+<ul>
+<li><a href="#1-常用命令">1. 常用命令</a></li>
+<li><a href="#2-hexo-安装">2. Hexo 安装</a></li>
+<li><a href="#3-hexo-配置">3. Hexo 配置</a><ul>
+<li><a href="#31-next主题个性化设置教程httpssegmentfaultcoma1190000009544924articleheader2">3.1. NexT主题个性化设置教程</a></li>
+<li><a href="#32-设置背景透明度">3.2. 设置背景透明度</a></li>
+<li><a href="#33-icon设置httpswwwjianshucomp7519c71c8ea9">3.3. icon设置</a></li>
+<li><a href="#34-添加tags和categorieshttpswwwjianshucomp3d2e7b3ec182">3.4. 添加tags和categories</a></li>
+<li><a href="#35-markdown插入图片">3.5. Markdown插入图片</a></li>
+<li><a href="#36-子博客">3.6. 子博客</a></li>
+</ul>
+</li>
+<li><a href="#4-报错记录">4. 报错记录</a><ul>
+<li><a href="#41-网页加载缓慢已修复">4.1. 网页加载缓慢(已修复)</a></li>
+<li><a href="#42-2018-3-31">4.2. 2018-3-31</a></li>
+</ul>
+</li>
+</ul>
+<!-- /code_chunk_output -->
+<h1 id="2-Hexo-安装"><a href="#2-Hexo-安装" class="headerlink" title="2. Hexo 安装"></a>2. Hexo 安装</h1><p><a href="https://blog.csdn.net/gdutxiaoxu/article/details/53576018" target="_blank" rel="noopener">安装教程</a><br><em>更改主题部分的实例是旧版的,新版Github<a href="https://github.com/theme-next" target="_blank" rel="noopener">地址</a></em></p>
+<h1 id="3-Hexo-配置"><a href="#3-Hexo-配置" class="headerlink" title="3. Hexo 配置"></a>3. Hexo 配置</h1><h2 id="3-1-NexT主题个性化设置教程"><a href="#3-1-NexT主题个性化设置教程" class="headerlink" title="3.1. NexT主题个性化设置教程"></a>3.1. <a href="https://segmentfault.com/a/1190000009544924#articleHeader2" target="_blank" rel="noopener">NexT主题个性化设置教程</a></h2><h2 id="3-2-设置背景透明度"><a href="#3-2-设置背景透明度" class="headerlink" title="3.2. 设置背景透明度"></a>3.2. 设置背景透明度</h2><p>修改<code>themes\next\source\css\_custom\custom.styl</code><br>增加以下几行</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.header-inner</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.8</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="selector-class">.main-inner</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">opacity</span>: <span class="number">0.8</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<h2 id="3-3-icon设置"><a href="#3-3-icon设置" class="headerlink" title="3.3. icon设置"></a>3.3. <a href="https://www.jianshu.com/p/7519c71c8ea9" target="_blank" rel="noopener">icon设置</a></h2><ul>
+<li><h2 id="3-4-添加tags和categories"><a href="#3-4-添加tags和categories" class="headerlink" title="3.4. 添加tags和categories"></a>3.4. <a href="https://www.jianshu.com/p/3d2e7b3ec182" target="_blank" rel="noopener">添加tags和categories</a></h2></li>
+</ul>
+<h2 id="3-5-Markdown插入图片"><a href="#3-5-Markdown插入图片" class="headerlink" title="3.5. Markdown插入图片"></a>3.5. Markdown插入图片</h2><p>安装插件<code>hexo-asset-image</code>, 注意一定要在博客的根目录运行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install https://github.com/CodeFalling/hexo-asset-image --save</span></pre></td></tr></table></figure>
+<p>有时候安装完后不一定显示图片成功, 需要修改下代码.<br>加载图片失败的原因一般是路径错误.<br>在<code>/node_modules/hexo-asset-image/index.js</code>有一段代码如下</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span></pre></td></tr></table></figure>
+<p>此处是按照<code>/</code>的位置截取url,按照需求调整选择第几个<code>/</code>就好了</p>
+<p><strong><em>注意:</em></strong> 如果想使代码生效, 需要更改下博客的内容才能让这些代码运行.</p>
+<h2 id="3-6-MathJax-数学公式"><a href="#3-6-MathJax-数学公式" class="headerlink" title="3.6. MathJax 数学公式"></a>3.6. MathJax 数学公式</h2><ul>
+<li><a href="http://palanceli.com/2018/03/08/2018/0308HexoLatex/" target="_blank" rel="noopener">http://palanceli.com/2018/03/08/2018/0308HexoLatex/</a></li>
+<li><a href="https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html" target="_blank" rel="noopener">https://2young.2simple.top/article/Hexo%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98-Pandoc.html</a></li>
+<li><a href="https://blog.csdn.net/wgshun616/article/details/81019687" target="_blank" rel="noopener">https://blog.csdn.net/wgshun616/article/details/81019687</a></li>
+</ul>
+<h2 id="3-7-子博客"><a href="#3-7-子博客" class="headerlink" title="3.7. 子博客"></a>3.7. 子博客</h2><p>github库名不同于用户名时,即子网页博客,博客的文章点进去会404  </p>
+<p><strong>解决:</strong>  </p>
+<ol>
+<li>创建<code>CNAME</code>文件,内容写入父网页域名(没有http://)</li>
+<li>文件保存在hexo站点文件夹的<code>public</code>和<code>source</code>里(因为当初百度的时候有人说这个有人说那个,反正我都装了就对了orz)</li>
+<li>站点配置文件<code>_config.yml</code>中修改,如下</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> URL</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line">url: https://benature.github.io/child.github.io/</span></pre></td></tr><tr><td class="code"><pre><span class="line">root: /child.github.io/</span></pre></td></tr></table></figure>
+<ol>
+<li><code>hexo d -g</code> .bingo~</li>
+</ol>
+<h1 id="4-报错记录"><a href="#4-报错记录" class="headerlink" title="4. 报错记录"></a>4. 报错记录</h1><h2 id="4-1-网页加载缓慢-已修复"><a href="#4-1-网页加载缓慢-已修复" class="headerlink" title="4.1. 网页加载缓慢(已修复)"></a>4.1. 网页加载缓慢(已修复)</h2><p>console报错记录是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;benature.github.io&#x2F;lib&#x2F;three&#x2F;three.min.js net::ERR_ABORTED 404</span></pre></td></tr><tr><td class="code"><pre><span class="line">GET https:&#x2F;&#x2F;benature.github.io&#x2F;lib&#x2F;three&#x2F;canvas_lines.min.js net::ERR_ABORTED 404</span></pre></td></tr></table></figure>
+<p>显然报错原因是路径错误.<br>通过搜索在<code>\themes\next\layout\_scripts\vendors.swig</code>内有相关设置<br>再看主题配置文件,有一栏就是<code>vendors</code>,把里面需要的网址反注释出来就好了</p>
+<h2 id="4-2-2018-3-31"><a href="#4-2-2018-3-31" class="headerlink" title="4.2. 2018-3-31"></a>4.2. 2018-3-31</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error: Connection reset by 13.250.177.223 port 22</span></pre></td></tr><tr><td class="code"><pre><span class="line">fatal: sha1 file &#39;&lt;stdout&gt;&#39; write error: Broken pipe</span></pre></td></tr><tr><td class="code"><pre><span class="line">fatal: The remote end hung up unexpectedly</span></pre></td></tr></table></figure>
+<hr>
+<p>参考资料:</p>
+<ul>
+<li>插入图片: <a href="https://blog.csdn.net/xjm850552586/article/details/84101345" target="_blank" rel="noopener">https://blog.csdn.net/xjm850552586/article/details/84101345</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Sooooo Cool</title>
+    <url>/web/Hexo-Configuration-NSConflict-%E6%9C%A8%E4%B8%80-mac10.15.1/</url>
     <content><![CDATA[<h1 id="1-常用命令"><a href="#1-常用命令" class="headerlink" title="1. 常用命令"></a>1. 常用命令</h1><ul>
 <li>更新博客</li>
 </ul>
