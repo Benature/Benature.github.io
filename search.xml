@@ -101,14 +101,6 @@
       </tags>
   </entry>
   <entry>
-    <title>mac-iterm2-zsh</title>
-    <url>/mac-iterm2-zsh/</url>
-    <content><![CDATA[<h1 id="下载-iterm2"><a href="#下载-iterm2" class="headerlink" title="下载 iterm2"></a>下载 iterm2</h1><h1 id="安装-brew"><a href="#安装-brew" class="headerlink" title="安装 brew"></a>安装 brew</h1><p>按照<a href="https://brew.sh/index_zh-cn" target="_blank" rel="noopener">官网</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span></pre></td></tr></table></figure>
-<p>后面用的着</p>
-]]></content>
-  </entry>
-  <entry>
     <title>微信文本记录破解数据库导出</title>
     <url>/others/wechat-data-export/</url>
     <content><![CDATA[<p>一切看运气哇咔咔</p>
@@ -649,24 +641,6 @@
 ]]></content>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>18级MMP封神榜</title>
-    <url>/spider-mmp-18rank/</url>
-    <content><![CDATA[<p>一场腥风血雨</p>
-<a id="more"></a>
-<h1 id="18级MMP封神榜"><a href="#18级MMP封神榜" class="headerlink" title="18级MMP封神榜"></a>18级MMP封神榜</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>厂主的封神榜, 最初见于热学课堂.<br>半个春秋后, 血雨腥风终于席卷了整个17级.<br>一时间, 人人道路以”mmp”.</p>
-</blockquote>
-<h2 id="正片"><a href="#正片" class="headerlink" title="正片"></a>正片</h2><blockquote>
-<p>又过了祥和的半年, mmp的无尽之火再一次熊熊燃起.<br>所幸, 17级已然渡到对岸.<br>这一次, 深陷于”苦难”之中<strong>无法自拔</strong>的, 是18级了.<br>作为过来人, 坐在对岸, 观赏这新的一学期”厮杀”…</p>
-</blockquote>
-<p>和往年一样, MMP封神榜从暑假就放榜了.</p>
-<p>其中不乏有人大早上六点多就起来刷题了, 果然狠人年年有.</p>
-]]></content>
-      <tags>
-        <tag>推文</tag>
       </tags>
   </entry>
   <entry>
