@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Linux 创建用户</title>
+    <url>/linux/linux-user-manage/</url>
+    <content><![CDATA[<p>Linux 创建用户</p>
+<a id="more"></a>
+<h1 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo adduser username</span></pre></td></tr></table></figure>
+<p>sample:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Adding user &#96;ben&#39; ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">Adding new group &#96;ben&#39; (1000) ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">Adding new user &#96;ben&#39; (1000) with group &#96;ben&#39; ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">Creating home directory &#96;&#x2F;home&#x2F;ben&#39; ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">Copying files from &#96;&#x2F;etc&#x2F;skel&#39; ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter new UNIX password:</span></pre></td></tr><tr><td class="code"><pre><span class="line">Retype new UNIX password:</span></pre></td></tr><tr><td class="code"><pre><span class="line">passwd: password updated successfully</span></pre></td></tr><tr><td class="code"><pre><span class="line">Changing the user information for ben</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter the new value, or press ENTER for the default</span></pre></td></tr><tr><td class="code"><pre><span class="line">	Full Name []: Benature</span></pre></td></tr><tr><td class="code"><pre><span class="line">	Room Number []: </span></pre></td></tr><tr><td class="code"><pre><span class="line">	Work Phone []:</span></pre></td></tr><tr><td class="code"><pre><span class="line">	Home Phone []:</span></pre></td></tr><tr><td class="code"><pre><span class="line">	Other []:</span></pre></td></tr><tr><td class="code"><pre><span class="line">Is the information correct? [Y&#x2F;n] y</span></pre></td></tr></table></figure>
+<h1 id="root-权限"><a href="#root-权限" class="headerlink" title="root 权限"></a>root 权限</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/sudoers</span></pre></td></tr></table></figure>
+<p>修改<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># User privilege specification</span></pre></td></tr><tr><td class="code"><pre><span class="line">root    ALL&#x3D;(ALL:ALL) ALL</span></pre></td></tr><tr><td class="code"><pre><span class="line">ben     ALL&#x3D;(ALL:ALL) ALL</span></pre></td></tr></table></figure></p>
+<p><code>:wq!</code>强行保存退出。</p>
+]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>01子串计数</title>
     <url>/algorithm/c-count-01-substring/</url>
     <content><![CDATA[<p>01子串计数</p>
