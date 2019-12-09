@@ -58,15 +58,15 @@
   };
 </script>
 
-  <meta name="description" content="apt卸载1sudo apt-get --purge remove mysql-common 终端浏览器 w3m终端浏览器  nohup 后台进程nohup 命令1nohup python3 -u demo.py &amp;gt; mmp_hour.log 2&amp;gt;&amp;amp;1 &amp;amp; python3的-u参数是取消Python的缓冲, 使得log文件尽可能与脚本输出同步, 但感觉仍有些延迟, 所以">
+  <meta name="description" content="TOC  免密登录 修改用户名密码 创建用户（管理员权限） 创建用户 root 权限   全局安装 miniconda3 修改主机名 apt卸载 终端浏览器 nohup 后台进程 nohup 命令 查看当前进程 杀死进程">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;linux&#x2F;Linux-note&#x2F;index.html">
 <meta property="og:site_name" content="Benature">
-<meta property="og:description" content="apt卸载1sudo apt-get --purge remove mysql-common 终端浏览器 w3m终端浏览器  nohup 后台进程nohup 命令1nohup python3 -u demo.py &amp;gt; mmp_hour.log 2&amp;gt;&amp;amp;1 &amp;amp; python3的-u参数是取消Python的缓冲, 使得log文件尽可能与脚本输出同步, 但感觉仍有些延迟, 所以">
+<meta property="og:description" content="TOC  免密登录 修改用户名密码 创建用户（管理员权限） 创建用户 root 权限   全局安装 miniconda3 修改主机名 apt卸载 终端浏览器 nohup 后台进程 nohup 命令 查看当前进程 杀死进程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-11T11:39:58.000Z">
+<meta property="og:updated_time" content="2019-12-09T05:45:46.117Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://benature.github.io/linux/Linux-note/">
 
@@ -231,7 +231,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">80</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">79</span></a>
 
   </li>
       
@@ -332,19 +332,11 @@
                 
               
 
-              <time title="Created: 2019-02-10 10:59:00" itemprop="dateCreated datePublished" datetime="2019-02-10T10:59:00+08:00">2019-02-10</time>
+              <time title="Created: 2019-12-09 10:59:00 / Modified: 13:45:46" itemprop="dateCreated datePublished" datetime="2019-12-09T10:59:00+08:00">2019-12-09</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-10-11 19:39:58" itemprop="dateModified" datetime="2019-10-11T19:39:58+08:00">2019-10-11</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -402,7 +394,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="apt卸载"><a href="#apt卸载" class="headerlink" title="apt卸载"></a>apt卸载</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
+        <p>TOC</p>
+<ul>
+<li><a href="#%e5%85%8d%e5%af%86%e7%99%bb%e5%bd%95">免密登录</a></li>
+<li><a href="#%e4%bf%ae%e6%94%b9%e7%94%a8%e6%88%b7%e5%90%8d%e5%af%86%e7%a0%81">修改用户名密码</a></li>
+<li><a href="#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86%e5%91%98%e6%9d%83%e9%99%90">创建用户（管理员权限）</a><ul>
+<li><a href="#%e5%88%9b%e5%bb%ba%e7%94%a8%e6%88%b7">创建用户</a></li>
+<li><a href="#root-%e6%9d%83%e9%99%90">root 权限</a></li>
+</ul>
+</li>
+<li><a href="#%e5%85%a8%e5%b1%80%e5%ae%89%e8%a3%85-miniconda3">全局安装 miniconda3</a></li>
+<li><a href="#%e4%bf%ae%e6%94%b9%e4%b8%bb%e6%9c%ba%e5%90%8d">修改主机名</a></li>
+<li><a href="#apt%e5%8d%b8%e8%bd%bd">apt卸载</a></li>
+<li><a href="#%e7%bb%88%e7%ab%af%e6%b5%8f%e8%a7%88%e5%99%a8">终端浏览器</a></li>
+<li><a href="#nohup-%e5%90%8e%e5%8f%b0%e8%bf%9b%e7%a8%8b">nohup 后台进程</a><ul>
+<li><a href="#nohup-%e5%91%bd%e4%bb%a4">nohup 命令</a></li>
+<li><a href="#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8d%e8%bf%9b%e7%a8%8b">查看当前进程</a></li>
+<li><a href="#%e6%9d%80%e6%ad%bb%e8%bf%9b%e7%a8%8b">杀死进程</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="免密登录"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录</h1><ol>
+<li><code>~/.ssh/authorized_keys</code>追加本地鸡公钥</li>
+<li><code>sudo vim /etc/ssh/sshd_config</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">AuthorizedKeysFile  .ssh&#x2F;authorized_keys</span></pre></td></tr></table></figure>
+这两项取消注释</li>
+</ol>
+<h1 id="修改用户名密码"><a href="#修改用户名密码" class="headerlink" title="修改用户名密码"></a>修改用户名密码</h1><ul>
+<li>root: <code>passwd</code></li>
+<li>else: <code>passwd username</code></li>
+</ul>
+<h1 id="创建用户（管理员权限）"><a href="#创建用户（管理员权限）" class="headerlink" title="创建用户（管理员权限）"></a>创建用户（管理员权限）</h1><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo adduser username</span></pre></td></tr></table></figure>
+<p>sample:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">Adding user &#96;ben&#39; ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Adding new group &#96;ben&#39; (1000) ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Adding new user &#96;ben&#39; (1000) with group &#96;ben&#39; ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Creating home directory &#96;&#x2F;home&#x2F;ben&#39; ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Copying files from &#96;&#x2F;etc&#x2F;skel&#39; ...</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Enter new UNIX password:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">Retype new UNIX password:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">passwd: password updated successfully</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Changing the user information for ben</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">Enter the new value, or press ENTER for the default</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	Full Name []: Benature</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	Room Number []: </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	Work Phone []:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">	Home Phone []:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">	Other []:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">Is the information correct? [Y&#x2F;n] y</span></pre></td></tr></table></figure>
+<h2 id="root-权限"><a href="#root-权限" class="headerlink" title="root 权限"></a>root 权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/sudoers</span></pre></td></tr></table></figure>
+<p>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"># User privilege specification</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">root    ALL&#x3D;(ALL:ALL) ALL</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">ben     ALL&#x3D;(ALL:ALL) ALL</span></pre></td></tr></table></figure></p>
+<p><code>:wq!</code>强行保存退出。</p>
+<p>Reference: <a href="https://www.jianshu.com/p/aaf38026e00e" target="_blank" rel="noopener">https://www.jianshu.com/p/aaf38026e00e</a></p>
+<h1 id="全局安装-miniconda3"><a href="#全局安装-miniconda3" class="headerlink" title="全局安装 miniconda3"></a>全局安装 miniconda3</h1><ol>
+<li><code>bash</code>安装</li>
+<li>安装位置不要在用户名下，改为<code>/opt/miniconda3/</code></li>
+<li>修改安装目录权限为所有用户都可以写入<code>sudo chmod ugo+w -R /opt/miniconda3/</code></li>
+<li><code>conda</code>加入<code>PATH</code>变量：<code>sudo vim /etc/profile/</code>，加入<code>PATH=/opt/miniconda3/bin:$PATH</code></li>
+<li>重开终端窗口 / 重连服务器</li>
+<li><code>conda -v</code> / <code>echo $PATH</code> 检查确认</li>
+</ol>
+<h1 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hostname</span></pre></td></tr></table></figure>
+<!-- 以防万一，更新 host 文件
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">``` --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> apt卸载</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">```shell</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
 <h1 id="终端浏览器"><a href="#终端浏览器" class="headerlink" title="终端浏览器"></a>终端浏览器</h1><ul>
 <li><a href="https://blog.csdn.net/sinat_31804365/article/details/52614093" target="_blank" rel="noopener">w3m终端浏览器</a></li>
 </ul>
@@ -411,7 +451,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"temp.temp"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    f.write(<span class="string">"run nohup"</span>)</span></pre></td></tr></table></figure>
 <p>的代码来及时确认程序是否运行</p>
 <h2 id="查看当前进程"><a href="#查看当前进程" class="headerlink" title="查看当前进程"></a>查看当前进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">jobs -l</span></pre></td></tr></table></figure>
-<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>
+<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>-->
     </div>
 
     
@@ -436,8 +476,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/python-code/python-Matlab_Import/" rel="next" title="在Python调用MATLAB程序">
-                  <i class="fa fa-chevron-left"></i> 在Python调用MATLAB程序
+                <a href="/algorithm/c-count-01-substring/" rel="next" title="01子串计数">
+                  <i class="fa fa-chevron-left"></i> 01子串计数
                 </a>
               
             </div>
@@ -445,10 +485,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/python-code/python-mxnet/" rel="prev" title="MXnet for GPU Install">
-                  MXnet for GPU Install <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -497,7 +533,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#apt卸载"><span class="nav-number">1.</span> <span class="nav-text">apt卸载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#终端浏览器"><span class="nav-number">2.</span> <span class="nav-text">终端浏览器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nohup-后台进程"><span class="nav-number">3.</span> <span class="nav-text">nohup 后台进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nohup-命令"><span class="nav-number">3.1.</span> <span class="nav-text">nohup 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前进程"><span class="nav-number">3.2.</span> <span class="nav-text">查看当前进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">3.3.</span> <span class="nav-text">杀死进程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#免密登录"><span class="nav-number">1.</span> <span class="nav-text">免密登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改用户名密码"><span class="nav-number">2.</span> <span class="nav-text">修改用户名密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建用户（管理员权限）"><span class="nav-number">3.</span> <span class="nav-text">创建用户（管理员权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">3.1.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#root-权限"><span class="nav-number">3.2.</span> <span class="nav-text">root 权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局安装-miniconda3"><span class="nav-number">4.</span> <span class="nav-text">全局安装 miniconda3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主机名"><span class="nav-number">5.</span> <span class="nav-text">修改主机名</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -516,7 +552,7 @@
         
           <a href="/archives/%20%7C%7C%20archive">
         
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">79</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
