@@ -49,9 +49,7 @@
 <li><code>conda -v</code> / <code>echo $PATH</code> 检查确认</li>
 </ol>
 <h1 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/hostname</span></pre></td></tr></table></figure>
-<!-- 以防万一，更新 host 文件
-
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/hosts</span></pre></td></tr><tr><td class="code"><pre><span class="line">``` --&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> apt卸载</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">```shell</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
+<h1 id="apt卸载"><a href="#apt卸载" class="headerlink" title="apt卸载"></a>apt卸载</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
 <h1 id="终端浏览器"><a href="#终端浏览器" class="headerlink" title="终端浏览器"></a>终端浏览器</h1><ul>
 <li><a href="https://blog.csdn.net/sinat_31804365/article/details/52614093" target="_blank" rel="noopener">w3m终端浏览器</a></li>
 </ul>
@@ -60,7 +58,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"temp.temp"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span></pre></td></tr><tr><td class="code"><pre><span class="line">    f.write(<span class="string">"run nohup"</span>)</span></pre></td></tr></table></figure>
 <p>的代码来及时确认程序是否运行</p>
 <h2 id="查看当前进程"><a href="#查看当前进程" class="headerlink" title="查看当前进程"></a>查看当前进程</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ps -ef | grep</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">jobs -l</span></pre></td></tr></table></figure>
-<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>-->]]></content>
+<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Linux</category>
       </categories>

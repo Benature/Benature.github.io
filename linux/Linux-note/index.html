@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Benature">
 <meta property="og:description" content="TOC  免密登录 修改用户名密码 创建用户（管理员权限） 创建用户 root 权限   全局安装 miniconda3 修改主机名 apt卸载 终端浏览器 nohup 后台进程 nohup 命令 查看当前进程 杀死进程">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-09T05:45:46.117Z">
+<meta property="og:updated_time" content="2019-12-09T06:32:28.440Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://benature.github.io/linux/Linux-note/">
 
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-12-09 10:59:00 / Modified: 13:45:46" itemprop="dateCreated datePublished" datetime="2019-12-09T10:59:00+08:00">2019-12-09</time>
+              <time title="Created: 2019-12-09 10:59:00 / Modified: 14:32:28" itemprop="dateCreated datePublished" datetime="2019-12-09T10:59:00+08:00">2019-12-09</time>
             </span>
           
             
@@ -440,9 +440,7 @@
 <li><code>conda -v</code> / <code>echo $PATH</code> 检查确认</li>
 </ol>
 <h1 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hostname</span></pre></td></tr></table></figure>
-<!-- 以防万一，更新 host 文件
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo vim /etc/hosts</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">``` --&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> apt卸载</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">```shell</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
+<h1 id="apt卸载"><a href="#apt卸载" class="headerlink" title="apt卸载"></a>apt卸载</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sudo apt-get --purge remove mysql-common</span></pre></td></tr></table></figure>
 <h1 id="终端浏览器"><a href="#终端浏览器" class="headerlink" title="终端浏览器"></a>终端浏览器</h1><ul>
 <li><a href="https://blog.csdn.net/sinat_31804365/article/details/52614093" target="_blank" rel="noopener">w3m终端浏览器</a></li>
 </ul>
@@ -451,7 +449,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"temp.temp"</span>, <span class="string">"w"</span>) <span class="keyword">as</span> f:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    f.write(<span class="string">"run nohup"</span>)</span></pre></td></tr></table></figure>
 <p>的代码来及时确认程序是否运行</p>
 <h2 id="查看当前进程"><a href="#查看当前进程" class="headerlink" title="查看当前进程"></a>查看当前进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ps -ef | grep</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">jobs -l</span></pre></td></tr></table></figure>
-<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>-->
+<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">kill &lt;num&gt;</span></pre></td></tr></table></figure>
     </div>
 
     
@@ -533,7 +531,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#免密登录"><span class="nav-number">1.</span> <span class="nav-text">免密登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改用户名密码"><span class="nav-number">2.</span> <span class="nav-text">修改用户名密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建用户（管理员权限）"><span class="nav-number">3.</span> <span class="nav-text">创建用户（管理员权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">3.1.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#root-权限"><span class="nav-number">3.2.</span> <span class="nav-text">root 权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局安装-miniconda3"><span class="nav-number">4.</span> <span class="nav-text">全局安装 miniconda3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主机名"><span class="nav-number">5.</span> <span class="nav-text">修改主机名</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#免密登录"><span class="nav-number">1.</span> <span class="nav-text">免密登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改用户名密码"><span class="nav-number">2.</span> <span class="nav-text">修改用户名密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建用户（管理员权限）"><span class="nav-number">3.</span> <span class="nav-text">创建用户（管理员权限）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">3.1.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#root-权限"><span class="nav-number">3.2.</span> <span class="nav-text">root 权限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全局安装-miniconda3"><span class="nav-number">4.</span> <span class="nav-text">全局安装 miniconda3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改主机名"><span class="nav-number">5.</span> <span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apt卸载"><span class="nav-number">6.</span> <span class="nav-text">apt卸载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#终端浏览器"><span class="nav-number">7.</span> <span class="nav-text">终端浏览器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nohup-后台进程"><span class="nav-number">8.</span> <span class="nav-text">nohup 后台进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nohup-命令"><span class="nav-number">8.1.</span> <span class="nav-text">nohup 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看当前进程"><span class="nav-number">8.2.</span> <span class="nav-text">查看当前进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">8.3.</span> <span class="nav-text">杀死进程</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
