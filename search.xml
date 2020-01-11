@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Github 命令行 clone 加速</title>
+    <url>/git/github-clone-speedup/</url>
+    <content><![CDATA[<p>Github 命令行 clone 加速</p>
+<a id="more"></a>
+<p>分别获得 ip 地址：</p>
+<ul>
+<li><a href="https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo" target="_blank" rel="noopener">https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo</a></li>
+<li><a href="https://github.com.ipaddress.com/#ipinfo" target="_blank" rel="noopener">https://github.com.ipaddress.com/#ipinfo</a></li>
+</ul>
+<p>追加到 host 文件中</p>
+<hr>
+<p>fork 到 gitee 再 clone</p>
+]]></content>
+      <tags>
+        <tag>Git</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pip 换源</title>
+    <url>/python-code/pip-change-source/</url>
+    <content><![CDATA[<p>pip 换源阿里云</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.pip/pip.conf</span></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[global]</span></pre></td></tr><tr><td class="code"><pre><span class="line">trusted-host &#x3D;  mirrors.aliyun.com</span></pre></td></tr><tr><td class="code"><pre><span class="line">index-url &#x3D; https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple</span></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux笔记</title>
     <url>/linux/Linux-note/</url>
     <content><![CDATA[<p>TOC</p>
@@ -226,7 +256,7 @@
     <url>/devices/mac-vs-windows/</url>
     <content><![CDATA[<p>Mac V.S. Windows</p>
 <a id="more"></a>
-<div class="table-container">
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -239,21 +269,16 @@
 <tr>
 <td style="text-align:center">副屏显示</td>
 <td style="text-align:center">拔插后有记忆, 可恢复</td>
-<td style="text-align:center">拔插后只聚集在主屏</td>
+<td style="text-align:center">拔插后只聚集在主屏（无记忆）</td>
 </tr>
 <tr>
 <td style="text-align:center">命令行</td>
-<td style="text-align:center">Good√</td>
+<td style="text-align:center">√</td>
 <td style="text-align:center">需要wsl, 环境不好同步(git branch, venv)</td>
 </tr>
 <tr>
-<td style="text-align:center">caps</td>
-<td style="text-align:center">TODO: unfounded :(</td>
-<td style="text-align:center">Capslock+</td>
-</tr>
-<tr>
 <td style="text-align:center">应用快捷切换</td>
-<td style="text-align:center">Manoco / Contexts</td>
+<td style="text-align:center">Thor / Manoco / Contexts</td>
 <td style="text-align:center"><code>Win+num</code> / Capslock+</td>
 </tr>
 <tr>
@@ -263,13 +288,18 @@
 </tr>
 <tr>
 <td style="text-align:center">剪贴板</td>
-<td style="text-align:center">etc</td>
+<td style="text-align:center">paste</td>
 <td style="text-align:center">Ditto</td>
 </tr>
 <tr>
 <td style="text-align:center">鼠标侧键</td>
-<td style="text-align:center"><a href="https://roov.org/2017/08/steermouse-%E5%9C%A8-mac-os-%E4%B8%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E9%BC%A0%E6%A0%87%E4%BE%A7%E9%94%AE/" target="_blank" rel="noopener">TODO:</a> :(</td>
-<td style="text-align:center">可</td>
+<td style="text-align:center">(手势够用了)</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">退出程序快捷键</td>
+<td style="text-align:center"><code>⌘+Q</code></td>
+<td style="text-align:center">憨憨状态栏右键退出法</td>
 </tr>
 <tr>
 <td style="text-align:center">文件管理器窗口跳转</td>
@@ -277,18 +307,79 @@
 <td style="text-align:center">Listery</td>
 </tr>
 <tr>
-<td style="text-align:center">微信加成</td>
-<td style="text-align:center"><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS" target="_blank" rel="noopener">√</a></td>
-<td style="text-align:center"><a href="https://github.com/anhkgg/SuperWeChatPC" target="_blank" rel="noopener">√</a> but 有小bug</td>
+<td style="text-align:center">文件管理器快速开启某任务</td>
+<td style="text-align:center">系统设置<code>快捷键</code></td>
+<td style="text-align:center">右键处设置</td>
 </tr>
 <tr>
-<td style="text-align:center">退出程序快捷键</td>
-<td style="text-align:center"><code>⌘+Q</code></td>
-<td style="text-align:center">憨憨状态栏右键退出法</td>
+<td style="text-align:center">Caps加成</td>
+<td style="text-align:center">Karabiner-Element</td>
+<td style="text-align:center">Capslock+</td>
+</tr>
+<tr>
+<td style="text-align:center">微信加成</td>
+<td style="text-align:center"><a href="https://github.com/Sunnyyoung/WeChatTweak-macOS" target="_blank" rel="noopener">√</a></td>
+<td style="text-align:center"><a href="https://github.com/anhkgg/SuperWeChatPC" target="_blank" rel="noopener">√</a></td>
+</tr>
+<tr>
+<td style="text-align:center">充当蓝牙键盘</td>
+<td style="text-align:center">1KeyBoard / <a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2650532150&amp;idx=1&amp;sn=a8c955ec5294866ad89a3f81735d3114" target="_blank" rel="noopener">RemoBoard</a></td>
+<td style="text-align:center"><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2650532150&amp;idx=1&amp;sn=a8c955ec5294866ad89a3f81735d3114" target="_blank" rel="noopener">RemoBoard</a></td>
+</tr>
+<tr>
+<td style="text-align:center">触屏</td>
+<td style="text-align:center">TouchBar</td>
+<td style="text-align:center">触屏显示器 (partly)</td>
+</tr>
+<tr>
+<td style="text-align:center">找鼠标</td>
+<td style="text-align:center">快速滑动鼠标放大</td>
+<td style="text-align:center">按<code>ctrl</code>蹦出圈圈</td>
+</tr>
+<tr>
+<td style="text-align:center">网易云音乐云盘</td>
+<td style="text-align:center">不支持上传</td>
+<td style="text-align:center">冇问题</td>
 </tr>
 </tbody>
 </table>
 </div>
+<h1 id="Bug"><a href="#Bug" class="headerlink" title="Bug"></a>Bug</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Mac</th>
+<th style="text-align:center">Windows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">复制黏贴失效</td>
+<td style="text-align:center">受字典的划词功能影响</td>
+<td style="text-align:center"><em>很少失效（但也有）</em></td>
+</tr>
+<tr>
+<td style="text-align:center">微信卡顿</td>
+<td style="text-align:center">发送信息显示延迟、切换聊天窗口卡顿</td>
+<td style="text-align:center">没有的事</td>
+</tr>
+<tr>
+<td style="text-align:center">微信自动退出</td>
+<td style="text-align:center">没试过</td>
+<td style="text-align:center"><em>不确定是不是通病</em></td>
+</tr>
+<tr>
+<td style="text-align:center">notion 崩溃</td>
+<td style="text-align:center">没有的事</td>
+<td style="text-align:center"><em>desktop 开启就崩</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>非斜体标记的问题都是在网上找到大量人吐槽的 bug ，可以认为是通病。<br>斜体标记的要么是网上没找到大量吐槽，要么是懒得找，直接换方法。</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Mac</tag>
@@ -692,7 +783,7 @@
     <url>/others/check-storage-in-folders/</url>
     <content><![CDATA[<p>懒得一个个点属性</p>
 <a id="more"></a>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">du -h --max-depth=1</span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">du -h --max-depth=1</span></pre></td></tr><tr><td class="code"><pre><span class="line">du -d 1 -h</span></pre></td></tr></table></figure>
 <p>主要是在清理电脑的时候在<code>资源管理器</code>上不能显示文件夹的大小, 一个个右键点<code>属性</code>会很累, 所以就找了一个命令来查看当前目录下文件夹的占用大小.</p>
 <blockquote>
 <p>注意在<code>D:/</code>等根目录下会有权限问题, 到某个文件夹下面还溢出了…</p>
@@ -2260,8 +2351,8 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 ]]></content>
   </entry>
   <entry>
-    <title>数据结构与算法分析简要</title>
-    <url>/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/</url>
+    <title>algorithm-note-2018简要</title>
+    <url>/algorithm/algorithm-note-2018/</url>
     <content><![CDATA[<p><em>算法知识简要大纲</em><br><a id="more"></a></p>
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -2422,7 +2513,7 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </tbody>
 </table>
 </div>
-<p><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/时间复杂度.png" alt="时间复杂度"></p>
+<p><img src="/algorithm/algorithm-note-2018/时间复杂度.png" alt="时间复杂度"></p>
 <ul>
 <li>计算时间复杂度<ul>
 <li>一层循环的时间复杂度为$𝑂(𝑁)$ </li>
@@ -2816,7 +2907,16 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <h2 id="插入排序-Insert"><a href="#插入排序-Insert" class="headerlink" title="插入排序 Insert"></a>插入排序 Insert</h2><p>从第二个开始抽出来, 和前面的比较并排位<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InsertionSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span>    </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp;    </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; len; i++) &#123; </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">//从第二个开始   </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &lt; arr[i<span class="number">-1</span>]) &#123;   <span class="comment">// 如果小于前一个 </span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp = arr[i];          <span class="comment">// 要移动的元放到temp中</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; tmp; j--) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="comment">//向前顺位</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">                arr[j+<span class="number">1</span>] = arr[j];    </span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            arr[j+<span class="number">1</span>] = tmp;    </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;          </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;    </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015225645277-1151100000.gif" alt="插入"></p>
 <h2 id="希尔排序-Shell"><a href="#希尔排序-Shell" class="headerlink" title="希尔排序 Shell"></a>希尔排序 Shell</h2><p>按增量分批做插入排序<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 希尔排序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> <span class="built_in">size</span>)</span>  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp, increment;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (increment = <span class="built_in">size</span>/ <span class="number">2</span>; increment &gt; <span class="number">0</span>; increment /= <span class="number">2</span>) &#123;    </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (i = increment; i &lt; <span class="built_in">size</span>; i++) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="comment">// 做插入排序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp = arr[i];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">for</span> (j = i - increment; j &gt;= <span class="number">0</span> &amp;&amp; tmp &lt; arr[j]; j -= increment) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                arr[j + increment] = arr[j];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            arr[j + increment] = tmp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2018.cnblogs.com/blog/849589/201803/849589-20180331170017421-364506073.gif" alt="希尔"></p>
 <h2 id="归并排序-Merge"><a href="#归并排序-Merge" class="headerlink" title="归并排序 Merge"></a>归并排序 Merge</h2><p>分治法<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> low, <span class="keyword">int</span> mid, <span class="keyword">int</span> high)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, k;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> *tmp = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>((high-low+<span class="number">1</span>)*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">//申请空间，使其大小为两个</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> left_low = low;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> left_high = mid;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> right_low = mid + <span class="number">1</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> right_high = high;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span>(k=<span class="number">0</span>; left_low&lt;=left_high &amp;&amp; right_low&lt;=right_high; k++)&#123;  <span class="comment">// 比较两个指针所指向的元素</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span>(arr[left_low]&lt;=arr[right_low])&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp[k] = arr[left_low++];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp[k] = arr[right_low++];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span>(left_low &lt;= left_high)&#123;  <span class="comment">//若第一个序列有剩余，直接复制出来粘到合并序列尾</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">//memcpy(tmp+k, arr+left_low, (left_high-left_low+l)*sizeof(int));</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span>(i=left_low;i&lt;=left_high;i++)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp[k++] = arr[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span>(right_low &lt;= right_high)&#123; <span class="comment">//若第二个序列有剩余，直接复制出来粘到合并序列尾</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">//memcpy(tmp+k, arr+right_low, (right_high-right_low+1)*sizeof(int));</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span>(i=right_low; i&lt;=right_high; i++)</span></pre></td></tr><tr><td class="code"><pre><span class="line">            tmp[k++] = arr[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// 从tmp复制回arr内</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;high-low+<span class="number">1</span>; i++)</span></pre></td></tr><tr><td class="code"><pre><span class="line">        arr[low+i] = tmp[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">free</span>(tmp);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">unsigned</span> <span class="keyword">int</span> first, <span class="keyword">unsigned</span> <span class="keyword">int</span> last)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> mid = <span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span>(first&lt;last)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        mid = (first+last)/<span class="number">2</span>; <span class="comment">/* 注意防止溢出 */</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">/*mid = first/2 + last/2;*/</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">//mid = (first &amp; last) + ((first ^ last) &gt;&gt; 1);</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        MergeSort(arr, first, mid);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        MergeSort(arr, mid+<span class="number">1</span>,last);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        merge(arr,first,mid,last);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></p>
-<h2 id="快速排序-Quick"><a href="#快速排序-Quick" class="headerlink" title="快速排序 Quick"></a>快速排序 Quick</h2><p>分块排序, 且左块皆小于右块<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> temp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp = *a;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    *a = *b;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    *b = temp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> maxlen, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (<span class="built_in">begin</span> &lt; <span class="built_in">end</span>) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        i = <span class="built_in">begin</span> + <span class="number">1</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        j = <span class="built_in">end</span>;        </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span>(arr[i] &gt; arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                swap(&amp;arr[i], &amp;arr[j]); </span></pre></td></tr><tr><td class="code"><pre><span class="line">                j--;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125; <span class="keyword">else</span> &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                i++;        <span class="comment">// 否则继续往后看</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;                   <span class="comment">// 循环跳出后i,j一样</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &gt;= arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            i--;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        swap(&amp;arr[<span class="built_in">begin</span>], &amp;arr[i]);      </span></pre></td></tr><tr><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, <span class="built_in">begin</span>, i);  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, j, <span class="built_in">end</span>);  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure><br><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015230936371-1413523412.gif" alt="快速"></p>
+<h2 id="快速排序-Quick"><a href="#快速排序-Quick" class="headerlink" title="快速排序 Quick"></a>快速排序 Quick</h2><p>分块排序, 且左块皆小于右块</p>
+<ul>
+<li>形式 1</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> *a, <span class="keyword">int</span> *b)</span></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> temp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    temp = *a;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    *a = *b;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    *b = temp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> maxlen, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> maxlen, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\nQuickSort(%d-&gt;%d)\n"</span>, <span class="built_in">begin</span>, <span class="built_in">end</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, store;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (<span class="built_in">begin</span> - <span class="built_in">end</span> &gt;= <span class="number">-1</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">return</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// arr[begin]为轴心点（与他比较）（亮黄色）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    i = <span class="built_in">begin</span> + <span class="number">1</span>;     <span class="comment">// 试探（红色）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    store = <span class="built_in">begin</span> + <span class="number">1</span>; <span class="comment">// 存储指数（紫色最左）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span> (i &lt; <span class="built_in">end</span>)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &lt; arr[<span class="built_in">begin</span>])&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            swap(&amp;arr[i], &amp;arr[store]); <span class="comment">// 移动过去的都是比轴心点小的</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            store++; <span class="comment">// 指向的是不满足判断条件的那个点（比轴心点大）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        i++;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    swap(&amp;arr[store - <span class="number">1</span>], &amp;arr[<span class="built_in">begin</span>]); <span class="comment">// 轴心点数值跳到那些都比他小的最右</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    QuickSort(arr, maxlen, <span class="built_in">begin</span>, store - <span class="number">1</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    QuickSort(arr, maxlen, store, <span class="built_in">end</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p><img src="/algorithm/algorithm-note-2018/Quicksort.gif" alt="快速"></p>
+<ul>
+<li>形式 2</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> maxlen, <span class="keyword">int</span> <span class="built_in">begin</span>, <span class="keyword">int</span> <span class="built_in">end</span>)</span></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">if</span> (<span class="built_in">begin</span> &lt; <span class="built_in">end</span>) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="comment">// arr[begin]为轴心点（与他比较）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        i = <span class="built_in">begin</span> + <span class="number">1</span>;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        j = <span class="built_in">end</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">while</span> (i &lt; j) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span>(arr[i] &gt; arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                swap(&amp;arr[i], &amp;arr[j]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">                j--;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125; <span class="keyword">else</span> &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                i++;        <span class="comment">// 否则继续往后看</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;                   <span class="comment">// 循环跳出后i,j一样</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span> (arr[i] &gt;= arr[<span class="built_in">begin</span>]) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            i--;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        swap(&amp;arr[<span class="built_in">begin</span>], &amp;arr[i]);</span></pre></td></tr><tr><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, <span class="built_in">begin</span>, i);  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        QuickSort(arr, maxlen, j, <span class="built_in">end</span>);  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <h2 id="堆排序-Heap"><a href="#堆排序-Heap" class="headerlink" title="堆排序 Heap"></a>堆排序 Heap</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LeftChild(i) (2*(i)+1)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PercDown</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> i, <span class="keyword">int</span> N)</span></span>&#123;                  <span class="comment">// 下滤</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> Child;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> Tmp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (Tmp=A[i];LeftChild(i)&lt;N;i=Child)&#123;            <span class="comment">// Tmp为第一个本体的值 , 每次更新i为指向的子节点(较大者)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        Child = LeftChild(i);                         <span class="comment">// 指向左子节点</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span>(Child != N<span class="number">-1</span> &amp;&amp; A[Child + <span class="number">1</span>] &gt; A[Child])&#123;  <span class="comment">// 子节点不在最末(不然会爆) 且 右子节点&gt;左子节点</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            Child++;                                  <span class="comment">// 从左子节点指向右子节点</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">if</span>(Tmp &lt; A[Child])&#123;                           <span class="comment">// 如果本体小于子节点最大的那个,</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            A[i] = A[Child];                          <span class="comment">// 把子节点覆盖到本体.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;<span class="keyword">else</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">break</span>;                                    <span class="comment">// 一旦本体已经最大则跳出</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    A[i] = Tmp;                                       <span class="comment">// 把元初本体的值放到最后指向的子节点</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeapSort</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> N)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i=N/<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)&#123;                             <span class="comment">// 从倒数第二层向上过滤排序</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        PercDown(A,i,N);                              <span class="comment">// 构造大顶堆</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = N<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        swap(&amp;A[<span class="number">0</span>],&amp;A[i]);                            <span class="comment">// 每换一次位(提取最大值到最后),</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">        PercDown(A,<span class="number">0</span>,i);                              <span class="comment">// 又要再做一次下滤.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <p><img src="https://images2017.cnblogs.com/blog/849589/201710/849589-20171015231308699-356134237.gif" alt="堆"></p>
 <h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 略</span></span></pre></td></tr></table></figure>
@@ -2926,7 +3026,7 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </tbody>
 </table>
 </div>
-<p>有的作者也允许多重图有自环<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/图论类型.png" alt="类型"></p>
+<p>有的作者也允许多重图有自环<br><img src="/algorithm/algorithm-note-2018/图论类型.png" alt="类型"></p>
 <ul>
 <li>按路径</li>
 </ul>
@@ -2956,9 +3056,9 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </div>
 <p>基础图: 边去掉方向的图</p>
 <ul>
-<li><p>按方向<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/有向图与无向图.png" alt="有向图与无向图"></p>
+<li><p>按方向<br><img src="/algorithm/algorithm-note-2018/有向图与无向图.png" alt="有向图与无向图"></p>
 </li>
-<li><p>按权重<br><img src="/others/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90/有权图与无权图.png" alt="有权图与无权图"></p>
+<li><p>按权重<br><img src="/algorithm/algorithm-note-2018/有权图与无权图.png" alt="有权图与无权图"></p>
 </li>
 </ul>
 <h2 id="存储显示方式"><a href="#存储显示方式" class="headerlink" title="存储显示方式"></a>存储显示方式</h2><h3 id="邻接矩阵-adjacency-matrices"><a href="#邻接矩阵-adjacency-matrices" class="headerlink" title="邻接矩阵 adjacency matrices"></a>邻接矩阵 adjacency matrices</h3><p>邻接矩阵使用$|V|∗|V|$的二维数组来表示图。$g[i][j]$表示的是顶点$i$和顶点$j$的关系。</p>
@@ -2984,7 +3084,7 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <blockquote>
 <p>参考资料：  </p>
 <ul>
-<li>《数据结构与算法分析——C语言描述》  </li>
+<li>《algorithm-note-2018——C语言描述》  </li>
 <li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a>  </li>
 <li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a>  </li>
 <li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a>  </li>
@@ -2992,8 +3092,8 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </blockquote>
 ]]></content>
       <tags>
+        <tag>Algorithm</tag>
         <tag>C</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
