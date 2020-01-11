@@ -440,7 +440,7 @@
 <p><a href="https://github.com/Benature/pdf-helper/tree/master/pdf_filter" target="_blank" rel="noopener">https://github.com/Benature/pdf-helper/tree/master/pdf_filter</a></p>
 ]]></content>
       <tags>
-        <tag>推文</tag>
+        <tag>公众号推文</tag>
       </tags>
   </entry>
   <entry>
@@ -473,7 +473,7 @@
 <p><a href="https://github.com/Benature/lazy-kit/blob/master/lecture_rename/" target="_blank" rel="noopener">https://github.com/Benature/lazy-kit/blob/master/lecture_rename/</a></p>
 ]]></content>
       <tags>
-        <tag>推文</tag>
+        <tag>公众号推文</tag>
       </tags>
   </entry>
   <entry>
@@ -965,22 +965,22 @@
     <content><![CDATA[<p>一个鸡肋</p>
 <a id="more"></a>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>如果你是中珠老油条，可以先扫下这个二维码感受一下，大概就知道后面一堆文字要说啥<del>（废话）</del>了。</p>
-<p><img src="/wechat-push/wechat-program-restroom/restroom.png" alt></p>
+<p><center><img src="/wechat-push/wechat-program-restroom/restroom.png" width="40%" alt align="center"></center><br><!-- ![](wechat-program-restroom/restroom.png) --></p>
 <p>在教学楼上课，课间时刻往往会出现一种尴尬的时刻。不过这种尴尬的情况仅仅发生在男生身上，女生一般毫不知情。好一个女懵男泪。</p>
 <p>按理说每个饮水机旁边都会有洗手间洗手间，不过并非每个洗手间都有男洗手间。换句话说，不是每个女洗手间旁边都有男洗手间。</p>
 <p>因此所谓的尴尬情况就是，从课室走向一边的洗手间，发现只有女洗手间。哦豁，完蛋。</p>
 <p>其实只要走过几次，就会发现男洗手间是相隔布阵的。如果看教学楼的竖直切面，男洗手间的分布如同国际象棋棋盘。</p>
 <p>有一天我一拍桌子，不能再这么老是走错方向了！（其实就是几步路都懒得走）</p>
 <p>因此我写了这样一个小程序</p>
-<p><img src="/wechat-push/wechat-program-restroom/restroom.gif" alt></p>
+<p><center><img src="/wechat-push/wechat-program-restroom/restroom.gif" width="40%" alt align="center"></center><br><!-- ![](wechat-program-restroom/restroom.gif) --></p>
 <p>最初的想法就是，当我还没出课室的时候，先点下自己的位置，就知道出门后该左转↩还是右转↪了</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>不过真实情况肯定不是这样嘛，谁上个厕所还要拿手机差的，出门左右观察一下大概就能做判断了…而且后期课室熟悉之后大概也清楚这门课要去洗手间的话应该走哪个方向了…</p>
 <p>总而言之，这玩意有点鸡肋。</p>
 <p>权当做帮助中珠新朋友熟悉“地形”吧，也让女同学同情一下俺们…</p>
 ]]></content>
       <tags>
-        <tag>推文</tag>
         <tag>微信小程序</tag>
+        <tag>公众号推文</tag>
       </tags>
   </entry>
   <entry>
@@ -1039,7 +1039,7 @@
 <p>如果对功能有什么想法或者建议, 欢迎评论区提issue.</p>
 ]]></content>
       <tags>
-        <tag>推文</tag>
+        <tag>公众号推文</tag>
       </tags>
   </entry>
   <entry>
