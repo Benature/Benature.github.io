@@ -2513,7 +2513,9 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </tbody>
 </table>
 </div>
-<p><img src="/algorithm/algorithm-note-2018/时间复杂度.png" alt="时间复杂度"></p>
+<center><img src="/algorithm/algorithm-note-2018/时间复杂度.png" width="50%" alt="时间复杂度" align="center"></center>
+
+<!-- ![时间复杂度](algorithm-note-2018/时间复杂度.png) -->
 <ul>
 <li>计算时间复杂度<ul>
 <li>一层循环的时间复杂度为$𝑂(𝑁)$ </li>
@@ -2574,10 +2576,13 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <li><a href="https://www.bing.com/search?q=%E5%B0%BE%E9%80%92%E5%BD%92" target="_blank" rel="noopener">尾递归(TODO:未懂)</a><br>执行的任何递归调用是在这种情况下的最后操作,而且通过封闭递归,递归调用的返回值(若有)立即返回.<br>必须是 <strong>线性递归</strong> (递归内只调用一个新的递归)</li>
 </ul>
 </li>
-<li>平衡符号<br><img src="/algorithm/algorithm-note-2018/平衡符号.gif" alt="平衡符号"></li>
+<li>平衡符号<!-- ![平衡符号](algorithm-note-2018/平衡符号.gif) -->
+</li>
 </ul>
 </li>
 </ul>
+<center><img src="/algorithm/algorithm-note-2018/平衡符号.gif" width="50%" alt="平衡符号" align="center"></center>
+
 <h2 id="队列-Queue"><a href="#队列-Queue" class="headerlink" title="队列 Queue"></a>队列 Queue</h2><ul>
 <li>基本操作<ul>
 <li><code>Enqueue</code> 入队 : 在表的末端(队尾rear)插入一个元素</li>
@@ -2714,10 +2719,11 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <table>
 <thead>
 <tr>
+<th>&lt;!—</th>
 <th>遍历顺序</th>
 <th>应用</th>
-<th>顺序</th>
-<th style="text-align:left">动画</th>
+<th style="text-align:left">顺序</th>
+<th>动画</th>
 </tr>
 </thead>
 <tbody>
@@ -2744,6 +2750,45 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <td></td>
 <td></td>
 <td style="text-align:left"><img src="/algorithm/algorithm-note-2018/层序遍历.gif" alt="层序遍历"></td>
+<td>—&gt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>遍历顺序</th>
+<th>应用</th>
+<th>顺序</th>
+<th style="text-align:left">动画</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483843&amp;idx=1&amp;sn=994bf0d42dd9941a879a3a3ed500a4d6" target="_blank" rel="noopener">先序遍历</a></td>
+<td>显示文件夹结构</td>
+<td>中-&gt;左-&gt;右</td>
+<td style="text-align:left">:<span><img src="/algorithm/algorithm-note-2018/前序遍历.gif" width="50%" alt="前序遍历" align="center"></span></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483853&amp;idx=1&amp;sn=94cd4b4ee8dc2268290a72334c6af57b" target="_blank" rel="noopener">后序遍历</a></td>
+<td>计算文件夹总大小</td>
+<td>左-&gt;右-&gt;中</td>
+<td style="text-align:left">:<span><img src="/algorithm/algorithm-note-2018/后序遍历.gif" width="50%" alt="后序遍历" align="center"></span></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483853&amp;idx=1&amp;sn=94cd4b4ee8dc2268290a72334c6af57b" target="_blank" rel="noopener">中序遍历</a></td>
+<td>表达式树</td>
+<td>左-&gt;中-&gt;右</td>
+<td style="text-align:left">:<span><img src="/algorithm/algorithm-note-2018/中序遍历.gif" width="50%" alt="中序遍历" align="center"></span></td>
+</tr>
+<tr>
+<td><a href="http://mp.weixin.qq.com/s?__biz=MzUyNjQxNjYyMg==&amp;mid=2247483868&amp;idx=1&amp;sn=d50041789fcd13a75a2296f620b69d71" target="_blank" rel="noopener">层序遍历</a></td>
+<td></td>
+<td></td>
+<td style="text-align:left">:<span><img src="/algorithm/algorithm-note-2018/层序遍历.gif" width="50%" alt="层序遍历" align="center"></span></td>
 </tr>
 </tbody>
 </table>
@@ -3026,7 +3071,10 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </tbody>
 </table>
 </div>
-<p>有的作者也允许多重图有自环<br><img src="/algorithm/algorithm-note-2018/图论类型.png" alt="类型"></p>
+<p>有的作者也允许多重图有自环</p>
+<center><img src="/algorithm/algorithm-note-2018/图论类型.png" width="50%" alt="类型" align="center"></center>
+
+<!-- ![类型](algorithm-note-2018/图论类型.png) -->
 <ul>
 <li>按路径</li>
 </ul>
@@ -3056,11 +3104,17 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 </div>
 <p>基础图: 边去掉方向的图</p>
 <ul>
-<li><p>按方向<br><img src="/algorithm/algorithm-note-2018/有向图与无向图.png" alt="有向图与无向图"></p>
-</li>
-<li><p>按权重<br><img src="/algorithm/algorithm-note-2018/有权图与无权图.png" alt="有权图与无权图"></p>
+<li>按方向<center><img src="/algorithm/algorithm-note-2018/有向图与无向图.png" width="50%" alt="有向图与无向图" align="center"></center>
+
 </li>
 </ul>
+<!-- ![有向图与无向图](algorithm-note-2018/有向图与无向图.png) -->
+<ul>
+<li>按权重<center><img src="/algorithm/algorithm-note-2018/有权图与无权图.png" width="50%" alt="有权图与无权图" align="center"></center>
+
+</li>
+</ul>
+<!-- ![有权图与无权图](algorithm-note-2018/有权图与无权图.png) -->
 <h2 id="存储显示方式"><a href="#存储显示方式" class="headerlink" title="存储显示方式"></a>存储显示方式</h2><h3 id="邻接矩阵-adjacency-matrices"><a href="#邻接矩阵-adjacency-matrices" class="headerlink" title="邻接矩阵 adjacency matrices"></a>邻接矩阵 adjacency matrices</h3><p>邻接矩阵使用$|V|∗|V|$的二维数组来表示图。$g[i][j]$表示的是顶点$i$和顶点$j$的关系。</p>
 <ul>
 <li>无向图<br>只需要知道顶点$i$和顶点$j$是否是相连的，因此我们只需要将$g[i][j]$和$g[j][j]$设置为1或是0表示相连或不相连即可。<br><img src="/algorithm/algorithm-note-2018/邻接矩阵.png" alt="邻接矩阵"></li>
