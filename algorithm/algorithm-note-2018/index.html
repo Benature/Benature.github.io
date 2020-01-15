@@ -79,7 +79,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-note-2018&#x2F;邻接矩阵2.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-note-2018&#x2F;邻接矩阵3.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-note-2018&#x2F;邻接表.png">
-<meta property="og:updated_time" content="2020-01-11T13:40:18.100Z">
+<meta property="og:updated_time" content="2020-01-11T13:49:37.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-note-2018&#x2F;时间复杂度.png">
   <link rel="canonical" href="https://benature.github.io/algorithm/algorithm-note-2018/">
@@ -245,7 +245,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">82</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">85</span></a>
 
   </li>
       
@@ -357,7 +357,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-11 21:40:18" itemprop="dateModified" datetime="2020-01-11T21:40:18+08:00">2020-01-11</time>
+                <time title="Modified: 2020-01-11 21:49:37" itemprop="dateModified" datetime="2020-01-11T21:49:37+08:00">2020-01-11</time>
               </span>
             
           
@@ -563,12 +563,14 @@
 <h1 id="表、栈、队列"><a href="#表、栈、队列" class="headerlink" title="表、栈、队列"></a>表、栈、队列</h1><h2 id="表ADT-链表-List"><a href="#表ADT-链表-List" class="headerlink" title="表ADT(链表) List"></a>表ADT(链表) List</h2><p>习惯上会留出一个 <strong>标志节点</strong> , 有时称之为 <strong>表头(header)</strong> 或 <strong>哑节点(dummy node)</strong> </p>
 <ul>
 <li><a href="https://visualgo.net/en/list" target="_blank" rel="noopener">动画</a></li>
-<li><p>Head File</p>
+<li>Head File</li>
+</ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">PtrToNode</span>;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode List;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode Position;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// series of functions</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">// ......</span></span></pre></td></tr></table></figure>
-</li>
-<li><p>结构体定义 </p>
+<ul>
+<li>结构体定义</li>
+</ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    Position Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="comment">// 可以加一个前置节点, 则成为双链表</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
-</li>
+<ul>
 <li><p>Find 查询<br>其实就是从头遍历</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, List L)</span></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    Position P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    P = L-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">while</span>( P != <span class="literal">NULL</span> &amp;&amp; P-&gt;Element != X)&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        P = P-&gt;Next;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">return</span> P;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 </li>
@@ -1115,10 +1117,10 @@
 <blockquote>
 <p>参考资料：  </p>
 <ul>
-<li>《algorithm-note-2018——C语言描述》  </li>
-<li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a>  </li>
-<li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a>  </li>
-<li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a>  </li>
+<li>《数据结构与算法——C语言描述》  </li>
+<li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a></li>
+<li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></li>
+<li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a></li>
 </ul>
 </blockquote>
 
@@ -1228,7 +1230,7 @@
         
           <a href="/archives/%20%7C%7C%20archive">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

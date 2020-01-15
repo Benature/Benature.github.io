@@ -58,13 +58,13 @@
   };
 </script>
 
-  <meta name="description" content="排序 Sort动画  算法复杂度冒泡排序 Bubble相邻比较+换位1void BubbleSort(int *arr, int len)  2&amp;#123;  3    int i, j, tmp;  4    for (i &#x3D; 0; i &amp;lt; len - 1; i++) &amp;#123;  5        for (j &#x3D; 0; j &amp;lt; len - i - 1; j++) &amp;#123;">
+  <meta name="description" content="排序 Sort 冒泡排序 Bubble 选择排序 Select 插入排序 Insert 希尔排序 Shell 归并排序 Merge 快速排序 Quick 堆排序 Heap 基数排序 计数排序 桶排序 随机快速排序">
 <meta name="keywords" content="Algorithm,C">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法">
 <meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;index.html">
 <meta property="og:site_name" content="Benature">
-<meta property="og:description" content="排序 Sort动画  算法复杂度冒泡排序 Bubble相邻比较+换位1void BubbleSort(int *arr, int len)  2&amp;#123;  3    int i, j, tmp;  4    for (i &#x3D; 0; i &amp;lt; len - 1; i++) &amp;#123;  5        for (j &#x3D; 0; j &amp;lt; len - i - 1; j++) &amp;#123;">
+<meta property="og:description" content="排序 Sort 冒泡排序 Bubble 选择排序 Select 插入排序 Insert 希尔排序 Shell 归并排序 Merge 快速排序 Quick 堆排序 Heap 基数排序 计数排序 桶排序 随机快速排序">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;sort.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;SelectionSort.gif">
@@ -75,7 +75,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;基数排序.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;计数排序.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;桶排序.png">
-<meta property="og:updated_time" content="2020-01-11T13:40:34.273Z">
+<meta property="og:updated_time" content="2020-01-15T04:05:25.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;algorithm&#x2F;algorithm-sort&#x2F;sort.png">
   <link rel="canonical" href="https://benature.github.io/algorithm/algorithm-sort/">
@@ -241,7 +241,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">82</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives<span class="badge">85</span></a>
 
   </li>
       
@@ -342,11 +342,19 @@
                 
               
 
-              <time title="Created: 2020-01-11 19:21:40 / Modified: 21:40:34" itemprop="dateCreated datePublished" datetime="2020-01-11T19:21:40+08:00">2020-01-11</time>
+              <time title="Created: 2020-01-11 19:21:40" itemprop="dateCreated datePublished" datetime="2020-01-11T19:21:40+08:00">2020-01-11</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-15 12:05:25" itemprop="dateModified" datetime="2020-01-15T12:05:25+08:00">2020-01-15</time>
+              </span>
             
           
 
@@ -391,7 +399,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h1><p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">动画</a></p>
+        <ul>
+<li><a href="#%e6%8e%92%e5%ba%8f-sort">排序 Sort</a><ul>
+<li><a href="#%e5%86%92%e6%b3%a1%e6%8e%92%e5%ba%8f-bubble">冒泡排序 Bubble</a></li>
+<li><a href="#%e9%80%89%e6%8b%a9%e6%8e%92%e5%ba%8f-select">选择排序 Select</a></li>
+<li><a href="#%e6%8f%92%e5%85%a5%e6%8e%92%e5%ba%8f-insert">插入排序 Insert</a></li>
+<li><a href="#%e5%b8%8c%e5%b0%94%e6%8e%92%e5%ba%8f-shell">希尔排序 Shell</a></li>
+<li><a href="#%e5%bd%92%e5%b9%b6%e6%8e%92%e5%ba%8f-merge">归并排序 Merge</a></li>
+<li><a href="#%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8f-quick">快速排序 Quick</a></li>
+<li><a href="#%e5%a0%86%e6%8e%92%e5%ba%8f-heap">堆排序 Heap</a></li>
+<li><a href="#%e5%9f%ba%e6%95%b0%e6%8e%92%e5%ba%8f">基数排序</a></li>
+<li><a href="#%e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f">计数排序</a></li>
+<li><a href="#%e6%a1%b6%e6%8e%92%e5%ba%8f">桶排序</a></li>
+<li><a href="#%e9%9a%8f%e6%9c%ba%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8f">随机快速排序</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h1><p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">动画</a></p>
 <ul>
 <li>算法复杂度<br><img src="/algorithm/algorithm-sort/sort.png" alt="算法复杂度"><h2 id="冒泡排序-Bubble"><a href="#冒泡排序-Bubble" class="headerlink" title="冒泡排序 Bubble"></a>冒泡排序 Bubble</h2>相邻比较+换位<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span>  </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                tmp = arr[j];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                arr[j] = arr[j+<span class="number">1</span>];  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                arr[j+<span class="number">1</span>] = tmp;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">``` </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">![冒泡](algorithm-sort/BubbleSort.gif)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">## 选择排序 Select</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">向后查找最小元, 与每一轮首位换位</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">```c </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectionSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, <span class="built_in">min</span>, tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">min</span> = i;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[<span class="built_in">min</span>]) &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">                <span class="built_in">min</span> = j;<span class="comment">// 修改最小元</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">        tmp = arr[<span class="built_in">min</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">        arr[<span class="built_in">min</span>] = arr[i];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">        arr[i] = tmp;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <img src="/algorithm/algorithm-sort/SelectionSort.gif" alt="选择"></li>
@@ -453,6 +478,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/python-code/python-uwsgi-install/" rel="prev" title="uswgi安装的辛酸路">
+                  uswgi安装的辛酸路 <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -520,7 +549,7 @@
         
           <a href="/archives/%20%7C%7C%20archive">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>libreoffice 安装（MAC）</title>
+    <url>/others/libreoffice-install/</url>
+    <content><![CDATA[<p>libreoffice 安装（MAC）</p>
+<a id="more"></a>
+<p><a href="https://www.libreoffice.org/download/download/" target="_blank" rel="noopener">https://www.libreoffice.org/download/download/</a><br>下载</p>
+<p>添加环境变量</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span></pre></td></tr></table></figure>
+<p>add this</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">PATH&#x3D;$PATH:&#x2F;Applications&#x2F;LibreOffice.app&#x2F;Contents&#x2F;MacOS</span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source ~/.zshrc</span></pre></td></tr></table></figure>
+<p>使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">soffice --convert-to docx --outdir . *.doc</span></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>Python 操作 Word</title>
+    <url>/python-code/python-docx-opt/</url>
+    <content><![CDATA[<p>Python 操作 Word</p>
+<a id="more"></a>
+<ul>
+<li>知乎教程<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/21643475" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21643475</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/21716087" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21716087</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22614722" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22614722</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23708800" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23708800</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>uswgi安装的辛酸路</title>
+    <url>/python-code/python-uwsgi-install/</url>
+    <content><![CDATA[<p>uswgi安装的辛酸路</p>
+<a id="more"></a>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install uswgi</span></pre></td></tr></table></figure>
+<p>死活报错</p>
+<p>安装了<code>python3.7-dev</code>也没有用。</p>
+<p>用<code>conda</code>更惨，<code>conda install uswgi</code>直接说找不到</p>
+<p>那源码安装吧，还是报错。</p>
+<p>还好源码安装的报错简单了，找到了这个<a href="https://github.com/unbit/uwsgi/issues/1770" target="_blank" rel="noopener">https://github.com/unbit/uwsgi/issues/1770</a></p>
+<blockquote>
+<p>If you use conda you should probably install uwsgi from conda itself. Or use the same compiler that your conda python has been built with.</p>
+</blockquote>
+<p>牛逼，然后发现<code>conda</code>安装没这么简单</p>
+<p><a href="https://anaconda.org/conda-forge/uwsgi" target="_blank" rel="noopener">https://anaconda.org/conda-forge/uwsgi</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install -c conda-forge uwsgi</span></pre></td></tr><tr><td class="code"><pre><span class="line">conda install -c conda-forge libiconv</span></pre></td></tr></table></figure>
+<p>注意在 root 权限下</p>
+]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序算法</title>
     <url>/algorithm/algorithm-sort/</url>
-    <content><![CDATA[<h1 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h1><p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">动画</a></p>
+    <content><![CDATA[<ul>
+<li><a href="#%e6%8e%92%e5%ba%8f-sort">排序 Sort</a><ul>
+<li><a href="#%e5%86%92%e6%b3%a1%e6%8e%92%e5%ba%8f-bubble">冒泡排序 Bubble</a></li>
+<li><a href="#%e9%80%89%e6%8b%a9%e6%8e%92%e5%ba%8f-select">选择排序 Select</a></li>
+<li><a href="#%e6%8f%92%e5%85%a5%e6%8e%92%e5%ba%8f-insert">插入排序 Insert</a></li>
+<li><a href="#%e5%b8%8c%e5%b0%94%e6%8e%92%e5%ba%8f-shell">希尔排序 Shell</a></li>
+<li><a href="#%e5%bd%92%e5%b9%b6%e6%8e%92%e5%ba%8f-merge">归并排序 Merge</a></li>
+<li><a href="#%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8f-quick">快速排序 Quick</a></li>
+<li><a href="#%e5%a0%86%e6%8e%92%e5%ba%8f-heap">堆排序 Heap</a></li>
+<li><a href="#%e5%9f%ba%e6%95%b0%e6%8e%92%e5%ba%8f">基数排序</a></li>
+<li><a href="#%e8%ae%a1%e6%95%b0%e6%8e%92%e5%ba%8f">计数排序</a></li>
+<li><a href="#%e6%a1%b6%e6%8e%92%e5%ba%8f">桶排序</a></li>
+<li><a href="#%e9%9a%8f%e6%9c%ba%e5%bf%ab%e9%80%9f%e6%8e%92%e5%ba%8f">随机快速排序</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h1 id="排序-Sort"><a href="#排序-Sort" class="headerlink" title="排序 Sort"></a>排序 Sort</h1><p><a href="https://visualgo.net/zh/sorting" target="_blank" rel="noopener">动画</a></p>
 <ul>
 <li>算法复杂度<br><img src="/algorithm/algorithm-sort/sort.png" alt="算法复杂度"><h2 id="冒泡排序-Bubble"><a href="#冒泡排序-Bubble" class="headerlink" title="冒泡排序 Bubble"></a>冒泡排序 Bubble</h2>相邻比较+换位<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BubbleSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span>  </span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, tmp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; len - i - <span class="number">1</span>; j++) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                tmp = arr[j];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                arr[j] = arr[j+<span class="number">1</span>];  </span></pre></td></tr><tr><td class="code"><pre><span class="line">                arr[j+<span class="number">1</span>] = tmp;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;  </span></pre></td></tr><tr><td class="code"><pre><span class="line">``` </span></pre></td></tr><tr><td class="code"><pre><span class="line">![冒泡](algorithm-sort/BubbleSort.gif)</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">## 选择排序 Select</span></pre></td></tr><tr><td class="code"><pre><span class="line">向后查找最小元, 与每一轮首位换位</span></pre></td></tr><tr><td class="code"><pre><span class="line">```c </span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SelectionSort</span><span class="params">(<span class="keyword">int</span> *arr, <span class="keyword">int</span> len)</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">int</span> i, j, <span class="built_in">min</span>, tmp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="built_in">min</span> = i;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        <span class="keyword">for</span> (j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[<span class="built_in">min</span>]) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">                <span class="built_in">min</span> = j;<span class="comment">// 修改最小元</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">            &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        tmp = arr[<span class="built_in">min</span>];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        arr[<span class="built_in">min</span>] = arr[i];</span></pre></td></tr><tr><td class="code"><pre><span class="line">        arr[i] = tmp;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <img src="/algorithm/algorithm-sort/SelectionSort.gif" alt="选择"></li>
@@ -2548,12 +2622,14 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <h1 id="表、栈、队列"><a href="#表、栈、队列" class="headerlink" title="表、栈、队列"></a>表、栈、队列</h1><h2 id="表ADT-链表-List"><a href="#表ADT-链表-List" class="headerlink" title="表ADT(链表) List"></a>表ADT(链表) List</h2><p>习惯上会留出一个 <strong>标志节点</strong> , 有时称之为 <strong>表头(header)</strong> 或 <strong>哑节点(dummy node)</strong> </p>
 <ul>
 <li><a href="https://visualgo.net/en/list" target="_blank" rel="noopener">动画</a></li>
-<li><p>Head File</p>
+<li>Head File</li>
+</ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">PtrToNode</span>;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode List;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> PtrToNode Position;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElementType;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// series of functions</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// ......</span></span></pre></td></tr></table></figure>
-</li>
-<li><p>结构体定义 </p>
+<ul>
+<li>结构体定义</li>
+</ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    ElementType Element;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    Position Next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="comment">// 可以加一个前置节点, 则成为双链表</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
-</li>
+<ul>
 <li><p>Find 查询<br>其实就是从头遍历</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">( ElementType X, List L)</span></span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    Position P;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    P = L-&gt;Next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">while</span>( P != <span class="literal">NULL</span> &amp;&amp; P-&gt;Element != X)&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">        P = P-&gt;Next;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="keyword">return</span> P;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 </li>
@@ -3100,10 +3176,10 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <blockquote>
 <p>参考资料：  </p>
 <ul>
-<li>《algorithm-note-2018——C语言描述》  </li>
-<li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a>  </li>
-<li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a>  </li>
-<li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a>  </li>
+<li>《数据结构与算法——C语言描述》  </li>
+<li>动画: <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a></li>
+<li>排序: <a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></li>
+<li>图论: <a href="https://blog.csdn.net/NoMasp/article/details/45827145" target="_blank" rel="noopener">https://blog.csdn.net/NoMasp/article/details/45827145</a></li>
 </ul>
 </blockquote>
 ]]></content>

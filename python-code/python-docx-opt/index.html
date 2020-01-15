@@ -58,17 +58,17 @@
   };
 </script>
 
-  <meta name="description" content="Valgrind官网">
-<meta name="keywords" content="安装,C++">
+  <meta name="description" content="Python 操作 Word">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Valgrind安装">
-<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;others&#x2F;Cpp-Valgrind&#x2F;index.html">
+<meta property="og:title" content="Python 操作 Word">
+<meta property="og:url" content="https:&#x2F;&#x2F;benature.github.io&#x2F;python-code&#x2F;python-docx-opt&#x2F;index.html">
 <meta property="og:site_name" content="Benature">
-<meta property="og:description" content="Valgrind官网">
+<meta property="og:description" content="Python 操作 Word">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-03-17T08:22:24.000Z">
+<meta property="og:updated_time" content="2020-01-14T02:44:57.233Z">
 <meta name="twitter:card" content="summary">
-  <link rel="canonical" href="https://benature.github.io/others/Cpp-Valgrind/">
+  <link rel="canonical" href="https://benature.github.io/python-code/python-docx-opt/">
 
 
 <script id="page-configurations">
@@ -82,7 +82,7 @@
   };
 </script>
 
-  <title>Valgrind安装 | Benature</title>
+  <title>Python 操作 Word | Benature</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/others/Cpp-Valgrind/">
+    <link itemprop="mainEntityOfPage" href="https://Benature.github.io/python-code/python-docx-opt/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Benature">
@@ -316,7 +316,7 @@
       <meta itemprop="name" content="Benature">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">Valgrind安装
+        <h2 class="post-title" itemprop="name headline">Python 操作 Word
 
           
         </h2>
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="Created: 2019-03-17 10:41:19 / Modified: 16:22:24" itemprop="dateCreated datePublished" datetime="2019-03-17T10:41:19+08:00">2019-03-17</time>
+              <time title="Created: 2020-01-14 10:43:21 / Modified: 10:44:57" itemprop="dateCreated datePublished" datetime="2020-01-14T10:43:21+08:00">2020-01-14</time>
             </span>
           
             
@@ -341,7 +341,7 @@
           
 
           
-            <span id="/others/Cpp-Valgrind/" class="post-meta-item leancloud_visitors" data-flag-title="Valgrind安装" title="Views">
+            <span id="/python-code/python-docx-opt/" class="post-meta-item leancloud_visitors" data-flag-title="Python 操作 Word" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -367,7 +367,7 @@
       
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/others/Cpp-Valgrind/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/others/Cpp-Valgrind/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/python-code/python-docx-opt/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/python-code/python-docx-opt/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -381,20 +381,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a href="http://valgrind.org/" target="_blank" rel="noopener">Valgrind官网</a></p>
+        <p>Python 操作 Word</p>
 <a id="more"></a>
-<p>本来想在Windows下安装的, 不过看了下官网首页, 似乎是不支持Windows的…</p>
-<blockquote>
-<p>It runs on the following platforms: X86/Linux, AMD64/Linux, ARM/Linux, ARM64/Linux, PPC32/Linux, PPC64/Linux, PPC64LE/Linux, S390X/Linux, MIPS32/Linux, MIPS64/Linux, X86/Solaris, AMD64/Solaris, ARM/Android (2.3.x and later), ARM64/Android, X86/Android (4.0 and later), MIPS32/Android, X86/Darwin and AMD64/Darwin (Mac OS X 10.12).</p>
-</blockquote>
-<p>Google到了一份教程, 同时看到<a href="http://valgrind.org/docs/download_docs.html" target="_blank" rel="noopener">官网</a>写到了版本号是<code>valgrind-3.14.0</code>, 于是猜测这个应该是最新版的.</p>
-<p>既然不支持Windows, 那就在子系统装吧!(子系统教程<a href="https://benature.github.io/2019/02/17/Linux-in-Windows/">此处</a>)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> wget ftp://sourceware.org/pub/valgrind/valgrind-3.14.0.tar.bz2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> bzip2 -d valgrind-3.14.0.tar.bz2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -xf valgrind-3.14.0.tar</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> valgrind-3.14.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./configure &amp;&amp; make</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo make install</span></span></pre></td></tr></table></figure>
-<hr>
-<p>参考资料:</p>
 <ul>
-<li><a href="http://valgrind.org/" target="_blank" rel="noopener">http://valgrind.org/</a></li>
-<li><a href="http://senlinzhan.github.io/2017/12/31/valgrind/" target="_blank" rel="noopener">http://senlinzhan.github.io/2017/12/31/valgrind/</a></li>
+<li>知乎教程<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/21643475" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21643475</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/21716087" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/21716087</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22614722" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22614722</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23708800" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23708800</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -411,9 +407,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/%E5%AE%89%E8%A3%85/" rel="tag"># 安装</a>
-            
-              <a href="/tags/C/" rel="tag"># C++</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
             
           </div>
         
@@ -423,8 +417,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/linux/Linux-problem-swap/" rel="next" title="Linux问题 之 swap分区满">
-                  <i class="fa fa-chevron-left"></i> Linux问题 之 swap分区满
+                <a href="/python-code/python-uwsgi-install/" rel="next" title="uswgi安装的辛酸路">
+                  <i class="fa fa-chevron-left"></i> uswgi安装的辛酸路
                 </a>
               
             </div>
@@ -433,8 +427,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/others/Optics-Reflection-and-Trasmission/" rel="prev" title="Reflection and Trasmission">
-                  Reflection and Trasmission <i class="fa fa-chevron-right"></i>
+                <a href="/others/libreoffice-install/" rel="prev" title="libreoffice 安装（MAC）">
+                  libreoffice 安装（MAC） <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
