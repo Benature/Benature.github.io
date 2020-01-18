@@ -2120,6 +2120,7 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <li><a href="#%e9%85%8d%e7%bd%ae%e4%b8%bb%e9%a2%98and%e5%ad%97%e4%bd%93">配置主题and字体</a></li>
 </ul>
 </li>
+<li><a href="#hotkey">Hotkey</a></li>
 <li><a href="#%e7%94%bb%e5%9b%be">画图</a></li>
 <li><a href="#%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6">配置文件</a></li>
 <li><a href="#%e9%98%85%e8%af%bbmarkdown">阅读Markdown</a><ul>
@@ -2169,6 +2170,45 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <li><code>-T</code>: 同时打开顶部的工具栏（Toolbar）</li>
 <li><code>-N</code>: 显示笔记本的名字（Name）（我觉得这个鸡肋，还占用了一行空间，不如省去）</li>
 </ul>
+<h2 id="Hotkey"><a href="#Hotkey" class="headerlink" title="Hotkey"></a>Hotkey</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">key</th>
+<th style="text-align:center">key-name</th>
+<th style="text-align:center">key-character</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">⌘</td>
+<td style="text-align:center">command</td>
+<td style="text-align:center"><code>cmd</code></td>
+</tr>
+<tr>
+<td style="text-align:center">⌥</td>
+<td style="text-align:center">option</td>
+<td style="text-align:center"><code>alt</code></td>
+</tr>
+<tr>
+<td style="text-align:center">⌃</td>
+<td style="text-align:center">control</td>
+<td style="text-align:center"><code>ctrl</code></td>
+</tr>
+<tr>
+<td style="text-align:center">↩</td>
+<td style="text-align:center">enter</td>
+<td style="text-align:center"><code>Enter</code></td>
+</tr>
+<tr>
+<td style="text-align:center">⇧</td>
+<td style="text-align:center">shift</td>
+<td style="text-align:center"><code>Shift</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>组合键用<code>-</code>连接</p>
 <h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><ul>
 <li>在内部显示图片用<code>%matplotlib inline</code></li>
 <li><a href="https://blog.csdn.net/ouyangandy/article/details/82852511" target="_blank" rel="noopener">在外部显示图片</a></li>
