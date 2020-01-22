@@ -2170,6 +2170,8 @@ u = \epsilon E^2</script><p>Maybe in the light of the <strong>Dielectric coeffic
 <li><code>-T</code>: 同时打开顶部的工具栏（Toolbar）</li>
 <li><code>-N</code>: 显示笔记本的名字（Name）（我觉得这个鸡肋，还占用了一行空间，不如省去）</li>
 </ul>
+<p>暗色 theme 的 plot 加成</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> jupyterthemes <span class="keyword">import</span> jtplot</span></pre></td></tr><tr><td class="code"><pre><span class="line">jtplot.style(theme=<span class="string">'inconsolata'</span>, context=<span class="string">'notebook'</span>, ticks=<span class="literal">True</span>)<span class="comment">#, grid=False)</span></span></pre></td></tr></table></figure>
 <h2 id="Hotkey"><a href="#Hotkey" class="headerlink" title="Hotkey"></a>Hotkey</h2><div class="table-container">
 <table>
 <thead>
