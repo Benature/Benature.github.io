@@ -14,6 +14,10 @@
 <li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
 <li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code></li>
 </ol>
+<h2 id="merge-和-rebase-的区别"><a href="#merge-和-rebase-的区别" class="headerlink" title="merge 和 rebase 的区别"></a>merge 和 rebase 的区别</h2><p>引用<a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">知乎</a>的回答：</p>
+<blockquote>
+<p>可以这么说：merge是显性合并，rebase是隐性合并。<br>同理，当你执行git pull时，是同时执行了git fetch 和 git merge两个操作。如果你不想进行merge操作，即不想留下合并的记录，可以使用 git pull —rebase操作。</p>
+</blockquote>
 <h2 id="SourceTree-下的-merge"><a href="#SourceTree-下的-merge" class="headerlink" title="SourceTree 下的 merge"></a>SourceTree 下的 merge</h2><ul>
 <li>Aim: merge <code>branchA</code> into <code>main</code></li>
 </ul>
@@ -22,6 +26,15 @@
 <li>select the commit and right click, select commit.</li>
 </ol>
 <p><strong>Significant:</strong> checkout to the branch which is to be merged <strong>with</strong>.(<code>branchA</code> in this case)</p>
+<hr>
+<blockquote>
+<p>Reference:</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">https://www.jianshu.com/p/603186352605</a></li>
+<li><a href="https://segmentfault.com/q/1010000000181403/a-1020000000181433" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000181403/a-1020000000181433</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23478654</a></li>
+</ul>
+</blockquote>
 ]]></content>
       <tags>
         <tag>GitHub</tag>
