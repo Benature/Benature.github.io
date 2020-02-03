@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git 多人协作</title>
-    <url>/git/git-multi-workers/</url>
+    <title>Git 多人协作 的 merge 顺序</title>
+    <url>/git/git-multi-workers-merge-order/</url>
     <content><![CDATA[<p>Git 多人协作</p>
 <a id="more"></a>
 <p><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">不开分支多人协作的后果—— git 自动用旧代码覆盖新的更改</a></p>
-<h1 id="merge-的顺序"><a href="#merge-的顺序" class="headerlink" title="merge 的顺序"></a>merge 的顺序</h1><p>Situation: a main branch <code>main</code> and two branches for two members <code>man1</code>, <code>man2</code>.</p>
+<h1 id="merge-的顺序很重要"><a href="#merge-的顺序很重要" class="headerlink" title="merge 的顺序很重要"></a>merge 的顺序很重要</h1><p>Situation: a main branch <code>main</code> and two branches for two members <code>man1</code>, <code>man2</code>.</p>
 <p>For every member, their merge should follow (example with <code>man1</code>):</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
 <p>👆of course we are in our working branch at first.</p>
