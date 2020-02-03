@@ -35,6 +35,7 @@
 <li>select the commit and right click, select commit.</li>
 </ol>
 <p><strong>Significant:</strong> checkout to the branch which is to be merged <strong>with</strong>. (<code>branchA</code> in this case)</p>
+<h2 id="Github-Desktop-下的-merge"><a href="#Github-Desktop-下的-merge" class="headerlink" title="Github Desktop 下的 merge"></a>Github Desktop 下的 merge</h2><p>参考<a href="https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html" target="_blank" rel="noopener">这个</a>，不再赘述。</p>
 <hr>
 <blockquote>
 <p>Reference:</p>
@@ -42,6 +43,7 @@
 <li><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">https://www.jianshu.com/p/603186352605</a></li>
 <li><a href="https://segmentfault.com/q/1010000000181403/a-1020000000181433" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000181403/a-1020000000181433</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23478654</a></li>
+<li><a href="https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html" target="_blank" rel="noopener">https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html</a></li>
 </ul>
 </blockquote>
 ]]></content>
