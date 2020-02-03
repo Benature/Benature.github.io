@@ -8,7 +8,16 @@
 <p><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">不开分支多人协作的后果—— git 自动用旧代码覆盖新的更改</a></p>
 <h1 id="merge-的顺序"><a href="#merge-的顺序" class="headerlink" title="merge 的顺序"></a>merge 的顺序</h1><p>Situation: a main branch <code>main</code> and two branches for two members <code>man1</code>, <code>man2</code>.</p>
 <p>For every member, their merge should follow (example with <code>man1</code>):</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> of course we are <span class="keyword">in</span> our working branch at first.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> don<span class="string">'t rush to push.</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="code"><pre><span class="line">git pull</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> update the latest version.</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git merge main</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> or git rebase main</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> fix the conflict <span class="keyword">if</span> it happens</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="code"><pre><span class="line">git merge man1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git push</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="keyword">done</span></span></span></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
+<p>👆of course we are in our working branch at first.</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr></table></figure>
+<p>👆don’t rush to push.</p>
+<p>👇update the latest version.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="code"><pre><span class="line">git pull</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git merge main</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"># or</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">git rebase main</span></pre></td></tr></table></figure>
+<p>fix the conflict if it happens</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="code"><pre><span class="line">git merge man1</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git push</span></pre></td></tr></table></figure>
+<p>done</p>
 <p>总结：</p>
 <ol>
 <li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
@@ -25,7 +34,7 @@
 <li>double click <code>branchA</code> on the side bar of branches.</li>
 <li>select the commit and right click, select commit.</li>
 </ol>
-<p><strong>Significant:</strong> checkout to the branch which is to be merged <strong>with</strong>.(<code>branchA</code> in this case)</p>
+<p><strong>Significant:</strong> checkout to the branch which is to be merged <strong>with</strong>. (<code>branchA</code> in this case)</p>
 <hr>
 <blockquote>
 <p>Reference:</p>
