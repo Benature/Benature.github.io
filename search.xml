@@ -6,8 +6,12 @@
     <content><![CDATA[<p>Git 多人协作</p>
 <a id="more"></a>
 <p><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">不开分支多人协作的后果—— git 自动用旧代码覆盖新的更改</a></p>
-<h1 id="merge-的顺序很重要"><a href="#merge-的顺序很重要" class="headerlink" title="merge 的顺序很重要"></a>merge 的顺序很重要</h1><p>Situation: a main branch <code>main</code> and two branches for two members <code>man1</code>, <code>man2</code>.</p>
-<p>For every member, their merge should follow (example with <code>man1</code>):</p>
+<h1 id="主干分支与个人分支的合并"><a href="#主干分支与个人分支的合并" class="headerlink" title="主干分支与个人分支的合并"></a>主干分支与个人分支的合并</h1><p>在个人分支 commit 后</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout dev</span></pre></td></tr><tr><td class="code"><pre><span class="line">git pull</span></pre></td></tr><tr><td class="code"><pre><span class="line">git merge --no-ff personal_branch  # --no-ff: 禁用 fast forward 模式</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> resolve conflict</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">git push</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">git checkout personal_branch</span></pre></td></tr><tr><td class="code"><pre><span class="line">git reset --hard dev</span></pre></td></tr></table></figure>
+<!-- Situation: a main branch `main` and two branches for two members `man1`, `man2`.
+
+For every member, their merge should follow (example with `man1`):
+
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
 <p>👆of course we are in our working branch at first.</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr></table></figure>
@@ -21,7 +25,7 @@
 <p>总结：</p>
 <ol>
 <li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
-<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code></li>
+<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code> —&gt;</li>
 </ol>
 <h2 id="merge-和-rebase-的区别"><a href="#merge-和-rebase-的区别" class="headerlink" title="merge 和 rebase 的区别"></a>merge 和 rebase 的区别</h2><p>引用<a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">知乎</a>的回答：</p>
 <blockquote>
@@ -40,13 +44,14 @@
 <blockquote>
 <p>Reference:</p>
 <ul>
+<li><a href="https://www.jianshu.com/p/58a166f24c81" target="_blank" rel="noopener">简书 | git-merge完全解析</a></li>
 <li><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">https://www.jianshu.com/p/603186352605</a></li>
 <li><a href="https://segmentfault.com/q/1010000000181403/a-1020000000181433" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000181403/a-1020000000181433</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23478654</a></li>
-<li><a href="https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html" target="_blank" rel="noopener">https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html</a></li>
+<li><a href="https://judes.me/tech/2017/02/06/overwrite-code.html" target="_blank" rel="noopener">https://judes.me/tech/2017/02/06/overwrite-code.html</a></li>
 </ul>
 </blockquote>
-]]></content>
+-->]]></content>
       <tags>
         <tag>GitHub</tag>
       </tags>

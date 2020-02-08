@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Benature">
 <meta property="og:description" content="Git 多人协作">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-03T17:32:50.023Z">
+<meta property="og:updated_time" content="2020-02-08T12:47:48.890Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://benature.github.io/git/git-multi-workers-merge-order/">
 
@@ -332,11 +332,19 @@
                 
               
 
-              <time title="Created: 2020-02-04 00:44:48 / Modified: 01:32:50" itemprop="dateCreated datePublished" datetime="2020-02-04T00:44:48+08:00">2020-02-04</time>
+              <time title="Created: 2020-02-04 00:44:48" itemprop="dateCreated datePublished" datetime="2020-02-04T00:44:48+08:00">2020-02-04</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-08 20:47:48" itemprop="dateModified" datetime="2020-02-08T20:47:48+08:00">2020-02-08</time>
+              </span>
             
           
 
@@ -384,8 +392,12 @@
         <p>Git 多人协作</p>
 <a id="more"></a>
 <p><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">不开分支多人协作的后果—— git 自动用旧代码覆盖新的更改</a></p>
-<h1 id="merge-的顺序很重要"><a href="#merge-的顺序很重要" class="headerlink" title="merge 的顺序很重要"></a>merge 的顺序很重要</h1><p>Situation: a main branch <code>main</code> and two branches for two members <code>man1</code>, <code>man2</code>.</p>
-<p>For every member, their merge should follow (example with <code>man1</code>):</p>
+<h1 id="主干分支与个人分支的合并"><a href="#主干分支与个人分支的合并" class="headerlink" title="主干分支与个人分支的合并"></a>主干分支与个人分支的合并</h1><p>在个人分支 commit 后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout dev</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git pull</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git merge --no-ff personal_branch  # --no-ff: 禁用 fast forward 模式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> resolve conflict</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git push</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">git checkout personal_branch</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">git reset --hard dev</span></pre></td></tr></table></figure>
+<!-- Situation: a main branch `main` and two branches for two members `man1`, `man2`.
+
+For every member, their merge should follow (example with `man1`):
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
 <p>👆of course we are in our working branch at first.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr></table></figure>
@@ -399,7 +411,7 @@
 <p>总结：</p>
 <ol>
 <li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
-<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code></li>
+<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code> —&gt;</li>
 </ol>
 <h2 id="merge-和-rebase-的区别"><a href="#merge-和-rebase-的区别" class="headerlink" title="merge 和 rebase 的区别"></a>merge 和 rebase 的区别</h2><p>引用<a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">知乎</a>的回答：</p>
 <blockquote>
@@ -418,13 +430,14 @@
 <blockquote>
 <p>Reference:</p>
 <ul>
+<li><a href="https://www.jianshu.com/p/58a166f24c81" target="_blank" rel="noopener">简书 | git-merge完全解析</a></li>
 <li><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">https://www.jianshu.com/p/603186352605</a></li>
 <li><a href="https://segmentfault.com/q/1010000000181403/a-1020000000181433" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000181403/a-1020000000181433</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23478654</a></li>
-<li><a href="https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html" target="_blank" rel="noopener">https://idratherbewriting.com/learnapidoc/pubapis_github_desktop_client.html</a></li>
+<li><a href="https://judes.me/tech/2017/02/06/overwrite-code.html" target="_blank" rel="noopener">https://judes.me/tech/2017/02/06/overwrite-code.html</a></li>
 </ul>
 </blockquote>
-
+-->
     </div>
 
     
@@ -506,7 +519,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#merge-的顺序很重要"><span class="nav-number">1.</span> <span class="nav-text">merge 的顺序很重要</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-和-rebase-的区别"><span class="nav-number">1.1.</span> <span class="nav-text">merge 和 rebase 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SourceTree-下的-merge"><span class="nav-number">1.2.</span> <span class="nav-text">SourceTree 下的 merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-Desktop-下的-merge"><span class="nav-number">1.3.</span> <span class="nav-text">Github Desktop 下的 merge</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主干分支与个人分支的合并"><span class="nav-number">1.</span> <span class="nav-text">主干分支与个人分支的合并</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
