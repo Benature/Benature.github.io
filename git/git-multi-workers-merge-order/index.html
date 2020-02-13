@@ -66,7 +66,7 @@
 <meta property="og:site_name" content="Benature">
 <meta property="og:description" content="Git 多人协作">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-08T12:47:48.890Z">
+<meta property="og:updated_time" content="2020-02-08T13:29:57.897Z">
 <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://benature.github.io/git/git-multi-workers-merge-order/">
 
@@ -209,7 +209,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories<span class="badge">4</span></a>
 
   </li>
       
@@ -343,7 +343,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-08 20:47:48" itemprop="dateModified" datetime="2020-02-08T20:47:48+08:00">2020-02-08</time>
+                <time title="Modified: 2020-02-08 21:29:57" itemprop="dateModified" datetime="2020-02-08T21:29:57+08:00">2020-02-08</time>
               </span>
             
           
@@ -394,25 +394,6 @@
 <p><a href="https://www.jianshu.com/p/603186352605" target="_blank" rel="noopener">不开分支多人协作的后果—— git 自动用旧代码覆盖新的更改</a></p>
 <h1 id="主干分支与个人分支的合并"><a href="#主干分支与个人分支的合并" class="headerlink" title="主干分支与个人分支的合并"></a>主干分支与个人分支的合并</h1><p>在个人分支 commit 后</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout dev</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git pull</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git merge --no-ff personal_branch  # --no-ff: 禁用 fast forward 模式</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> resolve conflict</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git push</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">git checkout personal_branch</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">git reset --hard dev</span></pre></td></tr></table></figure>
-<!-- Situation: a main branch `main` and two branches for two members `man1`, `man2`.
-
-For every member, their merge should follow (example with `man1`):
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
-<p>👆of course we are in our working branch at first.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr></table></figure>
-<p>👆don’t rush to push.</p>
-<p>👇update the latest version.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git pull</span></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git merge main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># or</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git rebase main</span></pre></td></tr></table></figure>
-<p>fix the conflict if it happens</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git merge man1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">git push</span></pre></td></tr></table></figure>
-<p>done</p>
-<p>总结：</p>
-<ol>
-<li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
-<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code> —&gt;</li>
-</ol>
 <h2 id="merge-和-rebase-的区别"><a href="#merge-和-rebase-的区别" class="headerlink" title="merge 和 rebase 的区别"></a>merge 和 rebase 的区别</h2><p>引用<a href="https://zhuanlan.zhihu.com/p/23478654" target="_blank" rel="noopener">知乎</a>的回答：</p>
 <blockquote>
 <p>可以这么说：merge是显性合并，rebase是隐性合并。<br>同理，当你执行git pull时，是同时执行了git fetch 和 git merge两个操作。如果你不想进行merge操作，即不想留下合并的记录，可以使用 git pull —rebase操作。</p>
@@ -437,6 +418,25 @@ For every member, their merge should follow (example with `man1`):
 <li><a href="https://judes.me/tech/2017/02/06/overwrite-code.html" target="_blank" rel="noopener">https://judes.me/tech/2017/02/06/overwrite-code.html</a></li>
 </ul>
 </blockquote>
+<!-- Situation: a main branch `main` and two branches for two members `man1`, `man2`.
+
+For every member, their merge should follow (example with `man1`):
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr></table></figure>
+<p>👆of course we are in our working branch at first.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git add .</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git commit -m "the merge order is important"</span></pre></td></tr></table></figure>
+<p>👆don’t rush to push.</p>
+<p>👇update the latest version.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git pull</span></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout man1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">git merge main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="comment"># or</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">git rebase main</span></pre></td></tr></table></figure>
+<p>fix the conflict if it happens</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">git checkout main</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">git merge man1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">git push</span></pre></td></tr></table></figure>
+<p>done</p>
+<p>总结：</p>
+<ol>
+<li>在工作分支 merge 主分支，在自己本地的工作分支处理冲突。<code>git merge main</code></li>
+<li>然后再回主干分支把工作分支合并好的 merge 进来。<code>git merge man1</code> —&gt;</li>
+</ol>
 -->
     </div>
 
@@ -519,7 +519,7 @@ For every member, their merge should follow (example with `man1`):
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主干分支与个人分支的合并"><span class="nav-number">1.</span> <span class="nav-text">主干分支与个人分支的合并</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#主干分支与个人分支的合并"><span class="nav-number">1.</span> <span class="nav-text">主干分支与个人分支的合并</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#merge-和-rebase-的区别"><span class="nav-number">1.1.</span> <span class="nav-text">merge 和 rebase 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SourceTree-下的-merge"><span class="nav-number">1.2.</span> <span class="nav-text">SourceTree 下的 merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github-Desktop-下的-merge"><span class="nav-number">1.3.</span> <span class="nav-text">Github Desktop 下的 merge</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -551,7 +551,7 @@ For every member, their merge should follow (example with `man1`):
             <a href="/categories/%20%7C%7C%20th">
           
         
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span>
         </a>
       </div>
