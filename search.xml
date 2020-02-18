@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>原生 Markdown 高仿 Notion 显示效果（甚至更优）</title>
+    <url>/others/markdown-multi-col/</url>
+    <content><![CDATA[<p>在 VS Code 中给 Markdown 增加排版自由度</p>
+<a id="more"></a>
+<p>VS Code 插件选择<code>Instant Markdown</code>，在浏览器 preview，因为 vscode 的侧栏显示 style 有限制。</p>
+<h1 id="Install-amp-Configuration"><a href="#Install-amp-Configuration" class="headerlink" title="Install &amp; Configuration"></a>Install &amp; Configuration</h1><p>为了加入自己的 css，对插件做点加工<del>（手脚）</del>：</p>
+<ol>
+<li>前往插件所在文件夹<br>eg: mac 下路径：<code>/Users/benature/.vscode/extensions/dbankier.vscode-instant-markdown-1.4.4</code></li>
+</ol>
+<p>原本的结构目录是</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── README.md</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── index.html</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── jsconfig.json</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── node_modules</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   └── ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── out</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   └── src</span></pre></td></tr><tr><td class="code"><pre><span class="line">│       ├── extension.js</span></pre></td></tr><tr><td class="code"><pre><span class="line">│       └── server.js</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── package-lock.json</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── package.json</span></pre></td></tr><tr><td class="code"><pre><span class="line">└── vscode-instant-markdown.gif</span></pre></td></tr></table></figure>
+<ol>
+<li>新建一个<code>public</code>文件夹，把自己的 css 文件放进去</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── public</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   └── bootstrap</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   │   ├── bootstrap.min.css</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   │   └── ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">│   └── muyi.css</span></pre></td></tr><tr><td class="code"><pre><span class="line">├── ...</span></pre></td></tr><tr><td class="code"><pre><span class="line">...</span></pre></td></tr></table></figure>
+<ol>
+<li>在<code>index.html</code>文件内假如对自定义 css 的引用（或者在 md 文件内引用也可以）</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"bootstrap.min.css"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"muyi.css"</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>到这里还不够，否则在网页打开 console 会看到自定义的 css 是 404 的</p>
+<ol>
+<li>把文件加到 server 里去</li>
+</ol>
+<p><code>out/src/server.js</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">app.get(<span class="string">'/muyi.css'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    res.sendfile(path.resolve(__dirname, <span class="string">'..'</span>, <span class="string">'..'</span>, <span class="string">'public'</span>, <span class="string">'muyi.css'</span>));</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr><tr><td class="code"><pre><span class="line">app.get(<span class="string">'/bootstrap.min.css'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    res.sendfile(path.resolve(__dirname, <span class="string">'..'</span>, <span class="string">'..'</span>, <span class="string">'public'</span>, <span class="string">'bootstrap'</span>, <span class="string">'bootstrap.min.css'</span>));</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;);</span></pre></td></tr></table></figure>
+<p>混入到其他<code>app.get</code>的代码里去，配置完成。</p>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><h2 id="多列显示"><a href="#多列显示" class="headerlink" title="多列显示"></a>多列显示</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"d-flex flex-row justify-content-between"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">第一列</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">第二列</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>这里的 class 用的是 bootstrap 的。</p>
+<p>Notion 原生对分列显示是比较 limited 的，比如分列后不能再仅针对某一行分列，只能在整一列的基础上右边再加一列。用 html 的不断 div 嵌套可以无限分列分行。</p>
+<h2 id="Toggle-List"><a href="#Toggle-List" class="headerlink" title="Toggle List"></a>Toggle List</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span><span class="tag">&lt;<span class="name">details</span> <span class="attr">open</span>&gt;</span><span class="tag">&lt;<span class="name">summary</span>&gt;</span>显示标题<span class="tag">&lt;/<span class="name">summary</span>&gt;</span><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">隐藏内容</span></pre></td></tr><tr><td class="code"><pre><span class="line">details 节点内的 open 使得 Toggle List 默认打开</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">details</span>&gt;</span></span></pre></td></tr></table></figure>
+<h2 id="Callout"><a href="#Callout" class="headerlink" title="Callout"></a>Callout</h2><p>选择了 Hexo 内的 note 类装饰来代替</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note b-green"</span>&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">### notion-like callout</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">- list 1</span></pre></td></tr><tr><td class="code"><pre><span class="line">- list 2</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></pre></td></tr></table></figure>
+<p>需要配置相应的 css，或者把插件原生的 css 换了</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.note</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-top-color</span>: <span class="built_in">rgb</span>(238, 227, 207);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-right-color</span>: <span class="built_in">rgb</span>(238, 227, 207);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-bottom-color</span>: <span class="built_in">rgb</span>(238, 227, 207);</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-left-color</span>: <span class="built_in">rgb</span>(238, 227, 207);</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">padding</span>: <span class="number">15px</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">position</span>: relative;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-left-width</span>: <span class="number">5px</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="selector-class">.note</span> <span class="selector-tag">p</span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">margin-bottom</span>:<span class="number">0</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="selector-class">.b-green</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-left-color</span>: <span class="number">#5cb85c</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="selector-class">.b-blue</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">    <span class="attribute">border-left-color</span>: <span class="number">#428bca</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<hr>
+<p>还有一种方法是用 <code>Mardown Preview Enhanced</code> 和 <code>Live Server</code>两个插件组合使用，配置 css 的引用会方便些，但是相对 <code>Instance Markdown</code> 的劣势在于不能实时 preview，需要保存先。因为目前的 MPE 的 <code>open in browser</code> 不是 live 的。</p>
+]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git 多人协作 的 merge 顺序</title>
     <url>/git/git-multi-workers-merge-order/</url>
     <content><![CDATA[<p>Git 多人协作</p>
@@ -345,6 +387,9 @@ For every member, their merge should follow (example with `man1`):
 </li>
 <li><p>Negative: 暗夜模式 pdf 阅读器</p>
 </li>
+<li><p>Better and Better</p>
+</li>
+<li>Slidepad</li>
 </ul>
 ]]></content>
       <tags>
