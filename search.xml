@@ -6,7 +6,8 @@
     <content><![CDATA[<p>在 VS Code 中给 Markdown 增加排版自由度</p>
 <a id="more"></a>
 <p>VS Code 插件选择<code>Instant Markdown</code>，在浏览器 preview，因为 vscode 的侧栏显示 style 有限制。</p>
-<h1 id="Install-amp-Configuration"><a href="#Install-amp-Configuration" class="headerlink" title="Install &amp; Configuration"></a>Install &amp; Configuration</h1><p>为了加入自己的 css，对插件做点加工<del>（手脚）</del>：</p>
+<h1 id="Install-amp-Configuration"><a href="#Install-amp-Configuration" class="headerlink" title="Install &amp; Configuration"></a>Install &amp; Configuration</h1><p><a href="https://github.com/Benature/vscode-instant-markdown" target="_blank" rel="noopener">如果你想偷懒：https://github.com/Benature/vscode-instant-markdown</a></p>
+<p>为了加入自己的 css，对插件做点加工<del>（手脚）</del>：</p>
 <ol>
 <li>前往插件所在文件夹<br>eg: mac 下路径：<code>/Users/benature/.vscode/extensions/dbankier.vscode-instant-markdown-1.4.4</code></li>
 </ol>
