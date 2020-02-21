@@ -1655,6 +1655,7 @@ here are hiden things
 <p>移除对大文件的引用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git filter-branch --force --index-filter &quot;git rm --cached --ignore-unmatch &#39;data&#x2F;bigfile&#39;&quot;  --prune-empty --tag-name-filter cat -- --all</span></pre></td></tr></table></figure></p>
 <p>repack<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git for-each-ref --format&#x3D;&#39;delete %(refname)&#39; refs&#x2F;original | git update-ref --stdin</span></pre></td></tr><tr><td class="code"><pre><span class="line">git reflog expire --expire&#x3D;now --all</span></pre></td></tr><tr><td class="code"><pre><span class="line">git gc --prune&#x3D;now</span></pre></td></tr></table></figure></p>
 <p>查看pack的空间使用情况<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git count-objects -v</span></pre></td></tr></table></figure></p>
+<p><strong>如果不止一个人使用仓库，需要其他成员删除本地库并重新 clone 远端的库，同时以上操作后不应有其他人 push 到远端，否则白忙活</strong></p>
 <hr>
 <p>参考资料:</p>
 <ul>
