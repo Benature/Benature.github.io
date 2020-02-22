@@ -1,6 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>咦？命令行里的点.是什么意思鸭</title>
+    <url>/linux/terminal-what-does-dot-mean/</url>
+    <content><![CDATA[<p>咦？命令行里的点.是什么意思鸭</p>
+<a id="more"></a>
+<p>命令行入门基本功<code>ls</code>、<code>cd</code>。相当于在命令行世界里拥有了眼镜和双腿。</p>
+<p>可能有好奇宝宝会碰到命令行里的<code>.</code>，有点好奇是啥意思</p>
+<h1 id="一个点"><a href="#一个点" class="headerlink" title="一个点."></a>一个点<code>.</code></h1><p>一个点<code>.</code>代表当前路径，来些🌰</p>
+<ol>
+<li>这叫原地踏步</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd .</span></pre></td></tr></table></figure>
+<ol>
+<li>打开当前路径下文件 </li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ./hello.txt</span></pre></td></tr></table></figure>
+<ol>
+<li>调用当前文件夹下命令</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./pip install numpy</span></pre></td></tr></table></figure>
+<h1 id="两个点"><a href="#两个点" class="headerlink" title="两个点.."></a>两个点<code>..</code></h1><p>两个点<code>..</code>代表上级目录，这个学<code>cd</code>的时候应该很熟练了。</p>
+<ol>
+<li>返回上级目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ..</span></pre></td></tr></table></figure>
+<ol>
+<li>返回很上面的目录</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ../../../..</span></pre></td></tr></table></figure>
+<ol>
+<li>打开文件之类的和上面一个点的方法一样，不赘述了</li>
+</ol>
+<h1 id="文件夹名前面带个点"><a href="#文件夹名前面带个点" class="headerlink" title="文件夹名前面带个点"></a>文件夹名前面带个点</h1><p>已知<code>ls</code>显示目录下文件，加个<code>-a</code>参数就会显示所有文件，包括隐藏文件，如</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls -a</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">..    .    .git</span></pre></td></tr></table></figure>
+<p>显然，分别是上级目录，当前目录，以及一个隐藏文件夹。</p>
+<p>所以前面带个点的文件夹是隐藏文件夹，比如在 finder 默认情况下是看不到的</p>
+<h1 id="三个点"><a href="#三个点" class="headerlink" title="三个点..."></a>三个点<code>...</code></h1><p>emmmmm，三个点<code>...</code>代表无语。</p>
+]]></content>
+      <tags>
+        <tag>入门教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pip 命令找不到？</title>
+    <url>/python-code/pip-cmd-not-found/</url>
+    <content><![CDATA[<p>pip 命令找不到？</p>
+<a id="more"></a>
+<p>有些人刚开始用 Python 可能会有</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip: command not found</span></pre></td></tr></table></figure>
+<p>原因有二：</p>
+<ul>
+<li>pip 所在路径不在环境变量内</li>
+<li>你没装 pip</li>
+</ul>
+<p>下面分系统说明下</p>
+<h1 id="MacOS-Linux"><a href="#MacOS-Linux" class="headerlink" title="MacOS / Linux"></a>MacOS / Linux</h1><h2 id="安装了-conda"><a href="#安装了-conda" class="headerlink" title="安装了 conda"></a>安装了 conda</h2><p>如果你安装了 anaconda 或者 miniconda，它所安装的文件夹下有个<code>bin</code>文件夹，需要把他放到环境变量内。</p>
+<p>此处以安装了 anaconda 为例，安装路径在<code>~/anaconda</code>。</p>
+<p>一般命令行是 bash 的，zsh 或者其他的也差不多，下面文件名换个名字而已。下面以 bash 为例。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 按 i 进入键入模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加以下一行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">PATH=$PATH:~/anaconda</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 按 esc，再输入:wq 然后回车保存退出</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">source ~/.bashrc # 或者重新开一个命令行窗口</span></pre></td></tr></table></figure>
+<p>然后检验一下<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip --version</span></pre></td></tr></table></figure></p>
+<p>应该可以了</p>
+<h2 id="用系统自带的-python"><a href="#用系统自带的-python" class="headerlink" title="用系统自带的 python"></a>用系统自带的 python</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo easy_install pip</span></pre></td></tr></table></figure>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="安装了-conda-1"><a href="#安装了-conda-1" class="headerlink" title="安装了 conda"></a>安装了 conda</h2><p>如果你安装了 anaconda 或者 miniconda，同样把它的<code>bin</code>文件夹添加到环境变量。</p>
+<p>windows 添加环境变量方法请自行百度。</p>
+<h2 id="安装了官方-python"><a href="#安装了官方-python" class="headerlink" title="安装了官方 python"></a>安装了官方 python</h2><p>那你估计真的安装出了问题？</p>
+]]></content>
+      <tags>
+        <tag>入门教程</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL 安装</title>
+    <url>/others/mysql8-install/</url>
+    <content><![CDATA[<p>MySQL 安装</p>
+<a id="more"></a>
+<h1 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h1><ol>
+<li>下载<br>download from <a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a>, select <code>macOS 10.14 (x86, 64-bit), DMG Archive</code>(.dmg file)</li>
+</ol>
+<blockquote>
+<p>顺路会看到一个叫 workbench 的，可视化工具，就像看 excel 看数据库，which is recommended.</p>
+</blockquote>
+<ol>
+<li>安装<br>clike <code>next</code> all the way.</li>
+</ol>
+<p>set the PATH</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.bash_profile</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 增加以下这行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">PATH=$PATH:/usr/local/mysql/bin</span></pre></td></tr></table></figure>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p>同样在<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a>下载，略。</p>
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> download the configuration</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql-apt-config_0.8.14-1_all.deb</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo dpkg -i mysql-apt-config_0.8.14-1_all.deb</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> default is fine, select OK and <span class="built_in">return</span></span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt update</span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> password(spa2020)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> use strong password encryption</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">sudo mysql_secure_installation</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> enter password</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> n (不换root密码)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Remove anonymous users? : y（删除匿名用户）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Disallow root login remotely?: n（是否禁止 root 远程登录）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Remove <span class="built_in">test</span> database and access to it? : y（删除测试数据库）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Reload privilege tables now? : y（立即重新加载特权表）</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">mysql -V # check version</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mysql  Ver 8.0.19 <span class="keyword">for</span> Linux on x86_64 (MySQL Community Server - GPL)</span></span></pre></td></tr></table></figure>
+<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p>参见<a href="https://benature.github.io/linux/wsl-install-mysql8/">此文</a></p>
+<blockquote>
+<p>macOS 和 Windows 下可以装个数据库 GUI app  </p>
+<ul>
+<li>MySQL Workbench (free &amp; recommend)<br><del>如同处理 excel，不用学 mysql 命令也能操作数据库啦</del></li>
+</ul>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacOS 自动化 tricks</title>
     <url>/devices/mac-auto-tricks/</url>
     <content><![CDATA[<p>MacOS 自动化 tricks</p>
@@ -624,7 +725,7 @@ For every member, their merge should follow (example with `man1`):
 <h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt update &amp;&amp; apt upgrade</span></pre></td></tr><tr><td class="code"><pre><span class="line">apt install git</span></pre></td></tr><tr><td class="code"><pre><span class="line">git clone https://github.com/tchelospy/termux-ngrok.git</span></pre></td></tr><tr><td class="code"><pre><span class="line">cd termux-ngrok</span></pre></td></tr><tr><td class="code"><pre><span class="line">chmod +x termux-ngrok.sh</span></pre></td></tr><tr><td class="code"><pre><span class="line">./termux-ngrok.sh</span></pre></td></tr></table></figure>
 ]]></content>
       <tags>
-        <tag>termux</tag>
+        <tag>Termux</tag>
       </tags>
   </entry>
   <entry>
@@ -1269,7 +1370,7 @@ For every member, their merge should follow (example with `man1`):
 </li>
 <li>Markdown 类<ul>
 <li>Markdown All in One：源码操作纵享丝滑</li>
-<li>Markdown Preview Enhanced：预览加成<ul>
+<li><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/" target="_blank" rel="noopener">Markdown Preview Enhanced</a>：预览加成<ul>
 <li>Tips: <ul>
 <li>右上会看到两个预览 icon，注意区分 vsc 原生的和 MPE 的（MPE 快捷键<code>cmd+opt+V</code>）</li>
 </ul>
