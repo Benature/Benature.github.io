@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MacOS 自动化 tricks</title>
+    <url>/devices/mac-auto-tricks/</url>
+    <content><![CDATA[<p>MacOS 自动化 tricks</p>
+<a id="more"></a>
+<h1 id="with-keyboard-maestro"><a href="#with-keyboard-maestro" class="headerlink" title="with keyboard maestro"></a>with keyboard maestro</h1><h2 id="SideCar"><a href="#SideCar" class="headerlink" title="SideCar"></a>SideCar</h2><figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">tell</span> process <span class="string">"SystemUIServer"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">		click (menu bar <span class="built_in">item</span> <span class="number">1</span> <span class="keyword">of</span> menu bar <span class="number">1</span> <span class="keyword">whose</span> description <span class="keyword">contains</span> <span class="string">"Displays"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">		click menu <span class="built_in">item</span> <span class="string">"[YOUR iPAD HERE]"</span> <span class="keyword">of</span> menu <span class="number">1</span> <span class="keyword">of</span> <span class="literal">result</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr></table></figure>
+<p>from <a href="https://github.com/Jcowwell/Sidecar-Scripts" target="_blank" rel="noopener">https://github.com/Jcowwell/Sidecar-Scripts</a></p>
+<h2 id="Multi-displays"><a href="#Multi-displays" class="headerlink" title="Multi-displays"></a>Multi-displays</h2><ul>
+<li><a href="https://forum.keyboardmaestro.com/t/move-window-to-next-screen-and-maintain-its-position/11836/2" target="_blank" rel="noopener">https://forum.keyboardmaestro.com/t/move-window-to-next-screen-and-maintain-its-position/11836/2</a></li>
+<li><a href="https://forum.keyboardmaestro.com/t/window-management-on-multiple-displays/10975" target="_blank" rel="noopener">https://forum.keyboardmaestro.com/t/window-management-on-multiple-displays/10975</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+        <tag>AppleScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>原生 Markdown 高仿 Notion 显示效果（甚至更优）</title>
     <url>/others/markdown-multi-col/</url>
     <content><![CDATA[<p>在 VS Code 中给 Markdown 增加排版自由度</p>
