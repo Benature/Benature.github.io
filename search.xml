@@ -1243,9 +1243,23 @@ For every member, their merge should follow (example with `man1`):
     <url>/others/vscode-plungin/</url>
     <content><![CDATA[<ul>
 <li>Code Runner</li>
+<li>TODO Highlight / Todo Tree</li>
+<li>Git 类<ul>
 <li>Gitlens - Git supercharged</li>
 <li>Git History</li>
-<li>TODO Highlight / Todo Tree</li>
+</ul>
+</li>
+<li>Markdown 类<ul>
+<li>Markdown All in One：源码操作纵享丝滑</li>
+<li>Markdown Preview Enhanced：预览加成<ul>
+<li>Tips: <ul>
+<li>右上会看到两个预览 icon，注意区分 vsc 原生的和 MPE 的（MPE 快捷键<code>cmd+opt+V</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 ]]></content>
       <tags>
