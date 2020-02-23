@@ -7,7 +7,7 @@
 <a id="more"></a>
 <p>命令行入门基本功<code>ls</code>、<code>cd</code>。相当于在命令行世界里拥有了眼镜和双腿。</p>
 <p>可能有好奇宝宝会碰到命令行里的<code>.</code>，有点好奇是啥意思</p>
-<h1 id="一个点"><a href="#一个点" class="headerlink" title="一个点."></a>一个点<code>.</code></h1><p>一个点<code>.</code>代表当前路径，来些🌰</p>
+<h1 id="一个点"><a href="#一个点" class="headerlink" title="一个点."></a>一个点<code>.</code></h1><p>一个点<code>.</code>代表当前路径，来些例子🌰</p>
 <ol>
 <li>这叫原地踏步</li>
 </ol>
@@ -61,6 +61,16 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 按 i 进入键入模式</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加以下一行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">PATH=$PATH:~/anaconda</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 按 esc，再输入:wq 然后回车保存退出</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">source ~/.bashrc # 或者重新开一个命令行窗口</span></pre></td></tr></table></figure>
 <p>然后检验一下<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip --version</span></pre></td></tr></table></figure></p>
 <p>应该可以了</p>
+<hr>
+<p>如果还是不行，给个江湖救急的法子</p>
+<p>首先你要确定<code>~/anaconda/bin</code>下的确有个叫<code>pip</code>的文件（比如用 finder 看）</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd ~/anaconda/bin</span></pre></td></tr><tr><td class="code"><pre><span class="line">pip install &lt;module&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果还是不行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">./pip install &lt;module&gt;</span></pre></td></tr></table></figure>
+<blockquote>
+<p>如果你对<code>./pip</code>里的点<code>.</code>好奇的话，可以砍<a href="https://benature.github.io/linux/terminal-what-does-dot-mean/">这里</a></p>
+</blockquote>
+<p>其他路径下则<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">~/anaconda/bin/pip install &lt;module&gt;</span></pre></td></tr></table></figure></p>
+<p>如果上面有一种情况你成功了，那你还有一丝希望，拯救你使用冗长的 pip 命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim ~/.bashrc</span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 加入这行</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">alias pip=~/anaconda/bin/pip</span></pre></td></tr></table></figure>
 <h2 id="用系统自带的-python"><a href="#用系统自带的-python" class="headerlink" title="用系统自带的 python"></a>用系统自带的 python</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo easy_install pip</span></pre></td></tr></table></figure>
 <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="安装了-conda-1"><a href="#安装了-conda-1" class="headerlink" title="安装了 conda"></a>安装了 conda</h2><p>如果你安装了 anaconda 或者 miniconda，同样把它的<code>bin</code>文件夹添加到环境变量。</p>
 <p>windows 添加环境变量方法请自行百度。</p>
