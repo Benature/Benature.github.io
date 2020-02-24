@@ -1370,7 +1370,7 @@ For every member, their merge should follow (example with `man1`):
   <entry>
     <title>VS Code 插件</title>
     <url>/others/vscode-plungin/</url>
-    <content><![CDATA[<ul>
+    <content><![CDATA[<h1 id="Recommendations"><a href="#Recommendations" class="headerlink" title="Recommendations"></a>Recommendations</h1><ul>
 <li>Code Runner</li>
 <li>TODO Highlight / Todo Tree</li>
 <li>Git 类<ul>
@@ -1380,28 +1380,26 @@ For every member, their merge should follow (example with `man1`):
 </li>
 <li>Markdown 类<ul>
 <li>Markdown All in One：源码操作纵享丝滑</li>
-<li><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/" target="_blank" rel="noopener">Markdown Preview Enhanced</a>：预览加成<ul>
-<li>Tips: <ul>
-<li>右上会看到两个预览 icon，注意区分 vsc 原生的和 MPE 的（MPE 快捷键<code>cmd+opt+V</code>）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>关于Markdown 的一顿骚操作可以看下<a href="https://benature.github.io/others/markdown-multi-col/">这里</a></li>
+<li><a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/" target="_blank" rel="noopener">Markdown Preview Enhanced</a>：预览加成</li>
+<li>关于 Markdown 的一顿骚操作可以看下<a href="https://benature.github.io/others/markdown-multi-col/">这里</a></li>
 </ul>
 </li>
 </ul>
 <hr>
-<p><strong>Tips:</strong></p>
-<ul>
-<li>MPE的主题样式默认是白底黑字的，自定义请去 setting 修改选择👇</li>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="MPE"><a href="#MPE" class="headerlink" title="MPE"></a>MPE</h2><ul>
+<li><p>右上会看到两个预览 icon，注意区分 vsc 原生的和 MPE 的（MPE 快捷键<code>cmd+opt+V</code>）</p>
+<p align="center">
+<img src="https://i.loli.net/2020/02/25/CliwoMYVOSxK9UA.png" width="25%">
+</p>
+</li>
+<li><p>MPE的主题样式默认是白底黑字的，自定义请去 setting 修改选择👇</p>
+</li>
 </ul>
 <p align="center">
   <img src="https://i.loli.net/2020/02/25/oclNJykIKMbXzTf.png" width="70%">
 </p>]]></content>
       <tags>
         <tag>资源</tag>
-        <tag>Mathematica</tag>
       </tags>
   </entry>
   <entry>
