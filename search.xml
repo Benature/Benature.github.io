@@ -1391,7 +1391,14 @@ For every member, their merge should follow (example with `man1`):
 </ul>
 </li>
 </ul>
-]]></content>
+<hr>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>MPE的主题样式默认是白底黑字的，自定义请去 setting 修改选择👇</li>
+</ul>
+<p align="center">
+  <img src="https://i.loli.net/2020/02/25/oclNJykIKMbXzTf.png" width="70%">
+</p>]]></content>
       <tags>
         <tag>资源</tag>
         <tag>Mathematica</tag>
