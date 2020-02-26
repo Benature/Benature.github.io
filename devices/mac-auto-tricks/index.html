@@ -67,7 +67,7 @@
 <meta property="og:description" content="MacOS 自动化 tricks">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;devices&#x2F;mac-auto-tricks&#x2F;Chrome-close-download.jpeg">
-<meta property="og:updated_time" content="2020-02-22T04:55:30.174Z">
+<meta property="og:updated_time" content="2020-02-26T10:29:34.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;benature.github.io&#x2F;devices&#x2F;mac-auto-tricks&#x2F;Chrome-close-download.jpeg">
   <link rel="canonical" href="https://benature.github.io/devices/mac-auto-tricks/">
@@ -334,11 +334,19 @@
                 
               
 
-              <time title="Created: 2020-02-22 12:46:42 / Modified: 12:55:30" itemprop="dateCreated datePublished" datetime="2020-02-22T12:46:42+08:00">2020-02-22</time>
+              <time title="Created: 2020-02-22 12:46:42" itemprop="dateCreated datePublished" datetime="2020-02-22T12:46:42+08:00">2020-02-22</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-26 18:29:34" itemprop="dateModified" datetime="2020-02-26T18:29:34+08:00">2020-02-26</time>
+              </span>
             
           
 
@@ -385,9 +393,10 @@
       
         <p>MacOS 自动化 tricks</p>
 <a id="more"></a>
-<h1 id="with-keyboard-maestro"><a href="#with-keyboard-maestro" class="headerlink" title="with keyboard maestro"></a>with keyboard maestro</h1><h2 id="SideCar"><a href="#SideCar" class="headerlink" title="SideCar"></a>SideCar</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">tell</span> process <span class="string">"SystemUIServer"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		click (menu bar <span class="built_in">item</span> <span class="number">1</span> <span class="keyword">of</span> menu bar <span class="number">1</span> <span class="keyword">whose</span> description <span class="keyword">contains</span> <span class="string">"Displays"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		click menu <span class="built_in">item</span> <span class="string">"[YOUR iPAD HERE]"</span> <span class="keyword">of</span> menu <span class="number">1</span> <span class="keyword">of</span> <span class="literal">result</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr></table></figure>
+<h1 id="AppleScript"><a href="#AppleScript" class="headerlink" title="AppleScript"></a>AppleScript</h1><h2 id="SideCar"><a href="#SideCar" class="headerlink" title="SideCar"></a>SideCar</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">tell</span> process <span class="string">"SystemUIServer"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">		click (menu bar <span class="built_in">item</span> <span class="number">1</span> <span class="keyword">of</span> menu bar <span class="number">1</span> <span class="keyword">whose</span> description <span class="keyword">contains</span> <span class="string">"Displays"</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		click menu <span class="built_in">item</span> <span class="string">"[YOUR iPAD HERE]"</span> <span class="keyword">of</span> menu <span class="number">1</span> <span class="keyword">of</span> <span class="literal">result</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr></table></figure>
 <p>from <a href="https://github.com/Jcowwell/Sidecar-Scripts" target="_blank" rel="noopener">https://github.com/Jcowwell/Sidecar-Scripts</a></p>
-<h2 id="Multi-displays"><a href="#Multi-displays" class="headerlink" title="Multi-displays"></a>Multi-displays</h2><ul>
+<h2 id="Click-icon-on-the-right-side-of-menubar"><a href="#Click-icon-on-the-right-side-of-menubar" class="headerlink" title="Click icon on the right side of menubar"></a>Click icon on the right side of menubar</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	control down</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">tell</span> <span class="built_in">application</span> <span class="string">"System Events"</span> <span class="keyword">to</span> <span class="keyword">tell</span> process <span class="string">"[APP PROCESS NAME]"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">		click menu bar <span class="built_in">item</span> <span class="number">1</span> <span class="keyword">of</span> menu bar <span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">end</span> <span class="keyword">tell</span></span></pre></td></tr></table></figure>
+<h1 id="with-keyboard-maestro"><a href="#with-keyboard-maestro" class="headerlink" title="with keyboard maestro"></a>with keyboard maestro</h1><h2 id="Multi-displays"><a href="#Multi-displays" class="headerlink" title="Multi-displays"></a>Multi-displays</h2><ul>
 <li><a href="https://forum.keyboardmaestro.com/t/move-window-to-next-screen-and-maintain-its-position/11836/2" target="_blank" rel="noopener">https://forum.keyboardmaestro.com/t/move-window-to-next-screen-and-maintain-its-position/11836/2</a></li>
 <li><a href="https://forum.keyboardmaestro.com/t/window-management-on-multiple-displays/10975" target="_blank" rel="noopener">https://forum.keyboardmaestro.com/t/window-management-on-multiple-displays/10975</a></li>
 </ul>
@@ -480,7 +489,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#with-keyboard-maestro"><span class="nav-number">1.</span> <span class="nav-text">with keyboard maestro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SideCar"><span class="nav-number">1.1.</span> <span class="nav-text">SideCar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-displays"><span class="nav-number">1.2.</span> <span class="nav-text">Multi-displays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-关闭下方-download-栏"><span class="nav-number">1.3.</span> <span class="nav-text">Chrome 关闭下方 download 栏</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AppleScript"><span class="nav-number">1.</span> <span class="nav-text">AppleScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SideCar"><span class="nav-number">1.1.</span> <span class="nav-text">SideCar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Click-icon-on-the-right-side-of-menubar"><span class="nav-number">1.2.</span> <span class="nav-text">Click icon on the right side of menubar</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#with-keyboard-maestro"><span class="nav-number">2.</span> <span class="nav-text">with keyboard maestro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-displays"><span class="nav-number">2.1.</span> <span class="nav-text">Multi-displays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-关闭下方-download-栏"><span class="nav-number">2.2.</span> <span class="nav-text">Chrome 关闭下方 download 栏</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
